@@ -13,36 +13,43 @@ body {
     background: #F8F5F1;
     color: #1a1a1a;
     font-family: 'Inter', sans-serif;
-    -webkit-font-smoothing: antialiased;
 }
 
-/* layout */
+/* container */
 .container {
     max-width: 1100px;
     margin: auto;
-    padding: 120px 24px;
+    padding: 100px 24px;
 }
 
-/* HERO */
-.hero {
-    height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* HERO IMAGES */
+.hero-img {
+    width: 100%;
+    height: 416px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
-.hero h1 {
+.hero-img.second {
+    height: 554px;
+    margin-top: 20px;
+}
+
+/* HERO TEXT */
+.hero-text {
+    margin-top: 40px;
+}
+
+.hero-text h1 {
     font-size: 64px;
     font-weight: 300;
-    letter-spacing: -1px;
     margin: 0;
 }
 
-.hero p {
-    font-size: 16px;
+.hero-text p {
     opacity: 0.65;
     max-width: 520px;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 /* SECTION TITLE */
@@ -60,25 +67,24 @@ body {
     gap: 28px;
 }
 
-/* PROJECT CARD */
+/* PROJECT */
 .project {
     position: relative;
     overflow: hidden;
     border-radius: 12px;
     aspect-ratio: 525 / 409;
-    cursor: pointer;
     background: #fff;
     border: 1px solid rgba(0,0,0,0.08);
-    transition: 0.35s ease;
     text-decoration: none;
     color: inherit;
+    transition: 0.3s ease;
 }
 
 .project img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 0.5s ease;
+    transition: 0.4s ease;
 }
 
 .project:hover {
@@ -90,7 +96,6 @@ body {
     transform: scale(1.03);
 }
 
-/* label */
 .label {
     position: absolute;
     bottom: 14px;
@@ -99,10 +104,9 @@ body {
     background: rgba(248,245,241,0.75);
     padding: 6px 10px;
     border-radius: 6px;
-    backdrop-filter: blur(6px);
 }
 
-/* text */
+/* ABOUT */
 .text {
     max-width: 600px;
     opacity: 0.75;
@@ -110,13 +114,36 @@ body {
     font-size: 15px;
 }
 
-/* responsive */
+/* FOOTER (DARK) */
+.footer {
+    margin-top: 120px;
+    background: #111;
+    color: #fff;
+    padding: 60px 24px;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: auto;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
     }
 
-    .hero h1 {
+    .hero-img {
+        height: 300px;
+    }
+
+    .hero-img.second {
+        height: 420px;
+    }
+
+    .hero-text h1 {
         font-size: 40px;
     }
 }
@@ -128,35 +155,39 @@ body {
 
 <div class="container">
 
-<!-- HERO -->
-<section class="hero">
+<!-- HERO IMAGES -->
+<img class="hero-img" src="hero.jpg" alt="Hero Image">
+<img class="hero-img second" src="hero2.jpg" alt="Hero Image 2">
+
+<!-- HERO TEXT -->
+<div class="hero-text">
     <h1>Ornella Dina D’Elia</h1>
     <p>UI/UX Designer • Visual Storyteller • Creative Developer</p>
-</section>
+</div>
 
 <!-- PROJECTS -->
 <div class="section-title">SELECTED WORK</div>
 
 <div class="grid">
 
-    <a href="projects/project1.html" class="project">
-        <img src="Untitled.jpg"> alt="AETHEL">
-        <div class="label">AETHEL - High Fashion Shopping App</div>
+    <a href="project-aethel.html" class="project">
+        <img src="Untitled.jpg">
+        <div class="label">AETHEL</div>
     </a>
 
-    <a href="projects/project2.html" class="project">
-        <img src="havenpackageforgirl.png" alt="HAVEN">
-        <div class="label">HAVEN - Gender Reveal Champagne</div>
+    <a href="project-haven.html" class="project">
+        <img src="havenpackageforgirl.png">
+        <div class="label">HAVEN</div>
     </a>
 
-    <a href="projects/project3.html" class="project">
-       <img src="businesscardmoonhive.png"> alt="MOONHIVE">
-        <div class="label">MOONHIVE - Wellness Brand</div>
+    <a href="project-moonhive.html" class="project">
+        <img src="businesscardmoonhive.png">
+        <div class="label">MOONHIVE</div>
     </a>
 
-    <a href="projects/project4.html" class="project">
-        <img src="illumixcover.png"> alt="ILLUMIX">
-        <div class="label">ILLUMIX - 3D Botanical Website</div>
+    <a href="project-illumix.html" class="project">
+        <img src="illumixcover.png">
+        <div class="label">ILLUMIX</div>
     </a>
 
 </div>
@@ -167,13 +198,13 @@ body {
 I am a designer focused on crafting immersive digital experiences through minimal and futuristic visual systems.
 </p>
 
-<!-- CONTACT -->
-<div class="section-title">CONTACT</div>
-<p class="text">
-Email: your@email.com<br>
-Instagram: @yourhandle
-</p>
+</div>
 
+<!-- FOOTER -->
+<div class="footer">
+    <div class="footer-inner">
+        © 2026 Ornella D’Elia — UI/UX Designer
+    </div>
 </div>
 
 </body>
