@@ -22,22 +22,30 @@ body {
     padding: 100px 24px;
 }
 
-/* HERO IMAGES */
-.hero-img {
+.hero {
+    position: relative;
     width: 100%;
     height: 416px;
+    margin-bottom: 40px;
+}
+
+/* background image */
+.hero-img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 12px;
 }
 
-.hero-img.second {
-    height: 554px;
-    margin-top: 20px;
-}
-
-/* HERO TEXT */
+/* overlay text */
 .hero-text {
-    margin-top: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #1a1a1a;
+    z-index: 2;
 }
 
 .hero-text h1 {
@@ -47,11 +55,9 @@ body {
 }
 
 .hero-text p {
-    opacity: 0.65;
-    max-width: 520px;
-    margin-top: 10px;
+    font-size: 16px;
+    opacity: 0.7;
 }
-
 /* SECTION TITLE */
 .section-title {
     margin: 120px 0 40px;
@@ -155,14 +161,16 @@ body {
 
 <div class="container">
 
-<!-- HERO IMAGES -->
-<img class="hero-img" src="hero.jpg" alt="Hero Image">
-<img class="hero-img second" src="hero2.jpg" alt="Hero Image 2">
+<!-- HERO -->
+<div class="hero">
 
-<!-- HERO TEXT -->
-<div class="hero-text">
-    <h1>Ornella Dina D’Elia</h1>
-    <p>UI/UX Designer • Visual Storyteller • Creative Developer</p>
+    <img class="hero-img" src="hero.jpg" alt="Hero Image">
+
+    <div class="hero-text">
+        <h1>Ornella Dina D’Elia</h1>
+        <p>UI/UX Designer • Visual Storyteller • Creative Developer</p>
+    </div>
+
 </div>
 
 <!-- PROJECTS -->
@@ -199,13 +207,27 @@ I am a designer focused on crafting immersive digital experiences through minima
 </p>
 
 </div>
-
-<!-- FOOTER -->
 <div class="footer">
     <div class="footer-inner">
-        © 2026 Ornella D’Elia — UI/UX Designer
+
+        <div style="margin-bottom: 10px;">
+            © 2026 Ornella D’Elia
+        </div>
+
+        <div>
+            Email: ornelladelia0@gmail.com <br>
+            Phone: +961 76441543
+        </div>
+
+        <div style="margin-top: 10px;">
+            <a href="#" style="color:white; text-decoration:none;">Behance</a> • 
+            <a href="#" style="color:white; text-decoration:none;">LinkedIn</a> • 
+            <a href="#" style="color:white; text-decoration:none;">Instagram</a>
+        </div>
+
     </div>
 </div>
+
 
 </body>
 </html>
