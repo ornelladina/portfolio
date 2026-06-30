@@ -45,7 +45,7 @@ body {
     margin-top: 12px;
 }
 
-/* SECTION TITLES */
+/* SECTION TITLE */
 .section-title {
     margin: 120px 0 40px;
     font-size: 12px;
@@ -60,7 +60,7 @@ body {
     gap: 28px;
 }
 
-/* PROJECT */
+/* PROJECT CARD */
 .project {
     position: relative;
     overflow: hidden;
@@ -71,6 +71,7 @@ body {
     border: 1px solid rgba(0,0,0,0.08);
     transition: 0.35s ease;
     text-decoration: none;
+    color: inherit;
 }
 
 .project img {
@@ -80,10 +81,9 @@ body {
     transition: 0.5s ease;
 }
 
-/* hover */
 .project:hover {
     transform: translateY(-4px);
-    border-color: rgba(0,0,0,0.18);
+    border-color: rgba(0,0,0,0.2);
 }
 
 .project:hover img {
@@ -96,9 +96,8 @@ body {
     bottom: 14px;
     left: 14px;
     font-size: 13px;
-    color: #1a1a1a;
-    background: rgba(248,245,241,0.7);
-    padding: 4px 8px;
+    background: rgba(248,245,241,0.75);
+    padding: 6px 10px;
     border-radius: 6px;
     backdrop-filter: blur(6px);
 }
@@ -141,23 +140,23 @@ body {
 <div class="grid">
 
     <a href="projects/project1.html" class="project">
-        <img src="images/Untitled.jpg">
-        <div class="label">AETHEL - High fashion shopping app</div>
+        <img src="images/Untitled.jpg" alt="AETHEL">
+        <div class="label">AETHEL - High Fashion Shopping App</div>
     </a>
 
     <a href="projects/project2.html" class="project">
-        <img src="images/havenpackageforgirl.png">
-        <div class="label">HAVEN - Gender Reveal Champagne [Art Nouveau]</div>
+        <img src="images/havenpackageforgirl.png" alt="HAVEN">
+        <div class="label">HAVEN - Gender Reveal Champagne</div>
     </a>
 
     <a href="projects/project3.html" class="project">
-        <img src="images/businesscardmoonhive.png">
+        <img src="images/businesscardmoonhive.png" alt="MOONHIVE">
         <div class="label">MOONHIVE - Wellness Brand</div>
     </a>
 
     <a href="projects/project4.html" class="project">
-        <img src="images/illumixcover.png">
-        <div class="label">ILLUMIX - 3D Botanical Models Website</div>
+        <img src="images/illumixcover.png" alt="ILLUMIX">
+        <div class="label">ILLUMIX - 3D Botanical Website</div>
     </a>
 
 </div>
