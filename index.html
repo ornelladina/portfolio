@@ -3,129 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ornella Dina D'elia Portfolio</title>
+<title>Ornella D'Elia</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-
 body {
     margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #0b0b0b;
+    background: #07070a;
     color: #ffffff;
-    line-height: 1.7;
+    font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 
+/* overall layout */
 .container {
     max-width: 1100px;
     margin: auto;
     padding: 120px 24px;
 }
 
-/* HERO — Wix-style spacing */
+/* HERO */
 .hero {
-    height: 100vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-h1 {
-    font-size: 72px;
-    font-weight: 500;
+.hero h1 {
+    font-size: 64px;
+    font-weight: 300;
     letter-spacing: -1px;
     margin: 0;
 }
 
 .hero p {
-    font-size: 18px;
-    opacity: 0.7;
-    max-width: 520px;
+    font-size: 16px;
+    opacity: 0.6;
+    max-width: 500px;
+    margin-top: 12px;
 }
 
-/* SECTION TITLES */
-h2 {
-    font-size: 22px;
-    font-weight: 400;
-    margin-top: 120px;
-    margin-bottom: 30px;
-    opacity: 0.9;
+/* SECTION TITLE */
+.section-title {
+    margin: 120px 0 40px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0.5;
 }
 
-/* PROJECT GRID — more “Wix Studio” feel */
+/* GRID (Wix-style) */
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 28px;
 }
 
-/* PROJECT CARDS — now minimal + premium */
-.card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 24px;
-    border-radius: 14px;
-    transition: 0.35s ease;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    background: rgba(255,255,255,0.06);
-    border-color: rgba(255,255,255,0.18);
-}
-
-/* TEXT */
-p {
-    font-size: 15px;
-    opacity: 0.75;
-}
-
-/* FOOTER */
-.footer {
-    margin-top: 140px;
-    opacity: 0.5;
-    font-size: 13px;
-}
-    .project {
+/* PROJECT CARD */
+.project {
     position: relative;
-    margin-bottom: 60px;
-    border-radius: 18px;
     overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 525 / 409;
+    background: #111;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: 0.4s ease;
 }
 
 .project img {
     width: 100%;
-    height: 500px;
+    height: 100%;
     object-fit: cover;
-    display: block;
     transition: 0.6s ease;
+    filter: grayscale(10%) contrast(1.05);
 }
 
+/* hover = subtle futuristic feel */
 .project:hover img {
-    transform: scale(1.03);
-    filter: brightness(0.7);
+    transform: scale(1.04);
+    filter: grayscale(0%) brightness(0.9);
 }
 
-.overlay {
+.project:hover {
+    border-color: rgba(255,255,255,0.18);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* overlay text */
+.label {
     position: absolute;
-    bottom: 30px;
-    left: 30px;
-    color: white;
+    bottom: 16px;
+    left: 16px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    opacity: 0.85;
 }
 
-.overlay h3 {
-    margin: 0;
-    font-size: 28px;
+/* ABOUT + CONTACT */
+.text {
+    max-width: 600px;
+    opacity: 0.7;
+    line-height: 1.7;
+    font-size: 15px;
 }
 
-.overlay p {
-    margin: 5px 0 0;
-    opacity: 0.8;
+/* responsive */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
 }
 </style>
+
 </head>
 
 <body>
@@ -134,69 +129,51 @@ p {
 
 <!-- HERO -->
 <section class="hero">
-    <h1>Ornella D'Elia</h1>
-    <p>UI/UX Designer • Creative Developer • Visual Storyteller</p>
-    <p>I create immersive digital experiences that blend emotion, minimalism, and storytelling.</p>
+    <h1>Ornella D’Elia</h1>
+    <p>UI/UX Designer • Visual Storyteller • Creative Developer</p>
 </section>
 
 <!-- PROJECTS -->
-<section>
-    <h2>Projects</h2>
+<div class="section-title">SELECTED WORK</div>
 
-    <div class="project">
+<div class="grid">
 
-        <img src="Untitled.jpg" alt="Project 1">
+    <a href="projects/project1.html" class="project">
+        <img src="images/project1.webp">
+        <div class="label">Project One</div>
+    </a>
 
-        <div class="overlay">
-            <h3>Project One</h3>
-            <p>UI / UX Design</p>
-        </div>
+    <a href="projects/project2.html" class="project">
+        <img src="images/project2.webp">
+        <div class="label">Project Two</div>
+    </a>
 
-    </div>
+    <a href="projects/project3.html" class="project">
+        <img src="images/project3.webp">
+        <div class="label">Project Three</div>
+    </a>
 
-    <div class="project">
+    <a href="projects/project4.html" class="project">
+        <img src="images/project4.webp">
+        <div class="label">Project Four</div>
+    </a>
 
-        <img src="project2.jpg" alt="Project 2">
-
-        <div class="overlay">
-            <h3>Project Two</h3>
-            <p>Branding / Visual Design</p>
-        </div>
-
-    </div>
-
-    <div class="project">
-
-        <img src="project3.jpg" alt="Project 3">
-
-        <div class="overlay">
-            <h3>Project Three</h3>
-            <p>Creative Direction</p>
-        </div>
-
-    </div>
-
-</section>
+</div>
 
 <!-- ABOUT -->
-<section>
-    <h2>About</h2>
-    <p>
-        I am a designer focused on building visual and interactive experiences.
-        My work explores emotion, storytelling, and minimal design systems.
-    </p>
-</section>
+<div class="section-title">ABOUT</div>
+
+<p class="text">
+I am a designer focused on crafting immersive digital experiences through minimal and futuristic visual systems.
+</p>
 
 <!-- CONTACT -->
-<section>
-    <h2>Contact</h2>
-    <p>Email: your@email.com</p>
-    <p>Instagram: @yourhandle</p>
-</section>
+<div class="section-title">CONTACT</div>
 
-<div class="footer">
-    © 2026 Ornella D'Elia
-</div>
+<p class="text">
+Email: your@email.com<br>
+Instagram: @yourhandle
+</p>
 
 </div>
 
