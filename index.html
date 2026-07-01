@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ornella Dina D'elia</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
 <style>
@@ -56,17 +55,18 @@ body {
 .hero { position: relative; width: 100%; height: 60vh; overflow: hidden; }
 .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+/* REFINED OVERLAY - Deep warm brown-grey for better color harmony */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(40, 35, 30, 0.4); 
     z-index: 1;
 }
 
-/* HERO TEXT - Left aligned, positioned on left */
+/* HERO TEXT - Left aligned */
 .hero-text {
     position: absolute;
     top: 50%;
@@ -77,7 +77,7 @@ body {
     text-align: left;
 }
 .hero-text h1 { font-size: 64px; font-weight: 300; margin: 0; }
-.hero-text p { font-size: 16px; opacity: 0.7; margin-top: 10px; }
+.hero-text p { font-size: 16px; opacity: 0.9; margin-top: 10px; }
 
 /* CONTAINER & GRID */
 .container { max-width: 1100px; margin: 0 auto; padding: 100px 24px; }
@@ -88,7 +88,7 @@ body {
 .project:hover { transform: translateY(-4px); border-color: rgba(0,0,0,0.2); }
 .project:hover img { transform: scale(1.03); }
 
-/* UPDATED LABELS */
+/* LABELS */
 .label { position: absolute; bottom: 14px; left: 14px; font-size: 13px; background: rgba(248,245,241,0.9); padding: 8px 12px; border-radius: 6px; }
 .label span { display: block; font-size: 10px; opacity: 0.6; text-transform: uppercase; margin-bottom: 2px; }
 
