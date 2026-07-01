@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ornella Dina D'Elia</title>
+<title>Ornella Dina D'elia</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-/* GLOBAL - Added border to the whole website */
+/* GLOBAL - Removed padding-bottom and adjusted border */
 body {
     margin: 0;
     background: #F8F5F1;
@@ -18,7 +18,6 @@ body {
     border: 8px solid #E5DCC5; 
     min-height: 100vh;
     box-sizing: border-box;
-    padding-bottom: 20px;
 }
 
 /* NAVBAR - Positioned to top right */
@@ -63,20 +62,20 @@ body {
     font-size: 14px;
 }
 
-/* HERO - Adjusted positioning */
+/* HERO - Full width adjustment */
 .hero {
     position: relative;
     width: 100%;
     height: 60vh;
-    margin-top: 80px;
-    padding: 0 40px;
-    box-sizing: border-box;
+    margin-top: 0; /* Remove top margin so it touches the top border */
+    overflow: hidden;
 }
 
 .hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .hero-text {
