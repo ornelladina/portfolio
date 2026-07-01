@@ -38,7 +38,7 @@ body {
 .nav-links { display: flex; gap: 40px; font-size: 14px; font-weight: 130; letter-spacing: 0.5px; height: 100%; align-items: center; }
 .nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; position: relative; height: 100%; display: flex; align-items: center; }
 
-/* DROPDOWN - Rounded corners and hover effect */
+/* DROPDOWN */
 .dropdown {
     position: absolute;
     top: 45px; 
@@ -56,7 +56,7 @@ body {
 .nav-item:hover .dropdown { display: flex; }
 .dropdown a { 
     text-decoration: none; 
-    color: #e3ce6b; 
+    color: #c0a880; /* Changed to match border */
     font-size: 14px; 
     padding: 6px 10px;
     border-radius: 4px;
@@ -78,38 +78,23 @@ body {
     z-index: 1;
 }
 
-.hero-text{
-    position:absolute;
-    top:50%;
-    left:10%;
-    transform:translateY(-50%);
-    z-index:2;
-    color:#FFFCEF;
-    text-align:left;
-    max-width:720px;
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: #FFFCEF;
+    text-align: left;
+    max-width: 720px;
 }
 
-.hero-text h1{
-    margin:0;
-    font-size:66px;
-    font-weight:250;
-    letter-spacing:.12em;
-    line-height:0.95;
-    text-transform:uppercase;
-}
-
-.hero-text p{
-    margin:18px 0 0;
-    font-size:13px;
-    font-weight:300;
-    letter-spacing:.30em;
-    text-transform:uppercase;
-    opacity:.95;
-}
+.hero-text h1 { margin: 0; font-size: 66px; font-weight: 250; letter-spacing: .12em; line-height: 0.95; text-transform: uppercase; }
+.hero-text p { margin: 18px 0 0; font-size: 13px; font-weight: 300; letter-spacing: .30em; text-transform: uppercase; opacity: .95; }
 
 /* CONTAINER & GRID */
-.container { max-width: 1100px; margin: 0 auto; padding:55px 24px 70px; }
-.section-title { margin:20px 0 32px; font-size: 12px; letter-spacing: 2px; opacity: 0.5; }
+.container { max-width: 1100px; margin: 0 auto; padding: 55px 24px 70px; }
+.section-title { margin: 20px 0 32px; font-size: 12px; letter-spacing: 2px; opacity: 0.5; }
 .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 .project { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 525 / 409; background: #fff; border: 1px solid rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: 0.3s ease; }
 .project img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s ease; }
@@ -120,44 +105,14 @@ body {
 .label { position: absolute; bottom: 14px; left: 14px; font-size: 13px; background: rgba(248,245,241,0.9); padding: 8px 12px; border-radius: 6px; }
 .label span { display: block; font-size: 10px; opacity: 0.6; text-transform: uppercase; margin-bottom: 2px; }
 
-/* ABOUT ORNELLA */
+/* ABOUT SECTION */
+.about-section { max-width: 900px; margin: 90px auto 80px; }
+.about-title { font-size: 12px; letter-spacing: .25em; text-transform: uppercase; font-weight: 300; margin-bottom: 22px; opacity: .65; }
+.about-text { font-size: 24px; line-height: 1.8; font-weight: 120; letter-spacing: .02em; color: #222; }
 
-.about-section{
-    max-width:900px;
-    margin:90px auto 80px;
-}
-
-.about-title{
-    font-size:12px;
-    letter-spacing:.25em;
-    text-transform:uppercase;
-    font-weight:300;
-    margin-bottom:22px;
-    opacity:.65;
-}
-
-.about-text{
-    font-size:24px;
-    line-height:1.8;
-    font-weight:120;
-    letter-spacing:.02em;
-    color:#222;
-}
-
-/* Scroll Animation */
-
-.fade-up{
-    opacity:0;
-    transform:translateY(60px);
-    transition:
-        opacity .9s ease,
-        transform .9s ease;
-}
-
-.fade-up.show{
-    opacity:1;
-    transform:translateY(0);
-}
+/* SCROLL ANIMATION */
+.fade-up { opacity: 0; transform: translateY(60px); transition: opacity .9s ease, transform .9s ease; }
+.fade-up.show { opacity: 1; transform: translateY(0); }
 
 </style>
 </head>
@@ -209,21 +164,30 @@ body {
             <div class="label"><span>UI/ Web Design</span> ILLUMIX</div>
         </a>
     </div>
+
+    <!-- About section placed inside container for proper layout -->
     <div class="about-section fade-up">
-
-    <div class="about-title">
-        About Ornella
+        <div class="about-title">About Ornella</div>
+        <div class="about-text">
+            Visual Designer specializing in high-end branding and UI/UX.
+            I create sophisticated digital experiences that merge organic,
+            Art Nouveau-inspired aesthetics with refined functionality.
+            My focus is on <em>"soft luxury"</em>—designing interfaces and
+            identities that feel both timeless and deeply considered.
+        </div>
     </div>
-
-    <div class="about-text">
-        Visual Designer specializing in high-end branding and UI/UX.
-        I create sophisticated digital experiences that merge organic,
-        Art Nouveau-inspired aesthetics with refined functionality.
-        My focus is on <em>"soft luxury"</em>—designing interfaces and
-        identities that feel both timeless and deeply considered.
-    </div>
-        
 </div>
+
+<script>
+    // Simple script to trigger the fade-up animation
+    window.addEventListener('scroll', () => {
+        const element = document.querySelector('.fade-up');
+        const position = element.getBoundingClientRect().top;
+        if (position < window.innerHeight - 100) {
+            element.classList.add('show');
+        }
+    });
+</script>
 
 </body>
 </html>
