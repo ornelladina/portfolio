@@ -15,9 +15,10 @@ body {
     background: #F8F5F1;
     color: #1a1a1a;
     font-family: 'Inter', sans-serif;
-    border: 8px solid #E5DCC5; /* Matching the border from your screenshot */
+    border: 8px solid #E5DCC5; 
     min-height: 100vh;
     box-sizing: border-box;
+    padding-bottom: 20px;
 }
 
 /* NAVBAR - Positioned to top right */
@@ -38,7 +39,7 @@ body {
     color: #1a1a1a;
 }
 
-/* DROPDOWN - Updated styles */
+/* DROPDOWN */
 .dropdown {
     position: absolute;
     top: 25px;
@@ -103,16 +104,20 @@ body {
     color: white;
 }
 
-/* Rest of your existing styles below */
+/* CONTENT & GRID */
 .container { max-width: 1100px; margin: 0 auto; padding: 100px 24px; }
 .section-title { margin: 120px 0 40px; font-size: 12px; letter-spacing: 2px; opacity: 0.5; }
 .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.project { position: relative; border-radius: 12px; aspect-ratio: 525 / 409; background: #fff; border: 1px solid rgba(0,0,0,0.08); text-decoration: none; color: inherit; }
-.project img { width: 100%; height: 100%; object-fit: cover; }
+.project { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 525 / 409; background: #fff; border: 1px solid rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: 0.3s ease; }
+.project img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s ease; }
+.project:hover { transform: translateY(-4px); border-color: rgba(0,0,0,0.2); }
+.project:hover img { transform: scale(1.03); }
 .label { position: absolute; bottom: 14px; left: 14px; font-size: 13px; background: rgba(248,245,241,0.75); padding: 6px 10px; border-radius: 6px; }
 .text { max-width: 600px; opacity: 0.75; line-height: 1.7; font-size: 15px; }
+
+/* FOOTER */
 .footer { margin-top: 120px; background: #111; color: #fff; padding: 60px 24px; }
-.footer-inner { max-width: 1100px; margin: auto; }
+.footer-inner { max-width: 1100px; margin: auto; opacity: 0.8; font-size: 14px; }
 
 </style>
 </head>
@@ -141,7 +146,44 @@ body {
     </div>
 </div>
 
-<!-- Rest of content follows... -->
+<div class="container">
+    <div class="section-title">SELECTED WORK</div>
+    <div class="grid">
+        <a href="project-aethel.html" class="project">
+            <img src="Untitled.jpg">
+            <div class="label">AETHEL</div>
+        </a>
+        <a href="project-haven.html" class="project">
+            <img src="havenpackageforgirl.png">
+            <div class="label">HAVEN</div>
+        </a>
+        <a href="project-moonhive.html" class="project">
+            <img src="businesscardmoonhive.png">
+            <div class="label">MOONHIVE</div>
+        </a>
+        <a href="project-illumix.html" class="project">
+            <img src="illumixcover.png">
+            <div class="label">ILLUMIX</div>
+        </a>
+    </div>
+
+    <div class="section-title">ABOUT</div>
+    <p class="text">
+        I am a designer focused on crafting immersive digital experiences through minimal and futuristic visual systems.
+    </p>
+</div>
+
+<div class="footer">
+    <div class="footer-inner">
+        <div style="margin-bottom: 10px;">© 2026 Ornella D’Elia</div>
+        <div>Email: ornelladelia0@gmail.com <br> Phone: +961 76441543</div>
+        <div style="margin-top: 10px;">
+            <a href="#" style="color:white; text-decoration:none;">Behance</a> • 
+            <a href="#" style="color:white; text-decoration:none;">LinkedIn</a> • 
+            <a href="#" style="color:white; text-decoration:none;">Instagram</a>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
