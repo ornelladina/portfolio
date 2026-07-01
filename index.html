@@ -78,21 +78,38 @@ body {
     z-index: 1;
 }
 
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 10%; 
-    transform: translateY(-50%);
-    z-index: 2;
-    color: #FFFCEF;
-    text-align: left;
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:10%;
+    transform:translateY(-50%);
+    z-index:2;
+    color:#FFFCEF;
+    text-align:left;
+    max-width:720px;
 }
-.hero-text h1 { font-size: 64px; font-weight: 450; margin: 0; }
-.hero-text p { font-size: 16px; opacity: 0.9; margin-top: 10px; }
+
+.hero-text h1{
+    margin:0;
+    font-size:66px;
+    font-weight:250;
+    letter-spacing:.12em;
+    line-height:0.95;
+    text-transform:uppercase;
+}
+
+.hero-text p{
+    margin:18px 0 0;
+    font-size:13px;
+    font-weight:300;
+    letter-spacing:.30em;
+    text-transform:uppercase;
+    opacity:.95;
+}
 
 /* CONTAINER & GRID */
-.container { max-width: 1100px; margin: 0 auto; padding: 100px 24px; }
-.section-title { margin: 120px 0 40px; font-size: 12px; letter-spacing: 2px; opacity: 0.5; }
+.container { max-width: 1100px; margin: 0 auto; padding:55px 24px 70px; }
+.section-title { margin:20px 0 32px; font-size: 12px; letter-spacing: 2px; opacity: 0.5; }
 .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 .project { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 525 / 409; background: #fff; border: 1px solid rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: 0.3s ease; }
 .project img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s ease; }
@@ -128,8 +145,8 @@ body {
     <div class="hero-overlay"></div>
     <img class="hero-img" src="lemonhero.png">
     <div class="hero-text">
-        <h1>ORNELLA DINA D'ELIA</h1>
-        <p>UI/UX Designer • Visual Storyteller • Creative Designer</p>
+        <h1>ORNELLA DINA DELIA</h1>
+        <p>UI/UX DESIGNER · VISUAL STORYTELLER · CREATIVE DESIGNER</p>
     </div>
 </div>
 
