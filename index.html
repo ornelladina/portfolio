@@ -9,13 +9,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quattrocento:wght@400;700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
 <style>
 
 /* GLOBAL */
 body {
     margin: 0;
     background: #F8F5F1;
-    color: #1a1a1a;;
+    color: #1a1a1a;
     font-family: "Sora", sans-serif;
     border: 12px solid #E6D99C; 
     min-height: 100vh;
@@ -78,29 +79,33 @@ body {
     display: block;
 }
 
-/* OVERLAY TEXT - Requested styling */
+/* OVERLAY TEXT - Centered content, positioned on the left */
 .hero-text {
     position: absolute;
     top: 50%;
-    left: 10%; /* Adjust this percentage to move it further left or right */
-    transform: translateY(-50%); /* Removed horizontal centering */
-    text-align: left; /* This aligns the text content to the left */
+    left: 10%; 
+    transform: translateY(-50%);
     z-index: 2;
     color: #FFFCEF;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
 }
 
 .hero-text h1 {
     font-size: 64px;
     font-weight: 300;
     margin: 0;
+    text-align: center;
 }
 
 .hero-text p {
     font-size: 16px;
     opacity: 0.7;
+    text-align: center;
 }
 
-/* SECTION TITLE - Requested styling */
+/* SECTION TITLE */
 .section-title {
     margin: 120px 0 40px;
     font-size: 12px;
