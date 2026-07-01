@@ -8,42 +8,115 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
+/* GLOBAL */
 body {
     margin: 0;
     background: #F8F5F1;
     color: #1a1a1a;
-    font-family: 'Sora-Light', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-/* container */
+/* BORDER AROUND WEBSITE */
+body::before {
+    content: "";
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid rgba(0,0,0,0.15);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    z-index: 10000;
+}
+
+/* NAV ITEMS */
+.nav-item {
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    color: #1a1a1a;
+    opacity: 0.8;
+}
+
+.nav-item:hover {
+    opacity: 1;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    background: rgba(248,245,241,0.95);
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 10px 14px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 140px;
+    backdrop-filter: blur(8px);
+}
+
+/* SHOW DROPDOWN ON HOVER */
+.nav-item:hover .dropdown {
+    display: flex;
+}
+
+/* DROPDOWN LINKS */
+.dropdown a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.dropdown a:hover {
+    opacity: 1;
+}
+
+/* CONTAINER */
 .container {
     max-width: 1100px;
+    margin: 0 auto;
     padding: 100px 24px;
 }
 
+/* HERO */
 .hero {
     position: relative;
-    width: 100%;
-    height: 416px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: 70vh;
+    min-height: 420px;
     margin-bottom: 40px;
 }
 
-/* background image */
 .hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* overlay text */
 .hero-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #1a1a1a;
-    z-index: 2;
 }
 
 .hero-text h1 {
@@ -56,6 +129,7 @@ body {
     font-size: 16px;
     opacity: 0.7;
 }
+
 /* SECTION TITLE */
 .section-title {
     margin: 120px 0 40px;
@@ -110,7 +184,7 @@ body {
     border-radius: 6px;
 }
 
-/* ABOUT */
+/* ABOUT TEXT */
 .text {
     max-width: 600px;
     opacity: 0.75;
@@ -118,7 +192,7 @@ body {
     font-size: 15px;
 }
 
-/* FOOTER (DARK) */
+/* FOOTER */
 .footer {
     margin-top: 120px;
     background: #111;
@@ -135,76 +209,90 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+
     .grid {
         grid-template-columns: 1fr;
-    }
-
-    .hero-img {
-        height: 300px;
-    }
-
-    .hero-img.second {
-        height: 420px;
     }
 
     .hero-text h1 {
         font-size: 40px;
     }
-}
-</style>
 
+    .navbar {
+        gap: 20px;
+        font-size: 12px;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- NAVIGATION -->
+<div class="navbar">
+
+    <div class="nav-item">
+        Projects
+        <div class="dropdown">
+            <a href="project-aethel.html">Aethel</a>
+            <a href="project-haven.html">Haven</a>
+            <a href="project-illumix.html">Illumix</a>
+            <a href="project-moonhive.html">Moonhive</a>
+        </div>
+    </div>
+
+    <a class="nav-item" href="about.html">About</a>
+
+</div>
 
 <!-- HERO -->
 <div class="hero">
-
     <img class="hero-img" src="lemonhero.png">
-
     <div class="hero-text">
         <h1>Ornella Dina D’Elia</h1>
         <p>UI/UX Designer • Visual Storyteller • Creative Developer</p>
     </div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <div class="section-title">SELECTED WORK</div>
+
+    <div class="grid">
+
+        <a href="project-aethel.html" class="project">
+            <img src="Untitled.jpg">
+            <div class="label">AETHEL</div>
+        </a>
+
+        <a href="project-haven.html" class="project">
+            <img src="havenpackageforgirl.png">
+            <div class="label">HAVEN</div>
+        </a>
+
+        <a href="project-moonhive.html" class="project">
+            <img src="businesscardmoonhive.png">
+            <div class="label">MOONHIVE</div>
+        </a>
+
+        <a href="project-illumix.html" class="project">
+            <img src="illumixcover.png">
+            <div class="label">ILLUMIX</div>
+        </a>
+
+    </div>
+
+    <div class="section-title">ABOUT</div>
+
+    <p class="text">
+        I am a designer focused on crafting immersive digital experiences through minimal and futuristic visual systems.
+    </p>
 
 </div>
 
-<!-- PROJECTS -->
-<div class="section-title">SELECTED WORK</div>
-
-<div class="grid">
-
-    <a href="project-aethel.html" class="project">
-        <img src="Untitled.jpg">
-        <div class="label">AETHEL</div>
-    </a>
-
-    <a href="project-haven.html" class="project">
-        <img src="havenpackageforgirl.png">
-        <div class="label">HAVEN</div>
-    </a>
-
-    <a href="project-moonhive.html" class="project">
-        <img src="businesscardmoonhive.png">
-        <div class="label">MOONHIVE</div>
-    </a>
-
-    <a href="project-illumix.html" class="project">
-        <img src="illumixcover.png">
-        <div class="label">ILLUMIX</div>
-    </a>
-
-</div>
-
-<!-- ABOUT -->
-<div class="section-title">ABOUT</div>
-<p class="text">
-I am a designer focused on crafting immersive digital experiences through minimal and futuristic visual systems.
-</p>
-
-</div>
+<!-- FOOTER -->
 <div class="footer">
     <div class="footer-inner">
 
@@ -225,7 +313,6 @@ I am a designer focused on crafting immersive digital experiences through minima
 
     </div>
 </div>
-
 
 </body>
 </html>
