@@ -20,7 +20,7 @@ body {
     box-sizing: border-box;
 }
 
-/* NAVBAR - Fixed height 45px and visible dropdown */
+/* NAVBAR */
 .navbar {
     width: 100%;
     height: 45px;
@@ -38,22 +38,31 @@ body {
 .nav-links { display: flex; gap: 40px; font-size: 14px; font-weight: 130; letter-spacing: 0.5px; height: 100%; align-items: center; }
 .nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; position: relative; height: 100%; display: flex; align-items: center; }
 
-/* DROPDOWN - Fixed positioning to sit under "Projects" */
+/* DROPDOWN - Rounded corners and hover effect */
 .dropdown {
     position: absolute;
     top: 45px; 
     left: 0;
     background: #F8F5F1;
     border: 2px solid #c0a880;
-    padding: 15px;
+    padding: 10px;
     display: none;
     flex-direction: column;
-    gap: 12px;
-    min-width: 180px;
+    gap: 8px;
+    min-width: 160px;
     z-index: 10001;
+    border-radius: 4px;
 }
 .nav-item:hover .dropdown { display: flex; }
-.dropdown a { text-decoration: none; color: #1a1a1a; font-size: 14px; }
+.dropdown a { 
+    text-decoration: none; 
+    color: #1a1a1a; 
+    font-size: 14px; 
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+.dropdown a:hover { background-color: #C89F8D; color: #FFFCEF; }
 
 /* HERO */
 .hero { position: relative; width: 100%; height: 60vh; overflow: hidden; }
