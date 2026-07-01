@@ -6,7 +6,9 @@
 <title>Ornella Dina D'elia</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quattrocento:wght@400;700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
 <style>
 
 /* GLOBAL */
@@ -14,7 +16,7 @@ body {
     margin: 0;
     background: #F8F5F1;
     color: #1a1a1a;;
-    font-family: 'Inter', sans-serif;
+    font-family: "Sora", sans-serif;
     border: 12px solid #E6D99C; 
     min-height: 100vh;
     box-sizing: border-box;
@@ -80,9 +82,9 @@ body {
 .hero-text {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: left;
+    left: 10%; /* Adjust this percentage to move it further left or right */
+    transform: translateY(-50%); /* Removed horizontal centering */
+    text-align: left; /* This aligns the text content to the left */
     z-index: 2;
     color: #FFFCEF;
 }
