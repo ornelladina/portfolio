@@ -6,9 +6,7 @@
 <title>Ornella Dina D'elia</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quattrocento:wght@400;700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -23,7 +21,7 @@ body {
     box-sizing: border-box;
 }
 
-/* NAVBAR - Updated for Logo Left / Links Right */
+/* NAVBAR */
 .navbar {
     position: absolute;
     top: 40px;
@@ -35,24 +33,9 @@ body {
     z-index: 10000;
 }
 
-.logo {
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 40px;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-}
-
-.nav-item {
-    cursor: pointer;
-    text-decoration: none;
-    color: #1a1a1a;
-}
+.logo { font-size: 18px; font-weight: 500; letter-spacing: 1px; }
+.nav-links { display: flex; gap: 40px; font-size: 14px; letter-spacing: 0.5px; }
+.nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; }
 
 .dropdown {
     position: absolute;
@@ -66,82 +49,45 @@ body {
     gap: 12px;
     min-width: 180px;
 }
-
-.nav-item:hover .dropdown {
-    display: flex;
-}
-
-.dropdown a {
-    text-decoration: none;
-    color: #1a1a1a;
-    font-size: 14px;
-}
+.nav-item:hover .dropdown { display: flex; }
+.dropdown a { text-decoration: none; color: #1a1a1a; font-size: 14px; }
 
 /* HERO */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    overflow: hidden;
-}
+.hero { position: relative; width: 100%; height: 60vh; overflow: hidden; }
+.hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-.hero-img {
+/* OVERLAY - Darkens the image for text readability */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+    background: rgba(0, 0, 0, 0.3); /* Adjust 0.3 to make it darker or lighter */
+    z-index: 1;
 }
 
-/* OVERLAY TEXT */
+/* HERO TEXT - Left aligned */
 .hero-text {
     position: absolute;
     top: 50%;
-    left: 10%; 
+    left: 80px; 
     transform: translateY(-50%);
     z-index: 2;
     color: #FFFCEF;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Aligned left as per your latest request */
-}
-
-.hero-text h1 {
-    font-size: 64px;
-    font-weight: 300;
-    margin: 0;
     text-align: left;
 }
+.hero-text h1 { font-size: 64px; font-weight: 300; margin: 0; }
+.hero-text p { font-size: 16px; opacity: 0.9; margin-top: 10px; }
 
-.hero-text p {
-    font-size: 16px;
-    opacity: 0.7;
-    background: rgba(0,0,0,0.2);
-    padding: 5px 15px;
-    border-radius: 20px;
-    text-align: left;
-}
-
-/* SECTION TITLE */
-.section-title {
-    margin: 120px 0 40px;
-    font-size: 12px;
-    letter-spacing: 2px;
-    opacity: 0.5;
-}
-
-/* CONTENT & GRID */
+/* GRID & LABELS */
 .container { max-width: 1100px; margin: 0 auto; padding: 100px 24px; }
+.section-title { margin: 120px 0 40px; font-size: 12px; letter-spacing: 2px; opacity: 0.5; }
 .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 .project { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 525 / 409; background: #fff; border: 1px solid rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: 0.3s ease; }
-.project img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s ease; }
-.project:hover { transform: translateY(-4px); border-color: rgba(0,0,0,0.2); }
-.project:hover img { transform: scale(1.03); }
-.label { position: absolute; bottom: 14px; left: 14px; font-size: 13px; background: rgba(248,245,241,0.75); padding: 6px 10px; border-radius: 6px; }
-.text { max-width: 600px; opacity: 0.75; line-height: 1.7; font-size: 15px; }
-
-/* FOOTER */
-.footer { margin-top: 120px; background: #111; color: #fff; padding: 60px 24px; }
-.footer-inner { max-width: 1100px; margin: auto; opacity: 0.8; font-size: 14px; }
+.project img { width: 100%; height: 100%; object-fit: cover; }
+.label { position: absolute; bottom: 14px; left: 14px; font-size: 13px; background: rgba(248,245,241,0.9); padding: 8px 12px; border-radius: 6px; }
+.label span { display: block; font-size: 10px; opacity: 0.6; text-transform: uppercase; }
 
 </style>
 </head>
@@ -151,11 +97,10 @@ body {
 <div class="navbar">
     <div class="logo">✦ ORNELLA DINA DELIA</div>
     <div class="nav-links">
-        <div class="nav-item">
-            Projects
+        <div class="nav-item">Projects
             <div class="dropdown">
-                <a href="project-aethel.html">Aethel Shopping App</a>
-                <a href="project-haven.html">Haven Campaign</a>
+                <a href="project-aethel.html">Aethel</a>
+                <a href="project-haven.html">Haven</a>
                 <a href="project-illumix.html">Illumix</a>
                 <a href="project-moonhive.html">MoonHive</a>
             </div>
@@ -166,10 +111,11 @@ body {
 </div>
 
 <div class="hero">
+    <div class="hero-overlay"></div>
     <img class="hero-img" src="lemonhero.png">
     <div class="hero-text">
         <h1>Ornella Dina D’elia</h1>
-        <p>UX/ UI & Visual Designer</p>
+        <p>UI/UX Designer • Visual Storyteller • Creative Developer</p>
     </div>
 </div>
 
@@ -178,37 +124,20 @@ body {
     <div class="grid">
         <a href="project-aethel.html" class="project">
             <img src="Untitled.jpg">
-            <div class="label">AETHEL</div>
+            <div class="label"><span>UI/UX</span> AETHEL</div>
         </a>
         <a href="project-haven.html" class="project">
             <img src="havenpackageforgirl.png">
-            <div class="label">HAVEN</div>
+            <div class="label"><span>Branding/ Packaging</span> HAVEN</div>
         </a>
         <a href="project-moonhive.html" class="project">
             <img src="businesscardmoonhive.png">
-            <div class="label">MOONHIVE</div>
+            <div class="label"><span>Branding/ Web Design</span> MOONHIVE</div>
         </a>
         <a href="project-illumix.html" class="project">
             <img src="illumixcover.png">
-            <div class="label">ILLUMIX</div>
+            <div class="label"><span>UI/ Web Design</span> ILLUMIX</div>
         </a>
-    </div>
-
-    <div class="section-title">ABOUT</div>
-    <p class="text">
-        I am a designer focused on crafting immersive digital experiences through minimal and futuristic visual systems.
-    </p>
-</div>
-
-<div class="footer">
-    <div class="footer-inner">
-        <div style="margin-bottom: 10px;">© 2026 Ornella D’Elia</div>
-        <div>Email: ornelladelia0@gmail.com <br> Phone: +961 76441543</div>
-        <div style="margin-top: 10px;">
-            <a href="#" style="color:white; text-decoration:none;">Behance</a> • 
-            <a href="#" style="color:white; text-decoration:none;">LinkedIn</a> • 
-            <a href="#" style="color:white; text-decoration:none;">Instagram</a>
-        </div>
     </div>
 </div>
 
