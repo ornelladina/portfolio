@@ -18,6 +18,8 @@ body {
     border: 12px solid #E6D99C; 
     min-height: 100vh;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 /* NAVBAR */
@@ -38,13 +40,13 @@ body {
 .nav-links { display: flex; gap: 40px; font-size: 14px; font-weight: 130; letter-spacing: 0.5px; height: 100%; align-items: center; }
 .nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; position: relative; height: 100%; display: flex; align-items: center; }
 
-/* DROPDOWN */
+/* DROPDOWN - Background #FFFCEF, Border #E6D99C */
 .dropdown {
     position: absolute;
     top: 45px; 
     left: 0;
-    background: #F8F5F1;
-    border: 2px solid #c0a880;
+    background: #FFFCEF;
+    border: 2px solid #E6D99C;
     padding: 10px;
     display: none;
     flex-direction: column;
@@ -56,7 +58,7 @@ body {
 .nav-item:hover .dropdown { display: flex; }
 .dropdown a { 
     text-decoration: none; 
-    color: #c0a880; /* Changed to match border */
+    color: #1a1a1a; 
     font-size: 14px; 
     padding: 6px 10px;
     border-radius: 4px;
@@ -67,52 +69,32 @@ body {
 /* HERO */
 .hero { position: relative; width: 100%; height: 60vh; overflow: hidden; }
 .hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(77, 58, 64, 0.15); 
-    z-index: 1;
-}
-
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    z-index: 2;
-    color: #FFFCEF;
-    text-align: left;
-    max-width: 720px;
-}
-
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(77, 58, 64, 0.15); z-index: 1; }
+.hero-text { position: absolute; top: 50%; left: 10%; transform: translateY(-50%); z-index: 2; color: #FFFCEF; text-align: left; max-width: 720px; }
 .hero-text h1 { margin: 0; font-size: 66px; font-weight: 250; letter-spacing: .12em; line-height: 0.95; text-transform: uppercase; }
 .hero-text p { margin: 18px 0 0; font-size: 13px; font-weight: 300; letter-spacing: .30em; text-transform: uppercase; opacity: .95; }
 
 /* CONTAINER & GRID */
-.container { max-width: 1100px; margin: 0 auto; padding: 55px 24px 70px; }
+.container { flex: 1; max-width: 1100px; margin: 0 auto; padding: 55px 24px 70px; }
 .section-title { margin: 20px 0 32px; font-size: 12px; letter-spacing: 2px; opacity: 0.5; }
 .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 .project { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 525 / 409; background: #fff; border: 1px solid rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: 0.3s ease; }
 .project img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s ease; }
 .project:hover { transform: translateY(-4px); border-color: rgba(0,0,0,0.2); }
 .project:hover img { transform: scale(1.03); }
-
-/* LABELS */
 .label { position: absolute; bottom: 14px; left: 14px; font-size: 13px; background: rgba(248,245,241,0.9); padding: 8px 12px; border-radius: 6px; }
 .label span { display: block; font-size: 10px; opacity: 0.6; text-transform: uppercase; margin-bottom: 2px; }
 
-/* ABOUT SECTION */
+/* ABOUT */
 .about-section { max-width: 900px; margin: 90px auto 80px; }
 .about-title { font-size: 12px; letter-spacing: .25em; text-transform: uppercase; font-weight: 300; margin-bottom: 22px; opacity: .65; }
 .about-text { font-size: 24px; line-height: 1.8; font-weight: 120; letter-spacing: .02em; color: #222; }
 
-/* SCROLL ANIMATION */
-.fade-up { opacity: 0; transform: translateY(60px); transition: opacity .9s ease, transform .9s ease; }
-.fade-up.show { opacity: 1; transform: translateY(0); }
+/* FOOTER */
+.footer { padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid #E6D99C; background: #F8F5F1; }
+.footer-col h4 { font-size: 14px; text-transform: uppercase; margin-bottom: 20px; }
+.footer-col a { display: block; color: #1a1a1a; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
+.social-icons { display: flex; gap: 15px; }
 
 </style>
 </head>
@@ -124,14 +106,14 @@ body {
     <div class="nav-links">
         <div class="nav-item">Projects
             <div class="dropdown">
-                <a href="project-aethel.html">Aethel</a>
-                <a href="project-haven.html">Haven</a>
-                <a href="project-illumix.html">Illumix</a>
-                <a href="project-moonhive.html">MoonHive</a>
+                <a href="#">Haven Campaign</a>
+                <a href="#">Aethel Shopping App</a>
+                <a href="#">Illumix</a>
+                <a href="#">MoonHive</a>
             </div>
         </div>
         <a class="nav-item" href="#">Gallery</a>
-        <a class="nav-item" href="about.html">About</a>
+        <a class="nav-item" href="#">About</a>
     </div>
 </div>
 
@@ -147,47 +129,35 @@ body {
 <div class="container">
     <div class="section-title">SELECTED WORK</div>
     <div class="grid">
-        <a href="project-aethel.html" class="project">
-            <img src="Untitled.jpg">
-            <div class="label"><span>UI/UX</span> AETHEL</div>
-        </a>
-        <a href="project-haven.html" class="project">
-            <img src="havenpackageforgirl.png">
-            <div class="label"><span>Branding/ Packaging</span> HAVEN</div>
-        </a>
-        <a href="project-moonhive.html" class="project">
-            <img src="businesscardmoonhive.png">
-            <div class="label"><span>Branding/ Web Design</span> MOONHIVE</div>
-        </a>
-        <a href="project-illumix.html" class="project">
-            <img src="illumixcover.png">
-            <div class="label"><span>UI/ Web Design</span> ILLUMIX</div>
-        </a>
+        <a href="#" class="project"><img src="Untitled.jpg"><div class="label"><span>UI/UX</span> AETHEL</div></a>
+        <a href="#" class="project"><img src="havenpackageforgirl.png"><div class="label"><span>Branding/ Packaging</span> HAVEN</div></a>
+        <a href="#" class="project"><img src="businesscardmoonhive.png"><div class="label"><span>Branding/ Web Design</span> MOONHIVE</div></a>
+        <a href="#" class="project"><img src="illumixcover.png"><div class="label"><span>UI/ Web Design</span> ILLUMIX</div></a>
     </div>
 
-    <!-- About section placed inside container for proper layout -->
-    <div class="about-section fade-up">
+    <div class="about-section">
         <div class="about-title">About Ornella</div>
-        <div class="about-text">
-            Visual Designer specializing in high-end branding and UI/UX.
-            I create sophisticated digital experiences that merge organic,
-            Art Nouveau-inspired aesthetics with refined functionality.
-            My focus is on <em>"soft luxury"</em>—designing interfaces and
-            identities that feel both timeless and deeply considered.
-        </div>
+        <div class="about-text">Visual Designer specializing in high-end branding and UI/UX. I create sophisticated digital experiences that merge organic, Art Nouveau-inspired aesthetics with refined functionality.</div>
     </div>
 </div>
 
-<script>
-    // Simple script to trigger the fade-up animation
-    window.addEventListener('scroll', () => {
-        const element = document.querySelector('.fade-up');
-        const position = element.getBoundingClientRect().top;
-        if (position < window.innerHeight - 100) {
-            element.classList.add('show');
-        }
-    });
-</script>
+<footer class="footer">
+    <div class="footer-col">
+        <h4>Contact Info</h4>
+        <p>ornelladelia0@gmail.com<br>Tel: +961 76441543</p>
+    </div>
+    <div class="footer-col">
+        <h4>Menu</h4>
+        <a href="#">Selected work</a>
+        <a href="#">About</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Accessibility Statement</a>
+    </div>
+    <div class="footer-col social-icons">
+        <a href="#">Behance</a>
+        <a href="#">LinkedIn</a>
+    </div>
+</footer>
 
 </body>
 </html>
