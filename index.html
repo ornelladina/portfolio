@@ -17,19 +17,6 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/* BORDER AROUND WEBSITE */
-body::before {
-    content: "";
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    border: 1px solid rgba(0,0,0,0.15);
-    pointer-events: none;
-    z-index: 9999;
-}
-
 /* NAVBAR */
 .navbar {
     position: fixed;
@@ -71,7 +58,6 @@ body::before {
     backdrop-filter: blur(8px);
 }
 
-/* SHOW DROPDOWN ON HOVER */
 .nav-item:hover .dropdown {
     display: flex;
 }
