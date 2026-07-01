@@ -23,16 +23,29 @@ body {
     box-sizing: border-box;
 }
 
-/* NAVBAR */
+/* NAVBAR - Updated for Logo Left / Links Right */
 .navbar {
     position: absolute;
-    top: 30px;
+    top: 40px;
+    left: 40px;
     right: 40px;
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
     font-size: 14px;
     letter-spacing: 0.5px;
-    z-index: 10000;
 }
 
 .nav-item {
@@ -79,7 +92,7 @@ body {
     display: block;
 }
 
-/* OVERLAY TEXT - Centered content, positioned on the left */
+/* OVERLAY TEXT */
 .hero-text {
     position: absolute;
     top: 50%;
@@ -89,20 +102,23 @@ body {
     color: #FFFCEF;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: flex-start; /* Aligned left as per your latest request */
 }
 
 .hero-text h1 {
     font-size: 64px;
     font-weight: 300;
     margin: 0;
-    text-align: center;
+    text-align: left;
 }
 
 .hero-text p {
     font-size: 16px;
     opacity: 0.7;
-    text-align: center;
+    background: rgba(0,0,0,0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-align: left;
 }
 
 /* SECTION TITLE */
@@ -133,24 +149,27 @@ body {
 <body>
 
 <div class="navbar">
-    <div class="nav-item">
-        Projects
-        <div class="dropdown">
-            <a href="project-aethel.html">Aethel Shopping App</a>
-            <a href="project-haven.html">Haven Campaign</a>
-            <a href="project-illumix.html">Illumix</a>
-            <a href="project-moonhive.html">MoonHive</a>
+    <div class="logo">✦ ORNELLA DINA DELIA</div>
+    <div class="nav-links">
+        <div class="nav-item">
+            Projects
+            <div class="dropdown">
+                <a href="project-aethel.html">Aethel Shopping App</a>
+                <a href="project-haven.html">Haven Campaign</a>
+                <a href="project-illumix.html">Illumix</a>
+                <a href="project-moonhive.html">MoonHive</a>
+            </div>
         </div>
+        <a class="nav-item" href="#">Gallery</a>
+        <a class="nav-item" href="about.html">About</a>
     </div>
-    <a class="nav-item" href="#">Gallery</a>
-    <a class="nav-item" href="about.html">About</a>
 </div>
 
 <div class="hero">
     <img class="hero-img" src="lemonhero.png">
     <div class="hero-text">
         <h1>Ornella Dina D’elia</h1>
-        <p>UI/UX Designer • Visual Storyteller • Creative Developer</p>
+        <p>UX/ UI & Visual Designer</p>
     </div>
 </div>
 
