@@ -120,6 +120,45 @@ body {
 .label { position: absolute; bottom: 14px; left: 14px; font-size: 13px; background: rgba(248,245,241,0.9); padding: 8px 12px; border-radius: 6px; }
 .label span { display: block; font-size: 10px; opacity: 0.6; text-transform: uppercase; margin-bottom: 2px; }
 
+/* ABOUT ORNELLA */
+
+.about-section{
+    max-width:900px;
+    margin:90px auto 80px;
+}
+
+.about-title{
+    font-size:12px;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    font-weight:300;
+    margin-bottom:22px;
+    opacity:.65;
+}
+
+.about-text{
+    font-size:24px;
+    line-height:1.8;
+    font-weight:120;
+    letter-spacing:.02em;
+    color:#222;
+}
+
+/* Scroll Animation */
+
+.fade-up{
+    opacity:0;
+    transform:translateY(60px);
+    transition:
+        opacity .9s ease,
+        transform .9s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
 </style>
 </head>
 
@@ -170,6 +209,20 @@ body {
             <div class="label"><span>UI/ Web Design</span> ILLUMIX</div>
         </a>
     </div>
+    <div class="about-section fade-up">
+
+    <div class="about-title">
+        About Ornella
+    </div>
+
+    <div class="about-text">
+        Visual Designer specializing in high-end branding and UI/UX.
+        I create sophisticated digital experiences that merge organic,
+        Art Nouveau-inspired aesthetics with refined functionality.
+        My focus is on <em>"soft luxury"</em>—designing interfaces and
+        identities that feel both timeless and deeply considered.
+    </div>
+        
 </div>
 
 </body>
