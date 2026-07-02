@@ -4,10 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Haven Project | Ornella Dina Delia</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
 <style>
-/* GLOBAL STYLES */
+
+/* GLOBAL */
 body {
     margin: 0;
     background: #F8F5F1;
@@ -16,14 +18,7 @@ body {
     border: 12px solid #E6D99C;
     min-height: 100vh;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
     overflow-x: hidden;
-}
-
-em {
-    font-family: "Cormorant Garamond", serif;
-    font-style: italic;
 }
 
 /* NAVBAR */
@@ -35,23 +30,19 @@ em {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
     position: sticky;
     top: 0;
-    z-index: 10000;
 }
 
 .logo {
     font-size: 16px;
     font-weight: 600;
-    letter-spacing: 1px;
 }
 
 .nav-links a {
-    color: black;
     text-decoration: none;
     font-size: 14px;
-    font-weight: 300;
+    color: black;
 }
 
 /* HERO */
@@ -63,23 +54,23 @@ em {
 
 .project-title {
     font-size: 48px;
-    font-weight: 200;
-    margin: 60px auto 40px auto;
-    max-width: 900px;
+    font-weight: 500;
+    margin: 60px 0 40px 0;
 }
 
 .hero-image {
     width: 100%;
     height: 682px;
     object-fit: cover;
-    display: block;
 }
 
-/* PARAGRAPH FIXED (MORE LEFT + WIDER) */
+/* PARAGRAPH — FIXED LEFT ALIGN */
 .paragraph-section {
-    max-width: 1200px;
-    margin: 60px auto 40px auto;
-    padding: 0 80px;
+    width: 100%;
+    margin: 0 0 120px 0;
+    padding-left: 140px;
+    padding-right: 40px;
+    box-sizing: border-box;
 }
 
 .paragraph-text {
@@ -87,34 +78,35 @@ em {
     line-height: 1.8;
     font-weight: 300;
     text-align: left;
-    opacity: 0.9;
+    max-width: 900px;
 }
 
-/* SECTION TITLES */
+/* SECTION TITLE */
 .section-title {
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    margin: 0 0 40px 80px;
-    opacity: 0.8;
+    margin: 0 0 40px 140px;
+    opacity: 0.7;
 }
 
 /* BRAND SECTION */
 .brand-section {
-    margin-bottom: 60px auto 40px auto;
+    margin-bottom: 120px;
 }
 
-/* COLORS ROW FIXED */
+/* COLORS ROW — FULL WIDTH FIX */
 .brand-row-colors {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 60px;
+    width: 100%;
+    padding: 0 140px;
+    box-sizing: border-box;
     margin-bottom: 100px;
-    padding: 0 80px;
 }
 
+/* COLOR BLOCKS */
 .color-palettes {
     display: flex;
     flex-direction: column;
@@ -135,14 +127,13 @@ em {
 
 .color-details {
     font-size: 14px;
-    font-weight: 300;
 }
 
 .color-details strong {
     display: block;
-    font-weight: 500;
 }
 
+/* LABEL ART */
 .label-art-container {
     max-width: 250px;
 }
@@ -161,22 +152,98 @@ em {
 .font-group h3 {
     font-size: 16px;
     margin: 0 0 8px 0;
-    font-weight: 500;
 }
 
-.font-group p {
+/* LABELS ROW — FIXED SPACING */
+.brand-row-labels {
+    width: 100%;
+    padding: 0 140px;
+    margin-bottom: 100px;
+    box-sizing: border-box;
+}
+
+.labels-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.labels-wrapper img {
+    width: 32%;
+    height: auto;
+}
+
+/* ARTWORK ROW */
+.brand-row-artwork {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 120px;
+}
+
+.artwork-img {
+    width: 55%;
+    height: auto;
+}
+
+/* THREE ROW IMAGES */
+.three-row-img-section {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 120px;
+    padding: 0 140px;
+}
+
+.row-img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* GALLERY */
+.gallery-section {
+    padding: 0 140px;
+    margin-bottom: 120px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 28px;
+}
+
+.gallery-large-img,
+.gallery-small-img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.gallery-caption {
     font-size: 14px;
-    margin: 0;
+    margin-top: 10px;
 }
 
-.font-sample-script {
-    font-family: 'Noteworthy', cursive;
-    font-size: 20px;
+/* TWO IMAGE SECTION */
+.two-img-section {
+    padding: 0 140px;
+    margin-bottom: 120px;
 }
 
-.font-sample-logo {
-    font-weight: 700;
-    letter-spacing: 0.1em;
+.two-img-container {
+    display: flex;
+    gap: 28px;
+}
+
+.two-img-container img {
+    width: 50%;
+    border-radius: 12px;
+}
+
+/* FOOTER */
+.footer {
+    padding: 60px 40px;
+    border-top: 1px solid #E6D99C;
+    font-size: 14px;
 }
 
 </style>
@@ -191,7 +258,7 @@ em {
 <div class="project-content">
 
 <section class="hero-section">
-    <h1 class="project-title u-text-uppercase">HAVEN: Branding/ Packaging & Reveal System</h1>
+    <h1 class="project-title">HAVEN: Branding / Packaging & Reveal System</h1>
     <img src="haven-hero.webp" class="hero-image">
 </section>
 
@@ -209,22 +276,22 @@ em {
 
     <div class="color-palettes">
         <div class="color-item">
-            <div class="color-swatch" style="background-color: #E2D29D;"></div>
+            <div class="color-swatch" style="background:#E2D29D;"></div>
             <div class="color-details"><strong>#E2D29D</strong> Dusty Gold</div>
         </div>
 
         <div class="color-item">
-            <div class="color-swatch" style="background-color: #FFFCEF;"></div>
+            <div class="color-swatch" style="background:#FFFCEF;"></div>
             <div class="color-details"><strong>#FFFCEF</strong> Warm Ivory</div>
         </div>
 
         <div class="color-item">
-            <div class="color-swatch" style="background-color: #C9A08F;"></div>
+            <div class="color-swatch" style="background:#C9A08F;"></div>
             <div class="color-details"><strong>#C9A08F</strong> Cherry Blossom</div>
         </div>
 
         <div class="color-item">
-            <div class="color-swatch" style="background-color: #A3BECF;"></div>
+            <div class="color-swatch" style="background:#A3BECF;"></div>
             <div class="color-details"><strong>#A3BECF</strong> Dusty Blue</div>
         </div>
     </div>
@@ -236,12 +303,11 @@ em {
     <div class="font-details">
         <div class="font-group">
             <h3>Reveal Font</h3>
-            <p class="font-sample-script u-text-uppercase">Noteworthy</p>
+            <p>Noteworthy</p>
         </div>
-
         <div class="font-group">
             <h3>Logo Font</h3>
-            <p class="font-sample-logo u-text-uppercase">OLICIY</p>
+            <p>OLICIY</p>
         </div>
     </div>
 
@@ -249,11 +315,13 @@ em {
 <h2 class="section-title">Packaging System</h2>
 
 <div class="brand-row-labels">
+
     <div class="labels-wrapper">
         <img src="haven-girl-label.webp" alt="Girl Label">
         <img src="haven-boy-label.webp" alt="Boy Label">
         <img src="haven-twin-label.webp" alt="Twin Label">
     </div>
+
 </div>
 
 <h2 class="section-title">Logo Artwork</h2>
@@ -277,18 +345,18 @@ em {
 
         <div class="gallery-left">
             <img src="haven-package-girl.webp" class="gallery-large-img">
-            <div class="gallery-caption u-text-uppercase">Girl Package</div>
+            <div class="gallery-caption">Girl Package</div>
         </div>
 
         <div class="gallery-right">
             <div>
                 <img src="haven-cards-girl.webp" class="gallery-small-img">
-                <div class="gallery-caption u-text-uppercase">Girl Card</div>
+                <div class="gallery-caption">Girl Card</div>
             </div>
 
             <div>
                 <img src="haven-cards-boy.webp" class="gallery-small-img">
-                <div class="gallery-caption u-text-uppercase">Boy Card</div>
+                <div class="gallery-caption">Boy Card</div>
             </div>
         </div>
 
@@ -297,12 +365,14 @@ em {
 
 <!-- TWO IMAGE SECTION -->
 <section class="two-img-section">
+
     <img src="haven-pkg-open-twins.webp" class="row-img">
 
     <div class="two-img-container">
         <img src="haven-pkg-open-twins.webp">
         <img src="haven-bottle-boy-close.webp">
     </div>
+
 </section>
 
 </div>
