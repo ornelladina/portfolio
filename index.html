@@ -1,125 +1,29 @@
+<!-- File: index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ORNELLA DINA DELIA</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
-
-<style>
-
-/* GLOBAL */
-body {
-    margin: 0;
-    background: #F8F5F1;
-    color: #1a1a1a;
-    font-family: "Sora", sans-serif;
-    border: 12px solid #E6D99C; 
-    min-height: 100vh;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-}
-
-/* NAVBAR */
-.navbar {
-    width: 100%;
-    height: 45px;
-    background-color: #FFFCEF;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    z-index: 10000;
-    overflow: visible; 
-}
-
-.logo { font-size: 16px; font-weight: 130; letter-spacing: 1px; }
-.nav-links { display: flex; gap: 40px; font-size: 14px; font-weight: 130; letter-spacing: 0.5px; height: 100%; align-items: center; }
-.nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; position: relative; height: 100%; display: flex; align-items: center; }
-
-/* DROPDOWN */
-.dropdown {
-    position: absolute;
-    top: 45px; 
-    left: 0;
-    background: #FFFCEF;
-    border: 2px solid #E6D99C;
-    padding: 10px;
-    display: none;
-    flex-direction: column;
-    gap: 8px;
-    min-width: 160px;
-    z-index: 10001;
-    border-radius: 4px;
-}
-.nav-item:hover .dropdown { display: flex; }
-.dropdown a { 
-    text-decoration: none; 
-    color: #1a1a1a; 
-    font-size: 14px; 
-    padding: 6px 10px;
-    border-radius: 4px;
-    transition: 0.3s ease;
-}
-.dropdown a:hover { background-color: #E6D99C; color: #FFFCEF; }
-
-/* HERO */
-.hero { position: relative; width: 100%; height: 60vh; overflow: hidden; }
-.hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(77, 58, 64, 0.15); z-index: 1; }
-.hero-text { position: absolute; top: 50%; left: 10%; transform: translateY(-50%); z-index: 2; color: #FFFCEF; text-align: left; max-width: 720px; }
-.hero-text h1 { margin: 0; font-size: 66px; font-weight: 250; letter-spacing: .12em; line-height: 0.95; text-transform: uppercase; }
-.hero-text p { margin: 18px 0 0; font-size: 13px; font-weight: 300; letter-spacing: .30em; text-transform: uppercase; opacity: .95; }
-
-/* CONTAINER & GRID */
-.container { flex: 1; max-width: 1100px; margin: 0 auto; padding: 55px 24px 70px; }
-.section-title { margin: 20px 0 32px; font-size: 12px; letter-spacing: 2px; opacity: 0.5; }
-.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.project { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 525 / 409; background: #fff; border: 1px solid rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: 0.3s ease; }
-.project img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s ease; }
-.project:hover { transform: translateY(-4px); border-color: rgba(0,0,0,0.2); }
-.project:hover img { transform: scale(1.03); }
-.label { position: absolute; bottom: 14px; left: 14px; font-size: 13px; background: rgba(248,245,241,0.9); padding: 8px 12px; border-radius: 6px; }
-.label span { display: block; font-size: 10px; opacity: 0.6; text-transform: uppercase; margin-bottom: 2px; }
-
-/* ABOUT */
-.about-section { max-width: 900px; margin: 90px auto 80px; }
-.about-title { font-size: 12px; letter-spacing: .25em; text-transform: uppercase; font-weight: 300; margin-bottom: 22px; opacity: .65; }
-.about-text { font-size: 24px; line-height: 1.8; font-weight: 120; letter-spacing: .02em; color: #222; }
-
-/* FOOTER */
-.footer { padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid #E6D99C; background: #F8F5F1; }
-.footer-col h4 { font-size: 14px; text-transform: uppercase; margin-bottom: 20px; }
-.footer-col a { display: block; color: #1a1a1a; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
-.social-icons { display: flex; gap: 15px; }
-
-</style>
+<!-- Link to your external CSS file -->
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="logo">✦ ORNELLA DINA DELIA</div>
-    <div class="nav-links">
-        <div class="nav-item">Projects
-            <div class="dropdown">
-                <a href="project-haven.html">Haven Campaign</a>
-                <a href="project-aethel.html">Aethel Shopping App</a>
-                <a href="project-illumix.html">Illumix</a>
-                <a href="project-moonhive.html">MoonHive</a>
-            </div>
-        </div>
-        <a class="nav-item" href="#">Gallery</a>
-        <a class="nav-item" href="#">About</a>
-    </div>
-</div>
+<!-- 1. THIS SCRIPT LOADS THE HEADER -->
+<div id="header-placeholder"></div>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('header-placeholder').innerHTML = data);
+</script>
 
+<!-- 2. UNIQUE PAGE CONTENT (Stays only on this page) -->
 <div class="hero">
     <div class="hero-overlay"></div>
-    <img class="hero-img" src="lemonhero.png">
+    <img class="hero-img" src="lemonhero.png" alt="Hero Image">
     <div class="hero-text">
         <h1>ORNELLA DINA DELIA</h1>
         <p>UI/UX DESIGNER · VISUAL STORYTELLER · CREATIVE DESIGNER</p>
@@ -140,24 +44,15 @@ body {
         <div class="about-text">Visual Designer specializing in high-end branding and UI/UX. I create sophisticated digital experiences that merge organic, Art Nouveau-inspired aesthetics with refined functionality.</div>
     </div>
 </div>
+<!-- END OF UNIQUE PAGE CONTENT -->
 
-<footer class="footer">
-    <div class="footer-col">
-        <h4>Contact Info</h4>
-        <p>ornelladelia0@gmail.com<br>Tel: +961 76441543</p>
-    </div>
-    <div class="footer-col">
-        <h4>Menu</h4>
-        <a href="index.html">Selected work</a>
-        <a href="#">About</a>
-        <a href="#">Privacy policy</a>
-        <a href="#">Accessibility Statement</a>
-    </div>
-    <div class="footer-col social-icons">
-        <a href="#">Behance</a>
-        <a href="#">LinkedIn</a>
-    </div>
-</footer>
+<!-- 3. THIS SCRIPT LOADS THE FOOTER -->
+<div id="footer-placeholder"></div>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+</script>
 
 </body>
 </html>
