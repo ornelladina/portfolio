@@ -7,15 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
 <style>
-    /* ALL ORIGINAL CSS RESTORED HERE */
-    /* GLOBAL STYLES */
+    /* GLOBAL STYLES (Inherited from main site) */
     body { margin: 0; background: #F8F5F1; color: #1a1a1a; font-family: "Sora", sans-serif; border: 12px solid #E6D99C; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; overflow-x: hidden; }
     em { font-family: "Cormorant Garamond", serif; font-style: italic; }
 
     /* TYPOGRAPHY HELPERS */
     .u-text-uppercase { text-transform: uppercase; }
 
-    /* NAVBAR (Re-added original styles) */
+    /* NAVBAR (Simplified for project page) */
     .navbar { width: 100%; height: 45px; background-color: #FFFCEF; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 10000; position: sticky; top: 0; }
     .logo { font-size: 16px; font-weight: 600; letter-spacing: 1px; }
     .nav-links a { color: black; text-decoration: none; font-size: 14px; font-weight: 300; letter-spacing: 0.5px; }
@@ -32,23 +31,35 @@
     .paragraph-section { max-width: 800px; margin: 0 auto 120px auto; padding: 0 24px; }
     .paragraph-text { font-size: 18px; line-height: 1.8; font-weight: 300; color: #1a1a1a; opacity: 0.9; text-align: left; }
 
-    /* SECTION 3: BRAND ELEMENTS */
+    /* SECTION 3: BRAND ELEMENTS (3 Rows) */
     .brand-section { margin-bottom: 120px; }
+    
+    /* Row 1: Colors & Font Details */
     .brand-row-colors { display: flex; justify-content: center; gap: 60px; align-items: flex-start; margin-bottom: 100px; padding: 0 24px; }
+    
+    /* Color Palettes */
     .color-palettes { display: flex; flex-direction: column; gap: 30px; }
     .color-item { display: flex; align-items: center; gap: 20px; }
     .color-swatch { width: 60px; height: 60px; border-radius: 8px; }
     .color-details { font-size: 14px; font-weight: 300; line-height: 1.6; text-align: left; }
     .color-details strong { display: block; font-weight: 500; }
+
+    /* Label Art Image (Center) */
     .label-art-container { max-width: 350px; }
     .label-art-img { width: 100%; height: auto; }
+
+    /* Font Details (Right) */
     .font-details { display: flex; flex-direction: column; gap: 30px; text-align: left; font-weight: 300; }
     .font-group h3 { font-size: 16px; margin: 0 0 8px 0; font-weight: 500; }
     .font-group p { font-size: 14px; margin: 0; line-height: 1.6; }
     .font-sample-script { font-family: 'Noteworthy', cursive; font-size: 20px; }
     .font-sample-logo { font-weight: 700; letter-spacing: 0.1em; }
+
+    /* Row 2: Labels Display */
     .brand-row-labels { width: 100%; margin-bottom: 100px; }
     .labels-img { width: 100%; height: auto; display: block; }
+
+    /* Row 3: Single Artwork Image */
     .brand-row-artwork { width: 100%; margin-bottom: 120px; padding: 0 24px; box-sizing: border-box;}
     .artwork-img { max-width: 300px; height: auto; display: block; margin: 0 auto; }
 
@@ -70,7 +81,7 @@
     .two-img-container { display: flex; gap: 28px; }
     .two-img-container img { width: 50%; height: auto; border-radius: 12px; }
 
-    /* FOOTER (Re-added original styles) */
+    /* FOOTER */
     .footer { padding: 60px 40px; border-top: 1px solid #E6D99C; margin-top: auto; text-align: left; font-size: 14px; font-weight: 300; }
 
     /* RESPONSIVE ADJUSTMENTS */
@@ -87,23 +98,19 @@
     }
 </style>
 </head>
-
 <body>
 
-<!-- REUSABLE HEADER LOADER -->
-<div id="header-placeholder"></div>
-<script>
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => document.getElementById('header-placeholder').innerHTML = data);
-</script>
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">✦ ORNELLA DINA DELIA</div>
+    <div class="nav-links"><a href="index.html">Back to Home</a></div>
+</div>
 
 <div class="project-content">
     
     <!-- SECTION 1: Title & Hero Image -->
     <section class="hero-section">
         <h1 class="project-title u-text-uppercase">HAVEN: Branding/ Packaging & Reveal System</h1>
-        <!-- UPDATED: Using .webp reference -->
         <img src="hero-haven.webp" class="hero-image" alt="Haven Project Hero Shot">
     </section>
 
@@ -114,8 +121,9 @@
         </p>
     </section>
 
-    <!-- SECTION 3: Brand Elements -->
+    <!-- SECTION 3: Brand Elements (Colors, Label Art, Fonts) -->
     <section class="brand-section">
+        <!-- Row 1: Colors, Art, Fonts -->
         <div class="brand-row-colors">
             <div class="color-palettes">
                 <div class="color-item">
@@ -135,10 +143,11 @@
                     <div class="color-details"><strong>#A3BECF</strong> Dusty Blue</div>
                 </div>
             </div>
+            
             <div class="label-art-container">
-                <!-- UPDATED: Using .webp reference -->
                 <img src="haven-label-art.webp" class="label-art-img" alt="Haven ornate label frame artwork">
             </div>
+
             <div class="font-details">
                 <div class="font-group">
                     <h3>Reveal Font</h3>
@@ -151,19 +160,20 @@
                 </div>
             </div>
         </div>
+
+        <!-- Row 2: Labels Photo -->
         <div class="brand-row-labels">
-            <!-- UPDATED: Using .webp reference -->
             <img src="haven-labels.webp" class="labels-img" alt="Three variations of Haven bottle labels">
         </div>
+
+        <!-- Row 3: Artwork Logo -->
         <div class="brand-row-artwork">
-            <!-- UPDATED: Using .webp reference -->
             <img src="haven-logo-art.webp" class="artwork-img" alt="Haven 'HAVEN' logo artwork">
         </div>
     </section>
 
     <!-- SECTION 4: Three Rows of Images -->
     <section class="three-row-img-section">
-        <!-- UPDATED: Using .webp reference -->
         <img src="haven-row-1.webp" class="row-img" alt="Haven branding detail 1">
         <img src="haven-row-2.webp" class="row-img" alt="Haven branding detail 2">
         <img src="haven-row-3.webp" class="row-img" alt="Haven branding detail 3">
@@ -173,18 +183,15 @@
     <section class="gallery-section">
         <div class="gallery-grid">
             <div class="gallery-left">
-                <!-- UPDATED: Using .webp reference -->
                 <img src="haven-package-girl.webp" class="gallery-large-img" alt="Haven gift package for a girl">
                 <div class="gallery-caption u-text-uppercase">Girl Package</div>
             </div>
             <div class="gallery-right">
                 <div>
-                    <!-- UPDATED: Using .webp reference -->
                     <img src="haven-cards-girl.webp" class="gallery-small-img" alt="Haven greeting cards for a girl">
                     <div class="gallery-caption u-text-uppercase">Girl Card</div>
                 </div>
                 <div>
-                    <!-- UPDATED: Using .webp reference -->
                     <img src="haven-cards-boy.webp" class="gallery-small-img" alt="Haven greeting cards for a boy">
                     <div class="gallery-caption u-text-uppercase">Boy Card</div>
                 </div>
@@ -195,10 +202,8 @@
 
     <!-- SECTION 6: Two Row Section of Two Images -->
     <section class="two-img-section">
-        <!-- UPDATED: Using .webp reference -->
         <img src="haven-pkg-open-twins.webp" class="row-img" alt="Haven package open revealing twin announcement">
         <div class="two-img-container">
-            <!-- UPDATED: Using .webp reference -->
             <img src="haven-pkg-open-twins.webp" alt="Haven package open detail">
             <img src="haven-bottle-boy-close.webp" alt="Haven bottle for a boy close-up">
         </div>
@@ -206,13 +211,10 @@
 
 </div>
 
-<!-- REUSABLE FOOTER LOADER -->
-<div id="footer-placeholder"></div>
-<script>
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => document.getElementById('footer-placeholder').innerHTML = data);
-</script>
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 Ornella Dina Delia</p>
+</footer>
 
 </body>
 </html>
