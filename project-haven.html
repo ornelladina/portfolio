@@ -9,8 +9,7 @@
 <style>
     /* GLOBAL STYLES */
     body { margin: 0; background: #F8F5F1; color: #1a1a1a; font-family: "Sora", sans-serif; border: 12px solid #E6D99C; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; overflow-x: hidden; }
-    em { font-family: "Cormorant Garamond", serif; font-style: italic; }
-
+    
     /* TYPOGRAPHY HELPERS */
     .u-text-uppercase { text-transform: uppercase; }
 
@@ -19,19 +18,18 @@
     .logo { font-size: 16px; font-weight: 600; letter-spacing: 1px; }
     .nav-links a { color: black; text-decoration: none; font-size: 14px; font-weight: 300; letter-spacing: 0.5px; }
 
-    /* PROJECT CONTENT CONTAINER */
     .project-content { width: 100%; }
 
-    /* SECTION 1: HERO */
+    /* HERO SECTION */
     .hero-section { width: 100%; text-align: center; margin-bottom: 80px; }
     .project-title { font-size: 48px; font-weight: 500; letter-spacing: -0.02em; color: #1a1a1a; margin: 60px 0 40px 0; max-width: 800px; margin-left: auto; margin-right: auto; }
     .hero-image { width: 100%; height: 682px; object-fit: cover; display: block; }
 
-    /* SECTION 2: PARAGRAPH - FIXED MARGIN */
-    .paragraph-section { max-width: 800px; margin: 0 0 120px 40px; padding-right: 24px; }
+    /* PARAGRAPH SECTION - Shifted Left */
+    .paragraph-section { max-width: 800px; margin: 0 0 0 40px; padding-bottom: 40px; }
     .paragraph-text { font-size: 18px; line-height: 1.8; font-weight: 300; color: #1a1a1a; opacity: 0.9; text-align: left; }
 
-    /* SECTION 3: BRAND ELEMENTS */
+    /* BRAND ELEMENTS */
     .brand-section { margin-bottom: 120px; }
     .brand-row-colors { display: flex; justify-content: center; gap: 60px; align-items: flex-start; margin-bottom: 100px; padding: 0 24px; }
     .color-palettes { display: flex; flex-direction: column; gap: 30px; }
@@ -39,53 +37,36 @@
     .color-swatch { width: 60px; height: 60px; border-radius: 8px; }
     .color-details { font-size: 14px; font-weight: 300; line-height: 1.6; text-align: left; }
     .color-details strong { display: block; font-weight: 500; }
-
     .label-art-container { max-width: 250px; }
     .label-art-img { width: 100%; height: auto; }
-
     .font-details { display: flex; flex-direction: column; gap: 30px; text-align: left; font-weight: 300; }
     .font-group h3 { font-size: 16px; margin: 0 0 8px 0; font-weight: 500; }
     .font-group p { font-size: 14px; margin: 0; line-height: 1.6; }
     .font-sample-script { font-family: 'Noteworthy', cursive; font-size: 20px; }
     .font-sample-logo { font-weight: 700; letter-spacing: 0.1em; }
 
-    /* ROW 2: NEW LABELS */
-    .brand-row-labels { width: 100%; margin-bottom: 100px; padding: 0 24px; box-sizing: border-box; }
-    .labels-wrapper { display: flex; gap: 20px; justify-content: center; }
-    .labels-wrapper img { width: 30%; height: auto; }
-
-    /* ROW 3: ARTWORK */
-    .brand-row-artwork { width: 100%; margin-bottom: 120px; padding: 0 24px; box-sizing: border-box;}
-    .artwork-img { max-width: 300px; height: auto; display: block; margin: 0 auto; }
-
-    /* THREE ROW SECTION - FIXED WIDTH & ADDED TITLES */
-    .three-row-img-section { display: flex; flex-direction: column; gap: 40px; margin-bottom: 120px; padding: 0; width: 100%; }
-    .row-container { width: 100%; text-align: center; }
-    .row-container h3 { font-size: 20px; margin-bottom: 15px; font-weight: 500; }
+    /* THREE ROW SECTION - Full Width, Tight Spacing */
+    .three-row-img-section { display: flex; flex-direction: column; gap: 20px; margin-bottom: 120px; width: 100%; }
+    .row-container { width: 100%; text-align: left; padding-left: 40px; box-sizing: border-box; }
+    .row-container h3 { font-size: 18px; margin: 0 0 10px 0; font-weight: 600; text-transform: uppercase; }
     .row-img { width: 100%; height: auto; display: block; }
     
-    .gallery-section { margin-bottom: 120px; padding: 0 24px; max-width: 1100px; margin-left: auto; margin-right: auto; }
+    /* OTHER SECTIONS */
+    .brand-row-labels, .brand-row-artwork, .gallery-section, .two-img-section { margin-bottom: 120px; padding: 0 24px; max-width: 1100px; margin-left: auto; margin-right: auto; }
     .gallery-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; }
-    .gallery-left { display: flex; flex-direction: column; }
     .gallery-large-img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
     .gallery-right { display: grid; grid-template-rows: 1fr 1fr; gap: 28px; }
     .gallery-small-img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
     .gallery-caption { font-size: 14px; font-weight: 300; text-align: right; margin-top: 12px; opacity: 0.8; }
-    .two-img-section { display: flex; flex-direction: column; gap: 28px; padding: 0 24px; max-width: 1100px; margin-left: auto; margin-right: auto; margin-bottom: 120px; }
     .two-img-container { display: flex; gap: 28px; }
     .two-img-container img { width: 50%; height: auto; border-radius: 12px; aspect-ratio: 1/1; object-fit: cover; }
-
     .footer { padding: 60px 40px; border-top: 1px solid #E6D99C; margin-top: auto; text-align: left; font-size: 14px; font-weight: 300; }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
         .navbar { padding: 0 20px; }
-        .project-title { font-size: 36px; margin: 40px 0 30px 0; }
+        .project-title { font-size: 36px; }
         .hero-image { height: 300px; }
-        .brand-row-colors { flex-direction: column-reverse; gap: 50px; align-items: center; }
-        .font-details { text-align: center; }
-        .gallery-grid { grid-template-columns: 1fr; }
-        .gallery-right { grid-template-rows: auto; }
         .two-img-container { flex-direction: column; }
         .two-img-container img { width: 100%; }
     }
@@ -110,6 +91,22 @@
         </p>
     </section>
 
+    <!-- FIXED SECTION -->
+    <section class="three-row-img-section">
+        <div class="row-container">
+            <h3>Brand Essence</h3>
+            <img src="haven-row-1.webp" class="row-img" alt="Haven branding detail 1">
+        </div>
+        <div class="row-container">
+            <h3>Packaging Details</h3>
+            <img src="haven-row-2.webp" class="row-img" alt="Haven branding detail 2">
+        </div>
+        <div class="row-container">
+            <h3>System Reveal</h3>
+            <img src="haven-row-3.webp" class="row-img" alt="Haven branding detail 3">
+        </div>
+    </section>
+
     <section class="brand-section">
         <div class="brand-row-colors">
             <div class="color-palettes">
@@ -124,59 +121,11 @@
                 <div class="font-group"><h3>Logo Font</h3><p class="font-sample-logo u-text-uppercase">OLICIY</p></div>
             </div>
         </div>
-
-        <div class="brand-row-labels">
-            <div class="labels-wrapper">
-                <img src="haven-girl-label.webp" alt="Girl Label">
-                <img src="haven-boy-label.webp" alt="Boy Label">
-                <img src="haven-twin-label.webp" alt="Twin Label">
-            </div>
-        </div>
-
-        <div class="brand-row-artwork"><img src="haven-logo-art.webp" class="artwork-img" alt="Haven logo artwork"></div>
     </section>
 
-    <!-- UPDATED THREE ROW SECTION -->
-    <section class="three-row-img-section">
-        <div class="row-container">
-            <h3>Title 1</h3>
-            <img src="haven-row-1.webp" class="row-img" alt="Haven branding detail 1">
-        </div>
-        <div class="row-container">
-            <h3>Title 2</h3>
-            <img src="haven-row-2.webp" class="row-img" alt="Haven branding detail 2">
-        </div>
-        <div class="row-container">
-            <h3>Title 3</h3>
-            <img src="haven-row-3.webp" class="row-img" alt="Haven branding detail 3">
-        </div>
-    </section>
-
-    <section class="gallery-section">
-        <div class="gallery-grid">
-            <div class="gallery-left">
-                <img src="haven-package-girl.webp" class="gallery-large-img" alt="Haven gift package for a girl">
-                <div class="gallery-caption u-text-uppercase">Girl Package</div>
-            </div>
-            <div class="gallery-right">
-                <div><img src="haven-cards-girl.webp" class="gallery-small-img" alt="Girl Card"><div class="gallery-caption u-text-uppercase">Girl Card</div></div>
-                <div><img src="haven-cards-boy.webp" class="gallery-small-img" alt="Boy Card"><div class="gallery-caption u-text-uppercase">Boy Card</div></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="two-img-section">
-        <img src="haven-pkg-open-twins.webp" class="row-img" alt="Haven package open">
-        <div class="two-img-container">
-            <img src="haven-pkg-open-twins.webp" alt="Haven package open detail">
-            <img src="haven-bottle-boy-close.webp" alt="Haven bottle close-up">
-        </div>
-    </section>
+    <footer class="footer">
+        <p>© 2026 Ornella Dina Delia</p>
+    </footer>
 </div>
-
-<footer class="footer">
-    <p>© 2026 Ornella Dina Delia</p>
-</footer>
-
 </body>
 </html>
