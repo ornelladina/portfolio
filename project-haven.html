@@ -5,28 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Haven Project | Ornella Dina Delia</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
-<!-- Link to your external stylesheet -->
+<!-- CRITICAL: Link to your shared external CSS file -->
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- REUSABLE HEADER LOADER -->
+<!-- 1. LOAD HEADER -->
 <div id="header-placeholder"></div>
 <script>
     fetch('header.html')
         .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        });
+        .then(data => document.getElementById('header-placeholder').innerHTML = data);
 </script>
 
+<!-- 2. UNIQUE HAVEN PROJECT CONTENT -->
 <div class="project-content">
     
     <!-- SECTION 1: Title & Hero Image -->
     <section class="hero-section">
         <h1 class="project-title u-text-uppercase">HAVEN: Branding/ Packaging & Reveal System</h1>
-        <img src="hero-haven.png" class="hero-image" alt="Haven Project Hero Shot">
+        <!-- UPDATE: Ensure file extension matches your files (.webp or .png) -->
+        <img src="hero-haven.webp" class="hero-image" alt="Haven Project Hero Shot">
     </section>
 
     <!-- SECTION 2: Paragraph -->
@@ -36,9 +36,8 @@
         </p>
     </section>
 
-    <!-- SECTION 3: Brand Elements (Colors, Label Art, Fonts) -->
+    <!-- SECTION 3: Brand Elements -->
     <section class="brand-section">
-        <!-- Row 1: Colors, Art, Fonts -->
         <div class="brand-row-colors">
             <div class="color-palettes">
                 <div class="color-item">
@@ -58,11 +57,9 @@
                     <div class="color-details"><strong>#A3BECF</strong> Dusty Blue</div>
                 </div>
             </div>
-            
             <div class="label-art-container">
-                <img src="haven-label-art.png" class="label-art-img" alt="Haven ornate label frame artwork">
+                <img src="haven-label-art.webp" class="label-art-img" alt="Haven ornate label frame artwork">
             </div>
-
             <div class="font-details">
                 <div class="font-group">
                     <h3>Reveal Font</h3>
@@ -75,39 +72,35 @@
                 </div>
             </div>
         </div>
-
-        <!-- Row 2: Labels Photo -->
         <div class="brand-row-labels">
-            <img src="haven-labels.png" class="labels-img" alt="Three variations of Haven bottle labels">
+            <img src="haven-labels.webp" class="labels-img" alt="Three variations of Haven bottle labels">
         </div>
-
-        <!-- Row 3: Artwork Logo -->
         <div class="brand-row-artwork">
-            <img src="haven-logo-art.png" class="artwork-img" alt="Haven 'HAVEN' logo artwork">
+            <img src="haven-logo-art.webp" class="artwork-img" alt="Haven 'HAVEN' logo artwork">
         </div>
     </section>
 
     <!-- SECTION 4: Three Rows of Images -->
     <section class="three-row-img-section">
-        <img src="haven-row-1.jpg" class="row-img" alt="Haven branding detail 1">
-        <img src="haven-row-2.jpg" class="row-img" alt="Haven branding detail 2">
-        <img src="haven-row-3.jpg" class="row-img" alt="Haven branding detail 3">
+        <img src="haven-row-1.webp" class="row-img" alt="Haven branding detail 1">
+        <img src="haven-row-2.webp" class="row-img" alt="Haven branding detail 2">
+        <img src="haven-row-3.webp" class="row-img" alt="Haven branding detail 3">
     </section>
 
     <!-- SECTION 5: Gallery Display -->
     <section class="gallery-section">
         <div class="gallery-grid">
             <div class="gallery-left">
-                <img src="haven-package-girl.png" class="gallery-large-img" alt="Haven gift package for a girl">
+                <img src="haven-package-girl.webp" class="gallery-large-img" alt="Haven gift package for a girl">
                 <div class="gallery-caption u-text-uppercase">Girl Package</div>
             </div>
             <div class="gallery-right">
                 <div>
-                    <img src="haven-cards-girl.png" class="gallery-small-img" alt="Haven greeting cards for a girl">
+                    <img src="haven-cards-girl.webp" class="gallery-small-img" alt="Haven greeting cards for a girl">
                     <div class="gallery-caption u-text-uppercase">Girl Card</div>
                 </div>
                 <div>
-                    <img src="haven-cards-boy.png" class="gallery-small-img" alt="Haven greeting cards for a boy">
+                    <img src="haven-cards-boy.webp" class="gallery-small-img" alt="Haven greeting cards for a boy">
                     <div class="gallery-caption u-text-uppercase">Boy Card</div>
                 </div>
             </div>
@@ -117,23 +110,22 @@
 
     <!-- SECTION 6: Two Row Section of Two Images -->
     <section class="two-img-section">
-        <img src="haven-pkg-open-twins.png" class="row-img" alt="Haven package open revealing twin announcement">
+        <img src="haven-pkg-open-twins.webp" class="row-img" alt="Haven package open revealing twin announcement">
         <div class="two-img-container">
-            <img src="haven-pkg-open-twins.png" alt="Haven package open detail">
-            <img src="haven-bottle-boy-close.png" alt="Haven bottle for a boy close-up">
+            <img src="haven-pkg-open-twins.webp" alt="Haven package open detail">
+            <img src="haven-bottle-boy-close.webp" alt="Haven bottle for a boy close-up">
         </div>
     </section>
 
 </div>
+<!-- END OF UNIQUE CONTENT -->
 
-<!-- REUSABLE FOOTER LOADER -->
+<!-- 3. LOAD FOOTER -->
 <div id="footer-placeholder"></div>
 <script>
     fetch('footer.html')
         .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
+        .then(data => document.getElementById('footer-placeholder').innerHTML = data);
 </script>
 
 </body>
