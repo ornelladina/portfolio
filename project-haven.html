@@ -7,89 +7,178 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
 <style>
-    /* GLOBAL STYLES */
-    body { margin: 0; background: #F8F5F1; color: #1a1a1a; font-family: "Sora", sans-serif; border: 12px solid #E6D99C; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; overflow-x: hidden; }
-    em { font-family: "Cormorant Garamond", serif; font-style: italic; }
+/* GLOBAL STYLES */
+body {
+    margin: 0;
+    background: #F8F5F1;
+    color: #1a1a1a;
+    font-family: "Sora", sans-serif;
+    border: 12px solid #E6D99C;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
 
-    /* TYPOGRAPHY HELPERS */
-    .u-text-uppercase { text-transform: uppercase; }
+em {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+}
 
-    /* NAVBAR */
-    .navbar { width: 100%; height: 45px; background-color: #FFFCEF; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 10000; position: sticky; top: 0; }
-    .logo { font-size: 16px; font-weight: 600; letter-spacing: 1px; }
-    .nav-links a { color: black; text-decoration: none; font-size: 14px; font-weight: 300; letter-spacing: 0.5px; }
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    height: 45px;
+    background-color: #FFFCEF;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+}
 
-    /* PROJECT CONTENT CONTAINER */
-    .project-content { width: 100%; }
+.logo {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
 
-    /* SECTION 1: HERO */
-    .hero-section { width: 100%; text-align: center; margin-bottom: 80px; }
-    .project-title { font-size: 48px; font-weight: 500; letter-spacing: -0.02em; color: #1a1a1a; margin: 60px 0 40px 0; max-width: 800px; margin-left: auto; margin-right: auto; }
-    .hero-image { width: 100%; height: 682px; object-fit: cover; display: block; }
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+}
 
-    /* SECTION 2: PARAGRAPH */
-    .paragraph-section { max-width: 800px; margin: 0 0 120px 24px; }
-    .paragraph-text { font-size: 18px; line-height: 1.8; font-weight: 300; color: #1a1a1a; opacity: 0.9; text-align: left; }
+/* HERO */
+.hero-section {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+}
 
-    /* SECTION 3: BRAND ELEMENTS */
-    .brand-section { margin-bottom: 120px; }
-    .brand-row-colors { display: flex; justify-content: center; gap: 60px; align-items: flex-start; margin-bottom: 100px; padding: 0 24px; }
-    .color-palettes { display: flex; flex-direction: column; gap: 30px; }
-    .color-item { display: flex; align-items: center; gap: 20px; }
-    .color-swatch { width: 60px; height: 60px; border-radius: 8px; }
-    .color-details { font-size: 14px; font-weight: 300; line-height: 1.6; text-align: left; }
-    .color-details strong { display: block; font-weight: 500; }
+.project-title {
+    font-size: 48px;
+    font-weight: 500;
+    margin: 60px auto 40px auto;
+    max-width: 900px;
+}
 
-    .label-art-container { max-width: 250px; }
-    .label-art-img { width: 100%; height: auto; }
+.hero-image {
+    width: 100%;
+    height: 682px;
+    object-fit: cover;
+    display: block;
+}
 
-    .font-details { display: flex; flex-direction: column; gap: 30px; text-align: left; font-weight: 300; }
-    .font-group h3 { font-size: 16px; margin: 0 0 8px 0; font-weight: 500; }
-    .font-group p { font-size: 14px; margin: 0; line-height: 1.6; }
-    .font-sample-script { font-family: 'Noteworthy', cursive; font-size: 20px; }
-    .font-sample-logo { font-weight: 700; letter-spacing: 0.1em; }
+/* PARAGRAPH FIXED (MORE LEFT + WIDER) */
+.paragraph-section {
+    max-width: 1200px;
+    margin: 0 auto 120px auto;
+    padding: 0 80px;
+}
 
-    /* ROW 2: NEW LABELS */
-    .brand-row-labels { width: 100%; margin-bottom: 100px; padding: 0 24px; box-sizing: border-box; }
-    .labels-wrapper { display: flex; gap: 20px; justify-content: center; }
-    .labels-wrapper img { width: 30%; height: auto; }
+.paragraph-text {
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 300;
+    text-align: left;
+    opacity: 0.9;
+}
 
-    /* ROW 3: ARTWORK */
-    .brand-row-artwork { width: 100%; margin-bottom: 120px; padding: 0 24px; box-sizing: border-box;}
-    .artwork-img { max-width: 300px; height: auto; display: block; margin: 0 auto; }
+/* SECTION TITLES */
+.section-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin: 0 0 40px 80px;
+    opacity: 0.8;
+}
 
-    /* SECTION: THREE ROW IMAGES */
-    .three-row-img-section { display: flex; flex-direction: column; gap: 40px; margin-bottom: 120px; width: 100%; box-sizing: border-box; }
-    .row-item { width: 100%; padding: 0 24px; box-sizing: border-box; }
-    .row-title { font-size: 18px; font-weight: 600; margin-bottom: 10px; text-transform: uppercase; }
-    .row-img { width: 100%; height: auto; border-radius: 12px; display: block; }
+/* BRAND SECTION */
+.brand-section {
+    margin-bottom: 120px;
+}
 
-    /* OTHER SECTIONS */
-    .gallery-section { margin-bottom: 120px; padding: 0 24px; max-width: 1100px; margin-left: auto; margin-right: auto; }
-    .gallery-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; }
-    .gallery-left { display: flex; flex-direction: column; }
-    .gallery-large-img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
-    .gallery-right { display: grid; grid-template-rows: 1fr 1fr; gap: 28px; }
-    .gallery-small-img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
-    .gallery-caption { font-size: 14px; font-weight: 300; text-align: right; margin-top: 12px; opacity: 0.8; }
-    .two-img-section { display: flex; flex-direction: column; gap: 28px; padding: 0 24px; max-width: 1100px; margin-left: auto; margin-right: auto; margin-bottom: 120px; }
-    .two-img-container { display: flex; gap: 28px; }
-    .two-img-container img { width: 50%; height: auto; border-radius: 12px; aspect-ratio: 1/1; object-fit: cover; }
+/* COLORS ROW FIXED */
+.brand-row-colors {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    margin-bottom: 100px;
+    padding: 0 80px;
+}
 
-    .footer { padding: 60px 40px; border-top: 1px solid #E6D99C; margin-top: auto; text-align: left; font-size: 14px; font-weight: 300; }
+.color-palettes {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-        .navbar { padding: 0 20px; }
-        .project-title { font-size: 36px; margin: 40px 0 30px 0; }
-        .hero-image { height: 300px; }
-        .brand-row-colors { flex-direction: column-reverse; gap: 50px; align-items: center; }
-        .font-details { text-align: center; }
-        .gallery-grid { grid-template-columns: 1fr; }
-        .gallery-right { grid-template-rows: auto; }
-        .two-img-container { flex-direction: column; }
-        .two-img-container img { width: 100%; }
-    }
+.color-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.color-swatch {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+}
+
+.color-details {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.color-details strong {
+    display: block;
+    font-weight: 500;
+}
+
+.label-art-container {
+    max-width: 250px;
+}
+
+.label-art-img {
+    width: 100%;
+}
+
+/* FONT COLUMN */
+.font-details {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.font-group h3 {
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    font-weight: 500;
+}
+
+.font-group p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.font-sample-script {
+    font-family: 'Noteworthy', cursive;
+    font-size: 20px;
+}
+
+.font-sample-logo {
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
 </style>
 </head>
 <body>
@@ -100,78 +189,122 @@
 </div>
 
 <div class="project-content">
-    <section class="hero-section">
-        <h1 class="project-title u-text-uppercase">HAVEN: Branding/ Packaging & Reveal System</h1>
-        <img src="haven-hero.webp" class="hero-image" alt="Haven Project Hero Shot">
-    </section>
 
-    <section class="paragraph-section">
-        <p class="paragraph-text">
-            Haven is a celebration of the 'soft luxury' aesthetic—a boutique reveal service designed to swap the loud for the refined. By blending organic Art Nouveau details with a muted, sophisticated palette, the brand creates an atmosphere that feels truly timeless.
-        </p>
-    </section>
+<section class="hero-section">
+    <h1 class="project-title u-text-uppercase">HAVEN: Branding/ Packaging & Reveal System</h1>
+    <img src="haven-hero.webp" class="hero-image">
+</section>
 
-    <section class="brand-section">
-        <div class="brand-row-colors">
-            <div class="color-palettes">
-                <div class="color-item"><div class="color-swatch" style="background-color: #E2D29D;"></div><div class="color-details"><strong>#E2D29D</strong> Dusty Gold</div></div>
-                <div class="color-item"><div class="color-swatch" style="background-color: #FFFCEF;"></div><div class="color-details"><strong>#FFFCEF</strong> Warm Ivory</div></div>
-                <div class="color-item"><div class="color-swatch" style="background-color: #C9A08F;"></div><div class="color-details"><strong>#C9A08F</strong> Cherry Blossom</div></div>
-                <div class="color-item"><div class="color-swatch" style="background-color: #A3BECF;"></div><div class="color-details"><strong>#A3BECF</strong> Dusty Blue</div></div>
+<section class="paragraph-section">
+    <p class="paragraph-text">
+        Haven is a celebration of the 'soft luxury' aesthetic—a boutique reveal service designed to swap the loud for the refined. By blending organic Art Nouveau details with a muted, sophisticated palette, the brand creates an atmosphere that feels truly timeless.
+    </p>
+</section>
+
+<section class="brand-section">
+
+<h2 class="section-title">Brand Identity</h2>
+
+<div class="brand-row-colors">
+
+    <div class="color-palettes">
+        <div class="color-item">
+            <div class="color-swatch" style="background-color: #E2D29D;"></div>
+            <div class="color-details"><strong>#E2D29D</strong> Dusty Gold</div>
+        </div>
+
+        <div class="color-item">
+            <div class="color-swatch" style="background-color: #FFFCEF;"></div>
+            <div class="color-details"><strong>#FFFCEF</strong> Warm Ivory</div>
+        </div>
+
+        <div class="color-item">
+            <div class="color-swatch" style="background-color: #C9A08F;"></div>
+            <div class="color-details"><strong>#C9A08F</strong> Cherry Blossom</div>
+        </div>
+
+        <div class="color-item">
+            <div class="color-swatch" style="background-color: #A3BECF;"></div>
+            <div class="color-details"><strong>#A3BECF</strong> Dusty Blue</div>
+        </div>
+    </div>
+
+    <div class="label-art-container">
+        <img src="haven-label-art.webp" class="label-art-img">
+    </div>
+
+    <div class="font-details">
+        <div class="font-group">
+            <h3>Reveal Font</h3>
+            <p class="font-sample-script u-text-uppercase">Noteworthy</p>
+        </div>
+
+        <div class="font-group">
+            <h3>Logo Font</h3>
+            <p class="font-sample-logo u-text-uppercase">OLICIY</p>
+        </div>
+    </div>
+
+</div>
+<h2 class="section-title">Packaging System</h2>
+
+<div class="brand-row-labels">
+    <div class="labels-wrapper">
+        <img src="haven-girl-label.webp" alt="Girl Label">
+        <img src="haven-boy-label.webp" alt="Boy Label">
+        <img src="haven-twin-label.webp" alt="Twin Label">
+    </div>
+</div>
+
+<h2 class="section-title">Logo Artwork</h2>
+
+<div class="brand-row-artwork">
+    <img src="haven-logo-art.webp" class="artwork-img" alt="Haven logo artwork">
+</div>
+
+</section>
+
+<!-- THREE ROW IMAGE SECTION -->
+<section class="three-row-img-section">
+    <img src="haven-row-1.webp" class="row-img" alt="Haven branding detail 1">
+    <img src="haven-row-2.webp" class="row-img" alt="Haven branding detail 2">
+    <img src="haven-row-3.webp" class="row-img" alt="Haven branding detail 3">
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+    <div class="gallery-grid">
+
+        <div class="gallery-left">
+            <img src="haven-package-girl.webp" class="gallery-large-img">
+            <div class="gallery-caption u-text-uppercase">Girl Package</div>
+        </div>
+
+        <div class="gallery-right">
+            <div>
+                <img src="haven-cards-girl.webp" class="gallery-small-img">
+                <div class="gallery-caption u-text-uppercase">Girl Card</div>
             </div>
-            <div class="label-art-container"><img src="haven-label-art.webp" class="label-art-img" alt="Haven ornate label frame artwork"></div>
-            <div class="font-details">
-                <div class="font-group"><h3>Reveal Font</h3><p class="font-sample-script u-text-uppercase">Noteworthy</p></div>
-                <div class="font-group"><h3>Logo Font</h3><p class="font-sample-logo u-text-uppercase">OLICIY</p></div>
+
+            <div>
+                <img src="haven-cards-boy.webp" class="gallery-small-img">
+                <div class="gallery-caption u-text-uppercase">Boy Card</div>
             </div>
         </div>
 
-        <div class="brand-row-labels">
-            <div class="labels-wrapper">
-                <img src="haven-girl-label.webp" alt="Girl Label">
-                <img src="haven-boy-label.webp" alt="Boy Label">
-                <img src="haven-twin-label.webp" alt="Twin Label">
-            </div>
-        </div>
+    </div>
+</section>
 
-        <div class="brand-row-artwork"><img src="haven-logo-art.webp" class="artwork-img" alt="Haven logo artwork"></div>
-    </section>
+<!-- TWO IMAGE SECTION -->
+<section class="two-img-section">
+    <img src="haven-pkg-open-twins.webp" class="row-img">
 
-    <section class="three-row-img-section">
-        <div class="row-item">
-            <div class="row-title">Brand Identity</div>
-            <img src="haven-row-1.webp" class="row-img" alt="Haven branding detail 1">
-        </div>
-        <div class="row-item">
-            <div class="row-title">Packaging Concept</div>
-            <img src="haven-row-2.webp" class="row-img" alt="Haven branding detail 2">
-        </div>
-        <div class="row-item">
-            <div class="row-title">Reveal Experience</div>
-            <img src="haven-row-3.webp" class="row-img" alt="Haven branding detail 3">
-        </div>
-    </section>
+    <div class="two-img-container">
+        <img src="haven-pkg-open-twins.webp">
+        <img src="haven-bottle-boy-close.webp">
+    </div>
+</section>
 
-    <section class="gallery-section">
-        <div class="gallery-grid">
-            <div class="gallery-left">
-                <img src="haven-package-girl.webp" class="gallery-large-img" alt="Haven gift package for a girl">
-                <div class="gallery-caption u-text-uppercase">Girl Package</div>
-            </div>
-            <div class="gallery-right">
-                <div><img src="haven-cards-girl.webp" class="gallery-small-img" alt="Girl Card"><div class="gallery-caption u-text-uppercase">Girl Card</div></div>
-                <div><img src="haven-cards-boy.webp" class="gallery-small-img" alt="Boy Card"><div class="gallery-caption u-text-uppercase">Boy Card</div></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="two-img-section">
-        <img src="haven-pkg-open-twins.webp" class="row-img" alt="Haven package open">
-        <div class="two-img-container">
-            <img src="haven-pkg-open-twins.webp" alt="Haven package open detail">
-            <img src="haven-bottle-boy-close.webp" alt="Haven bottle close-up">
-        </div>
-    </section>
 </div>
 
 <footer class="footer">
