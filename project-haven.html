@@ -1,133 +1,245 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Haven Project | Ornella Dina Delia</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
+
+
 <style>
+
     /* GLOBAL STYLES */
+
     body { margin: 0; background: #F8F5F1; color: #1a1a1a; font-family: "Sora", sans-serif; border: 12px solid #E6D99C; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; overflow-x: hidden; }
+
     
+
     /* SECTION HEADINGS */
+
     .section-title { font-size: 18px; font-weight: 600; letter-spacing: 2px; margin: 0 auto 40px auto; padding: 0 24px; max-width: 1100px; text-transform: uppercase; color: #1a1a1a; }
 
+
+
     /* NAVBAR */
+
     .navbar { width: 100%; height: 45px; background-color: #FFFCEF; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 10000; position: sticky; top: 0; }
+
     .logo { font-size: 16px; font-weight: 600; letter-spacing: 1px; }
+
     .nav-links a { color: black; text-decoration: none; font-size: 14px; font-weight: 300; letter-spacing: 0.5px; }
 
+
+
     /* PROJECT CONTENT */
+
     .project-content { width: 100%; }
 
+
+
     /* HERO */
+
     .hero-section { width: 100%; text-align: center; margin-bottom: 80px; }
+
     .project-title { font-size: 48px; font-weight: 500; letter-spacing: -0.02em; color: #1a1a1a; margin: 60px 0 40px 0; max-width: 800px; margin-left: auto; margin-right: auto; }
+
     .hero-image { width: 100%; height: 682px; object-fit: cover; display: block; }
 
+
+
     /* BRAND ELEMENTS SECTION */
+
     .brand-section { margin-bottom: 120px; }
+
     .brand-row { margin-bottom: 100px; }
 
+
+
     /* Row 1: Colors */
+
     .brand-row-colors { display: flex; justify-content: center; gap: 60px; align-items: flex-start; padding: 0 24px; max-width: 1100px; margin: 0 auto; }
+
     .color-palettes { display: flex; flex-direction: column; gap: 30px; }
+
     .color-item { display: flex; align-items: center; gap: 20px; }
+
     .color-swatch { width: 60px; height: 60px; border-radius: 8px; }
+
     .color-details { font-size: 14px; font-weight: 300; line-height: 1.6; }
 
+
+
     /* Row 2: Labels */
+
     .labels-wrapper { display: flex; gap: 20px; justify-content: center; padding: 0 24px; max-width: 1100px; margin: 0 auto; }
+
     .labels-wrapper img { width: 500px; height: 500px; object-fit: cover; border-radius: 12px; }
 
+
+
     /* Row 3: Typography */
+
     .typography-row { display: flex; justify-content: center; gap: 60px; padding: 0 24px; max-width: 1100px; margin: 0 auto; }
+
     .font-group { text-align: left; }
+
     .font-group h3 { font-size: 16px; margin: 0 0 8px 0; font-weight: 500; }
+
     .font-sample-script { font-family: 'Noteworthy', cursive; font-size: 20px; }
+
     .font-sample-logo { font-weight: 700; letter-spacing: 0.1em; }
 
-    /* CARD GALLERY */
-    .gallery-section { margin-bottom: 120px; padding: 0 24px; max-width: 1100px; margin-left: auto; margin-right: auto; }
-    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-    .gallery-item img { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; }
-    .gallery-caption { font-size: 14px; font-weight: 600; text-transform: uppercase; margin-top: 12px; }
+
 
     /* OTHER SECTIONS */
-    .three-row-img-section { margin-bottom: 120px; padding: 0 24px; max-width: 1100px; margin-left: auto; margin-right: auto;}
+
+    .three-row-img-section, .gallery-section, .two-img-section { margin-bottom: 120px; padding: 0 24px; max-width: 1100px; margin-left: auto; margin-right: auto;}
+
     .row-img { width: 100%; height: auto; border-radius: 12px; display: block; }
+
+    .gallery-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; }
+
+    .gallery-large-img, .gallery-small-img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+
+    .gallery-right { display: grid; grid-template-rows: 1fr 1fr; gap: 28px; }
+
+    .two-img-container { display: flex; gap: 28px; }
+
+    .two-img-container img { width: 50%; height: auto; border-radius: 12px; aspect-ratio: 1/1; object-fit: cover; }
+
     .footer { padding: 60px 40px; border-top: 1px solid #E6D99C; text-align: left; font-size: 14px; }
+
 </style>
+
 </head>
+
 <body>
 
+
+
 <div class="navbar">
+
     <div class="logo">✦ ORNELLA DINA DELIA</div>
+
     <div class="nav-links"><a href="index.html">Back to Home</a></div>
+
 </div>
+
+
 
 <div class="project-content">
+
     <section class="hero-section">
+
         <h1 class="project-title u-text-uppercase">HAVEN: Branding/ Packaging & Reveal System</h1>
+
         <img src="haven-hero.webp" class="hero-image" alt="Haven Project Hero Shot">
+
     </section>
+
+
 
     <!-- SECTION 3: BRAND ELEMENTS -->
+
     <section class="brand-section">
+
+        
+
+        <!-- Row 1 -->
+
         <h2 class="section-title">Color Palette</h2>
+
         <div class="brand-row brand-row-colors">
+
             <div class="color-palettes">
+
                 <div class="color-item"><div class="color-swatch" style="background-color: #E2D29D;"></div><div class="color-details"><strong>#E2D29D</strong> Dusty Gold</div></div>
+
                 <div class="color-item"><div class="color-swatch" style="background-color: #FFFCEF;"></div><div class="color-details"><strong>#FFFCEF</strong> Warm Ivory</div></div>
+
                 <div class="color-item"><div class="color-swatch" style="background-color: #C9A08F;"></div><div class="color-details"><strong>#C9A08F</strong> Cherry Blossom</div></div>
+
                 <div class="color-item"><div class="color-swatch" style="background-color: #A3BECF;"></div><div class="color-details"><strong>#A3BECF</strong> Dusty Blue</div></div>
+
             </div>
+
         </div>
+
+
+
+        <!-- Row 2 -->
 
         <h2 class="section-title">Logo Label</h2>
+
         <div class="brand-row labels-wrapper">
+
             <img src="haven-girl-label.webp" alt="Girl Label">
+
             <img src="haven-boy-label.webp" alt="Boy Label">
+
             <img src="haven-twin-label.webp" alt="Twin Label">
+
         </div>
+
+
+
+        <!-- Row 3 -->
 
         <h2 class="section-title">Typography</h2>
+
         <div class="brand-row typography-row">
+
             <div class="font-group">
+
                 <h3>Reveal Font</h3>
+
                 <p class="font-sample-script">Noteworthy</p>
+
             </div>
+
             <div class="font-group">
+
                 <h3>Logo Font</h3>
+
                 <p class="font-sample-logo">OLICIY</p>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- CARD SECTION -->
-    <section class="gallery-section">
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="haven-cards-girl.webp" alt="Girl Card">
-                <div class="gallery-caption">Girl Card</div>
-            </div>
-            <div class="gallery-item">
-                <img src="haven-cards-boy.webp" alt="Boy Card">
-                <div class="gallery-caption">Boy Card</div>
-            </div>
-        </div>
-    </section>
+
+
+    <!-- REMAINING SECTIONS -->
 
     <section class="three-row-img-section">
+
         <img src="haven-row-1.webp" class="row-img" alt="Branding detail">
+
         <img src="haven-row-2.webp" class="row-img" alt="Branding detail">
+
         <img src="haven-row-3.webp" class="row-img" alt="Branding detail">
+
     </section>
+
 </div>
 
+
+
 <footer class="footer">
+
     <p>© 2026 Ornella Dina Delia</p>
+
 </footer>
+
 </body>
-</html>
+
+</html> 
