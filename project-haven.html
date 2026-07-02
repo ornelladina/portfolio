@@ -9,7 +9,7 @@
 <style>
     /* GLOBAL STYLES (Inherited from main site) */
     body { margin: 0; background: #F8F5F1; color: #1a1a1a; font-family: "Sora", sans-serif; border: 12px solid #E6D99C; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; overflow-x: hidden; }
-    em { font-family: "Cormorant Garamond", serif; font-style: italic; } /* Assuming serif italic for emphasis based on design */
+    em { font-family: "Cormorant Garamond", serif; font-style: italic; }
 
     /* TYPOGRAPHY HELPERS */
     .u-text-uppercase { text-transform: uppercase; }
@@ -52,37 +52,31 @@
     .font-details { display: flex; flex-direction: column; gap: 30px; text-align: left; font-weight: 300; }
     .font-group h3 { font-size: 16px; margin: 0 0 8px 0; font-weight: 500; }
     .font-group p { font-size: 14px; margin: 0; line-height: 1.6; }
-    .font-sample-script { font-family: 'Noteworthy', cursive; /* Fallback, replace with actual font if webfont available */ font-size: 20px; }
+    .font-sample-script { font-family: 'Noteworthy', cursive; font-size: 20px; }
     .font-sample-logo { font-weight: 700; letter-spacing: 0.1em; }
 
     /* Row 2: Labels Display */
     .brand-row-labels { width: 100%; margin-bottom: 100px; }
-    .labels-img { width: 100%; height: auto; display: block; } /* image_3.png */
+    .labels-img { width: 100%; height: auto; display: block; }
 
     /* Row 3: Single Artwork Image */
     .brand-row-artwork { width: 100%; margin-bottom: 120px; padding: 0 24px; box-sizing: border-box;}
-    .artwork-img { max-width: 300px; height: auto; display: block; margin: 0 auto; } /* Artwork "HAVEN" logo */
+    .artwork-img { max-width: 300px; height: auto; display: block; margin: 0 auto; }
 
     /* SECTION 4: 3 ROWS OF IMAGES */
     .three-row-img-section { display: flex; flex-direction: column; gap: 28px; margin-bottom: 120px; padding: 0 24px; max-width: 1100px; margin-left: auto; margin-right: auto;}
     .row-img { width: 100%; height: auto; border-radius: 12px; display: block; }
 
-    /* SECTION 5: GALLERY DISPLAY (As seen in image_4.png) */
+    /* SECTION 5: GALLERY DISPLAY */
     .gallery-section { margin-bottom: 120px; padding: 0 24px; max-width: 1100px; margin-left: auto; margin-right: auto; }
     .gallery-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; }
-    
-    /* Left Column (Large Image) */
     .gallery-left { display: flex; flex-direction: column; }
     .gallery-large-img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
-    
-    /* Right Column (Stacked Images) */
     .gallery-right { display: grid; grid-template-rows: 1fr 1fr; gap: 28px; }
     .gallery-small-img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
-    
-    /* Gallery Captions */
     .gallery-caption { font-size: 14px; font-weight: 300; text-align: right; margin-top: 12px; opacity: 0.8; }
 
-    /* SECTION 6: TWO ROW SECTION OF TWO IMAGES (As seen in image_5.png) */
+    /* SECTION 6: TWO ROW SECTION OF TWO IMAGES */
     .two-img-section { display: flex; flex-direction: column; gap: 28px; padding: 0 24px; max-width: 1100px; margin-left: auto; margin-right: auto; margin-bottom: 120px; }
     .two-img-container { display: flex; gap: 28px; }
     .two-img-container img { width: 50%; height: auto; border-radius: 12px; }
@@ -94,10 +88,10 @@
     @media (max-width: 768px) {
         .navbar { padding: 0 20px; }
         .project-title { font-size: 36px; margin: 40px 0 30px 0; }
-        .hero-image { height: 300px; } /* Smaller hero on mobile */
+        .hero-image { height: 300px; }
         .brand-row-colors { flex-direction: column-reverse; gap: 50px; align-items: center; }
         .font-details { text-align: center; }
-        .gallery-grid { grid-template-columns: 1fr; } /* Stack gallery on mobile */
+        .gallery-grid { grid-template-columns: 1fr; }
         .gallery-right { grid-template-rows: auto; }
         .two-img-container { flex-direction: column; }
         .two-img-container img { width: 100%; }
@@ -117,7 +111,7 @@
     <!-- SECTION 1: Title & Hero Image -->
     <section class="hero-section">
         <h1 class="project-title u-text-uppercase">HAVEN: Branding/ Packaging & Reveal System</h1>
-        <img src="hero-haven.png" class="hero-image" alt="Haven Project Hero Shot">
+        <img src="hero-haven.webp" class="hero-image" alt="Haven Project Hero Shot">
     </section>
 
     <!-- SECTION 2: Paragraph -->
@@ -151,7 +145,7 @@
             </div>
             
             <div class="label-art-container">
-                <img src="haven-label-art.png" class="label-art-img" alt="Haven ornate label frame artwork">
+                <img src="haven-label-art.webp" class="label-art-img" alt="Haven ornate label frame artwork">
             </div>
 
             <div class="font-details">
@@ -169,36 +163,36 @@
 
         <!-- Row 2: Labels Photo -->
         <div class="brand-row-labels">
-            <img src="haven-labels.png" class="labels-img" alt="Three variations of Haven bottle labels">
+            <img src="haven-labels.webp" class="labels-img" alt="Three variations of Haven bottle labels">
         </div>
 
         <!-- Row 3: Artwork Logo -->
         <div class="brand-row-artwork">
-            <img src="haven-logo-art.png" class="artwork-img" alt="Haven 'HAVEN' logo artwork">
+            <img src="haven-logo-art.webp" class="artwork-img" alt="Haven 'HAVEN' logo artwork">
         </div>
     </section>
 
     <!-- SECTION 4: Three Rows of Images -->
     <section class="three-row-img-section">
-        <img src="haven-row-1.jpg" class="row-img" alt="Haven branding detail 1">
-        <img src="haven-row-2.jpg" class="row-img" alt="Haven branding detail 2">
-        <img src="haven-row-3.jpg" class="row-img" alt="Haven branding detail 3">
+        <img src="haven-row-1.webp" class="row-img" alt="Haven branding detail 1">
+        <img src="haven-row-2.webp" class="row-img" alt="Haven branding detail 2">
+        <img src="haven-row-3.webp" class="row-img" alt="Haven branding detail 3">
     </section>
 
     <!-- SECTION 5: Gallery Display -->
     <section class="gallery-section">
         <div class="gallery-grid">
             <div class="gallery-left">
-                <img src="haven-package-girl.png" class="gallery-large-img" alt="Haven gift package for a girl">
+                <img src="haven-package-girl.webp" class="gallery-large-img" alt="Haven gift package for a girl">
                 <div class="gallery-caption u-text-uppercase">Girl Package</div>
             </div>
             <div class="gallery-right">
                 <div>
-                    <img src="haven-cards-girl.png" class="gallery-small-img" alt="Haven greeting cards for a girl">
+                    <img src="haven-cards-girl.webp" class="gallery-small-img" alt="Haven greeting cards for a girl">
                     <div class="gallery-caption u-text-uppercase">Girl Card</div>
                 </div>
                 <div>
-                    <img src="haven-cards-boy.png" class="gallery-small-img" alt="Haven greeting cards for a boy">
+                    <img src="haven-cards-boy.webp" class="gallery-small-img" alt="Haven greeting cards for a boy">
                     <div class="gallery-caption u-text-uppercase">Boy Card</div>
                 </div>
             </div>
@@ -208,10 +202,10 @@
 
     <!-- SECTION 6: Two Row Section of Two Images -->
     <section class="two-img-section">
-        <img src="haven-pkg-open-twins.png" class="row-img" alt="Haven package open revealing twin announcement">
+        <img src="haven-pkg-open-twins.webp" class="row-img" alt="Haven package open revealing twin announcement">
         <div class="two-img-container">
-            <img src="haven-pkg-open-twins.png" alt="Haven package open detail">
-            <img src="haven-bottle-boy-close.png" alt="Haven bottle for a boy close-up">
+            <img src="haven-pkg-open-twins.webp" alt="Haven package open detail">
+            <img src="haven-bottle-boy-close.webp" alt="Haven bottle for a boy close-up">
         </div>
     </section>
 
@@ -219,4 +213,8 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-    <p>©
+    <p>© 2026 Ornella Dina Delia</p>
+</footer>
+
+</body>
+</html>
