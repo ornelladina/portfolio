@@ -3,59 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AETHEL | Case Study</title>
+    <title>AETHEL Project</title>
+    <!-- Importing Fonts from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Inter:wght@400&family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* CSS: Defining the 'Soft Luxury' Aesthetic */
-        body {
-            background-color: #2A1B1B; /* Deep Burgundy */
-            color: #EAE3D5; /* Off-White */
-            font-family: 'Georgia', serif;
-            margin: 0;
-            padding: 40px;
-            line-height: 1.6;
+        /* Base Styles */
+        body { margin: 0; padding: 0; background-color: #2A1818; color: #EAE3D5; font-family: 'Sora', sans-serif; }
+        .logo { font-family: 'Cinzel', serif; font-size: 2rem; letter-spacing: 2px; }
+        .text-font { font-family: 'Inter', sans-serif; }
+        
+        /* Section Layouts */
+        section { padding: 50px 20px; text-align: center; }
+        
+        /* Hero Section */
+        .hero { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        
+        /* Section with background image */
+        .bg-image-section { 
+            background: url('your-background-image.jpg') no-repeat center center; 
+            background-size: cover; 
+            min-height: 400px;
         }
-        .container { max-width: 800px; margin: auto; }
-        h1, h2, h3 { color: #C5A880; font-family: 'Cinzel', serif; }
-        h1 { font-size: 3rem; text-align: center; }
-        section { margin-bottom: 60px; padding: 20px; border: 1px solid #C5A880; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 10px; }
-        .design-principles p { margin-bottom: 15px; }
+
+        /* Section 4: Solid color with image */
+        .solid-color-section { background-color: #2A1818; padding: 100px 20px; }
+        .content-box { background-color: #EAE3D5; padding: 20px; display: inline-block; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>AETHEL: THE ART OF CURATED LUXURY</h1>
-
-    <section>
-        <h2>Project Overview</h2>
-        <ul>
-            <li><strong>Role:</strong> UI/UX Designer</li>
-            <li><strong>Objective:</strong> A high-end fashion e-commerce experience.</li>
-            <li><strong>Design Philosophy:</strong> Soft luxury, minimalist, editorial.</li>
-        </ul>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="hero-main.jpg" alt="Aethel Hero" style="max-width: 100%; height: auto;">
+        <div class="logo">AETHEL</div>
+        <p class="text-font">The Art of Curated Luxury</p>
     </section>
 
-    <section>
-        <h2>1. Challenge & Goals</h2>
-        <p>To bridge the gap between editorial-style browsing and efficient, high-end mobile commerce while maintaining brand exclusivity.</p>
+    <!-- Section 2: Background Image -->
+    <section class="bg-image-section">
+        <h2>Collection Overview</h2>
     </section>
 
-    <section class="design-principles">
-        <h2>Visual Design Principles</h2>
-        <p><strong>Visual Hierarchy:</strong> A tiered layout guiding the eye from identity to details.</p>
-        <p><strong>Strategic Whitespace:</strong> Generous space to allow products to breathe.</p>
-        <p><strong>Color Mood:</strong> Deep Burgundy backgrounds with Champagne typography for sophistication.</p>
+    <!-- Section 4: Solid color with image -->
+    <section class="solid-color-section">
+        <div class="content-box">
+            <img src="product-example.jpg" alt="Product" style="max-width: 300px;">
+        </div>
     </section>
-
-    <section>
-        <h2>Color Palette</h2>
-        <p>Deep Burgundy: #2A1B1B</p>
-        <p>Off-White: #EAE3D5</p>
-        <p>Champagne: #C5A880</p>
-    </section>
-</div>
 
 </body>
 </html>
