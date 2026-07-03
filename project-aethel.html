@@ -3,78 +3,74 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
 <title>AETHEL Case Study</title>
 
-<!-- Fonts -->
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;600&family=Sora:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-/* RESET */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+    body {
+        font-family: 'Sora', sans-serif;
+        background: #ffffff;
+        color: #fff;
+        overflow-x: hidden;
+    }
 
-body{
-  font-family:'Sora', sans-serif;
-  background:#fff;
-  color:#fff;
-  overflow-x:hidden;
-}
+    /* SECTION 1 */
+    .section-1 {
+        background: #3B1D1F;
+        padding: 80px 40px;
+        text-align: center;
+    }
 
-/* =========================
-   SECTION 1
-========================= */
-.section-1{
-  background:#3B1D1F;
-  padding:90px 40px;
-  text-align:center;
-}
+    .main-title {
+        font-size: 48px;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
 
-.section-1 h1{
-  font-weight:400;
-  font-size:48px;
-  letter-spacing:0.5px;
-}
+    /* SECTION 2 HERO */
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 90vh;
+        background: url('aether-hero.webp') center/cover no-repeat;
+    }
 
-/* =========================
-   SECTION 2 HERO
-========================= */
-.hero{
-  position:relative;
-  width:100%;
-  height:90vh;
-  background:url('aether-hero.webp') center/cover no-repeat;
-}
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(59, 29, 31, 0.10);
+    }
 
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(59,29,31,0.10);
-}
+    .hero-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Cinzel', serif;
+        font-size: 80px;
+        font-weight: 400;
+        text-align: center;
+        color: #fff;
+        z-index: 2;
+    }
 
-.hero-title{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  font-family:'Cinzel', serif;
-  font-size:80px;
-  font-weight:400;
-}
-
-/* =========================
-   SECTION 3 DIVIDER
-========================= */
-.divider{
-  height:40px;
-  width:100%;
-  background:#3B1D1F;
-}
+    /* SECTION 3 */
+    .divider {
+        width: 100%;
+        height: 40px;
+        background: #3B1D1F;
+    }
 
 </style>
 </head>
@@ -83,165 +79,396 @@ body{
 
 <!-- SECTION 1 -->
 <section class="section-1">
-  <h1>Case Study: Aethel High-Fashion</h1>
+    <div class="main-title">Case Study: Aethel High-Fashion</div>
 </section>
 
 <!-- SECTION 2 -->
 <section class="hero">
-  <div class="hero-title">AETHEL</div>
+    <div class="hero-overlay"></div>
+    <div class="hero-title">AETHEL</div>
 </section>
 
 <!-- SECTION 3 -->
 <div class="divider"></div>
-
-   
-<!-- =========================
-SECTION 4 (FIXED: TEXT ABOVE IMAGE)
-========================= -->
+<!-- SECTION 4 -->
 <section class="section-4">
+    <div class="section-4-overlay">
 
-  <div class="section-4-inner">
+        <div class="overview-text">
+            <h2>Project Overview: AETHEL</h2>
 
-    <!-- TEXT FIRST (corrected layout) -->
-    <div class="section-4-text">
+            <p>
+                Role: UI/UX Designer.<br><br>
 
-      <h2>Project Overview: AETHEL</h2>
+                Objective: To design a high-end fashion e-commerce application that prioritizes brand curation and a premium, editorial shopping experience.<br><br>
 
-      <p>
-        Role: UI/UX Designer.<br><br>
+                Design Philosophy: Focused on a "soft luxury" aesthetic, utilizing a minimalist layout, muted color palettes, and high-contrast typography to emphasize exclusivity and class.<br><br>
 
-        Objective: To design a high-end fashion e-commerce application that prioritizes brand curation and a premium, editorial shopping experience.<br><br>
+                <strong>1. Challenge & Goals</strong><br><br>
 
-        Design Philosophy: Focused on a "soft luxury" aesthetic, using minimalist layout, muted palettes, and high-contrast typography.<br><br>
+                Challenge: High-fashion e-commerce platforms often prioritize quantity over quality, leading to overwhelming interfaces that detract from the exclusivity of the brand.<br><br>
 
-        <strong>1. Challenge & Goals</strong><br><br>
+                Goals: To create a 'soft luxury' mobile experience where the visual storytelling remains the primary focus. The goal was to build a cohesive visual system that bridges the gap between editorial-style browsing and efficient, high-end mobile commerce.
+            </p>
+        </div>
 
-        Challenge: High-fashion e-commerce platforms often prioritize quantity over quality, leading to overwhelming interfaces.<br><br>
-
-        Goals: Create a soft luxury mobile experience focused on visual storytelling and editorial browsing.
-      </p>
+        <div class="section-4-image">
+            <img src="aethel-display1.webp" alt="display 1">
+        </div>
 
     </div>
-
-    <!-- IMAGE BELOW -->
-    <div class="section-4-image">
-      <img src="aethel-display1.webp" />
-    </div>
-
-  </div>
-
 </section>
 
-
-<!-- =========================
-SECTION 5 (FIXED: STACKED STRUCTURE)
-========================= -->
+<!-- SECTION 5 -->
 <section class="section-5">
+    <div class="market-analysis">
 
-  <div class="section-5-inner">
+        <!-- LEFT COLUMN -->
+        <div class="left">
+            <h2>2. Market Analysis</h2>
+            <p>
+                I analyzed existing luxury fashion apps to identify common pitfalls in mobile layout design.
+                My focus was on how top-tier brands balance dense product grids with white space, and how they
+                handle CTA placement to maintain a premium feel without sacrificing utility.
+            </p>
+        </div>
 
-    <!-- BLOCK 1 -->
-    <div class="block">
-      <h2>2. Market Analysis</h2>
-      <p>
-        I analyzed existing luxury fashion apps to identify layout pitfalls.
-        Focus was on whitespace, CTA placement, and editorial balance.
-      </p>
+        <!-- RIGHT COLUMN -->
+        <div class="right">
+
+            <div class="block">
+                <h3>Key Findings:</h3>
+                <p>
+                    A. The "Soft Luxury" Gap: There is an opportunity for a platform that balances a refined,
+                    minimalist aesthetic with intuitive mobile-first patterns, specifically by using whitespace
+                    and controlled typography to elevate the perceived value of items.
+                </p>
+            </div>
+
+            <div class="block">
+                <p>
+                    B. The "Soft Luxury" Gap: There is an opportunity for a platform that balances a refined,
+                    minimalist aesthetic with intuitive mobile-first patterns, specifically by using whitespace
+                    and controlled typography to elevate the perceived value of items.
+                </p>
+            </div>
+
+            <div class="block">
+                <p>
+                    C. Inconsistent Visual Hierarchy: Competitors frequently struggle to balance editorial content
+                    with functional navigation, leading to a fragmented user experience where the brand identity
+                    feels disconnected from the shopping utility.
+                </p>
+            </div>
+
+        </div>
+
     </div>
-
-    <!-- BLOCK 2 -->
-    <div class="block">
-      <h3>Key Findings A</h3>
-      <p>
-        The "Soft Luxury" Gap: Opportunity exists for a minimalist yet intuitive mobile-first luxury experience.
-      </p>
-    </div>
-
-    <!-- BLOCK 3 -->
-    <div class="block">
-      <h3>Key Findings B</h3>
-      <p>
-        Same principle applied: whitespace + controlled typography elevates perceived value.
-      </p>
-    </div>
-
-    <!-- BLOCK 4 -->
-    <div class="block">
-      <h3>Key Findings C</h3>
-      <p>
-        Inconsistent visual hierarchy remains a major issue in luxury e-commerce platforms.
-      </p>
-    </div>
-
-  </div>
-
 </section>
 
+<style>
+/* SECTION 4 */
+.section-4 {
+    background: url('aethel-bkimg1.webp') center/cover no-repeat;
+    padding: 120px;
+    position: relative;
+}
+
+.section-4-overlay {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.overview-text {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 120;
+    line-height: 1.6;
+}
+
+.overview-text h2 {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* image */
+.section-4-image img {
+    width: 235px;
+    height: 510px;
+    object-fit: cover;
+}
+
+/* SECTION 5 */
+.section-5 {
+    background: #3B1D1F;
+    padding: 120px;
+}
+
+.market-analysis {
+    display: flex;
+    gap: 80px;
+}
+
+/* 50/50 split */
+.left, .right {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 120;
+    line-height: 1.6;
+}
+
+.left h2 {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.right .block {
+    margin-bottom: 25px;
+}
+
+.right h3 {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+</style>
+
+ <!-- SECTION 6 -->
+<section class="section-6">
+    <img src="aethel-display2.webp" alt="display 2">
+</section>
+
+<!-- SECTION 7 -->
+<section class="section-7">
+    <div class="carousel-row">
+        <img src="aethel-corousel1.webp" alt="c1">
+        <img src="aethel-corousel2.webp" alt="c2">
+        <img src="aethel-corousel3.webp" alt="c3">
+    </div>
+</section>
+
+<!-- SECTION 8 -->
+<section class="section-8">
+
+    <div class="wireframing-title">WIREFRAMING</div>
+
+    <div class="wireframe-container">
+
+        <!-- BEFORE -->
+        <div class="before">
+            <h3>Before</h3>
+
+            <img class="wf1" src="aethel-wf1.webp" />
+            <img class="wf2" src="aethel-wf2.webp" />
+            <img class="wf3" src="aethel-wf3.webp" />
+        </div>
+
+        <!-- ARROW -->
+        <div class="arrow">→</div>
+
+        <!-- AFTER -->
+        <div class="after">
+            <h3>After</h3>
+
+            <img class="af1" src="aethel-a.webp" />
+            <img class="af2" src="aethel-b.webp" />
+            <img class="af3" src="aethel-c.webp" />
+        </div>
+
+    </div>
+</section>
 
 <style>
 
-/* =========================
-SECTION 4 STYLES (FIXED)
-========================= */
-
-.section-4{
-  background:url('aethel-bkimg1.webp') center/cover no-repeat;
-  padding:120px 60px;
+/* SECTION 6 */
+.section-6 {
+    background: #3B1D1F;
+    padding: 120px 0;
+    display: flex;
+    justify-content: center;
 }
 
-.section-4-inner{
-  display:flex;
-  flex-direction:column; /* FIXED: vertical flow */
-  gap:40px;
-  max-width:1100px;
-  margin:auto;
+.section-6 img {
+    width: 80%;
+    max-width: 1000px;
+    object-fit: cover;
 }
 
-.section-4-text{
-  font-size:16px;
-  font-weight:300;
-  line-height:1.6;
+/* SECTION 7 */
+.section-7 {
+    padding: 120px;
+    background: #ffffff;
 }
 
-.section-4-text h2{
-  font-weight:400;
-  margin-bottom:20px;
+.carousel-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
 }
 
-.section-4-image img{
-  width:235px;
-  height:510px;
-  object-fit:cover;
+.carousel-row img {
+    width: 251px;
+    height: 395px;
+    object-fit: cover;
 }
 
-
-/* =========================
-SECTION 5 STYLES (STACKED FIX)
-========================= */
-
-.section-5{
-  background:#3B1D1F;
-  padding:120px 60px;
+/* SECTION 8 */
+.section-8 {
+    padding: 120px;
+    background: #3B1D1F;
+    color: white;
 }
 
-.section-5-inner{
-  display:flex;
-  flex-direction:column; /* FIXED: stacked */
-  gap:50px;
-  max-width:900px;
-  margin:auto;
+.wireframing-title {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 60px;
 }
 
-.section-5 .block{
-  font-size:16px;
-  font-weight:300;
-  line-height:1.6;
+.wireframe-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.section-5 h2,
-.section-5 h3{
-  font-weight:400;
-  margin-bottom:10px;
+/* BEFORE */
+.before, .after {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.before h3, .after h3 {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.before img,
+.after img {
+    width: 559px;
+    height: 555px;
+    object-fit: cover;
+}
+
+/* zigzag offsets */
+.wf1 { margin-left: 120px; }
+.wf2 { margin-left: 400px; }
+.wf3 { margin-left: 120px; }
+
+.af1 { margin-right: 120px; }
+.af2 { margin-right: 400px; }
+.af3 { margin-right: 120px; }
+
+/* arrow */
+.arrow {
+    font-size: 60px;
+    font-weight: 300;
+}
+</style>
+
+ 
+<!-- SECTION 9 -->
+<section class="section-9">
+
+    <div class="palette-typography">
+
+        <!-- ROW 1 -->
+        <div class="row">
+            <h2>Color Palette</h2>
+
+            <div class="colors">
+                <div class="color-item">
+                    <div class="square" style="background:#2A1B1B;"></div>
+                    <p>Deep Burgundy #2A1B1B — Main backgrounds</p>
+                </div>
+
+                <div class="color-item">
+                    <div class="square" style="background:#EAE3D5;"></div>
+                    <p>Off-White #EAE3D5 — Product cards & search</p>
+                </div>
+
+                <div class="color-item">
+                    <div class="square" style="background:#C5A880;"></div>
+                    <p>Champagne #C5A880 — Typography & Icons</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="row">
+            <h2>Typography</h2>
+
+            <p>
+                Logo Font: Cinzel (via Sora pairing system)<br>
+                AETHEL — Cinzel Regular
+            </p>
+
+            <p>
+                Body Font: Inter Regular<br>
+                a b c d e f g h i j k l m n o p q r s t u v w x y z
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECTION 10 -->
+<section class="section-10">
+    <img src="aethel-fulldisplay.webp" alt="full display">
+</section>
+
+<!-- SECTION 11 -->
+<section class="section-11">
+    <img src="aethel-img.webp" alt="final image">
+</section>
+
+</body>
+</html>
+
+<style>
+
+/* SECTION 9 */
+.section-9 {
+    padding: 120px;
+    background: #ffffff;
+    color: #000;
+}
+
+.palette-typography .row {
+    margin-bottom: 60px;
+}
+
+.colors {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.color-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+}
+
+/* SECTION 10 */
+.section-10 img {
+    width: 100%;
+    height: 694px;
+    object-fit: cover;
+    display: block;
+}
+
+/* SECTION 11 */
+.section-11 img {
+    width: 100%;
+    height: 703px;
+    object-fit: cover;
+    display: block;
 }
 
 </style>
