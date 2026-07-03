@@ -8,9 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
 <style>
-/* =========================
-   GLOBAL
-========================= */
 body{
     margin:0;
     background:#F8F5F1;
@@ -23,11 +20,9 @@ body{
 
 *{ box-sizing:border-box; }
 
-img{ display:block; max-width:100%; }
+img{ max-width:100%; display:block; }
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAV */
 .navbar{
     width:100%;
     height:45px;
@@ -43,7 +38,6 @@ img{ display:block; max-width:100%; }
 .logo{
     font-size:16px;
     font-weight:600;
-    letter-spacing:1px;
 }
 
 .nav-links a{
@@ -53,9 +47,7 @@ img{ display:block; max-width:100%; }
     color:#000;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 .hero-section{
     text-align:center;
     margin-bottom:80px;
@@ -74,9 +66,7 @@ img{ display:block; max-width:100%; }
     object-fit:cover;
 }
 
-/* =========================
-   SECTION 2
-========================= */
+/* SECTION 2 */
 .paragraph-section{
     max-width:800px;
     margin:0 0 120px 80px;
@@ -90,12 +80,14 @@ img{ display:block; max-width:100%; }
 }
 
 /* =========================
-   SECTION 3 (FIXED GRID)
+   SECTION 3 (RESTORED STRUCTURE)
 ========================= */
+
 .brand-section{
     margin-bottom:140px;
 }
 
+/* ROW 1 */
 .brand-grid{
     max-width:1200px;
     margin:0 auto;
@@ -105,7 +97,7 @@ img{ display:block; max-width:100%; }
     gap:60px;
 }
 
-/* colors */
+/* COLORS */
 .color-item{
     display:flex;
     align-items:center;
@@ -119,7 +111,23 @@ img{ display:block; max-width:100%; }
     border-radius:8px;
 }
 
-/* labels */
+/* FONTS */
+.font-group{
+    margin-bottom:30px;
+}
+
+.font-group h3{
+    font-size:14px;
+    font-weight:500;
+    margin-bottom:6px;
+}
+
+.font-group p{
+    font-size:14px;
+    font-weight:300;
+}
+
+/* ROW 2 */
 .labels-wrapper{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -129,7 +137,7 @@ img{ display:block; max-width:100%; }
     padding:0 80px;
 }
 
-/* artwork */
+/* ROW 3 */
 .artwork-wrapper{
     text-align:center;
     margin-top:100px;
@@ -147,21 +155,10 @@ img{ display:block; max-width:100%; }
     object-fit:contain;
 }
 
-/* fonts */
-.font-group h3{
-    font-size:14px;
-    font-weight:500;
-    margin-bottom:6px;
-}
-
-.font-group p{
-    font-size:14px;
-    font-weight:300;
-}
-
 /* =========================
-   SECTION 4 (STRICT GRID 500x500)
+   SECTION 4 (STRICT 500x500 GRID)
 ========================= */
+
 .gallery-section{
     max-width:1200px;
     margin:0 auto 140px auto;
@@ -188,9 +185,7 @@ img{ display:block; max-width:100%; }
     opacity:0.7;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 .footer{
     padding:60px 80px;
     border-top:1px solid #E6D99C;
@@ -198,48 +193,27 @@ img{ display:block; max-width:100%; }
     font-weight:300;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 @media(max-width:768px){
+    .project-title{ font-size:32px; padding:0 20px; }
 
-    .project-title{
-        font-size:32px;
-        padding:0 20px;
-    }
+    .paragraph-section{ margin:0 20px 80px 20px; }
 
-    .paragraph-section{
-        margin:0 20px 80px 20px;
-    }
+    .brand-grid{ grid-template-columns:1fr; padding:0 20px; }
 
-    .brand-grid{
-        grid-template-columns:1fr;
-        padding:0 20px;
-    }
+    .labels-wrapper{ grid-template-columns:1fr; padding:0 20px; }
 
-    .labels-wrapper{
-        grid-template-columns:1fr;
-        padding:0 20px;
-    }
+    .gallery-section{ padding:0 20px; }
 
-    .gallery-section{
-        padding:0 20px;
-    }
+    .gallery-grid{ grid-template-columns:1fr; }
 
-    .gallery-grid{
-        grid-template-columns:1fr;
-    }
-
-    .gallery-grid img{
-        height:350px;
-    }
+    .gallery-grid img{ height:350px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <div class="navbar">
     <div class="logo">✦ ORNELLA DINA DELIA</div>
     <div class="nav-links"><a href="index.html">Back to Home</a></div>
@@ -254,13 +228,16 @@ img{ display:block; max-width:100%; }
 <!-- PARAGRAPH -->
 <section class="paragraph-section">
     <p class="paragraph-text">
-        Haven is a celebration of the soft luxury aesthetic—blending Art Nouveau detail with a refined, minimal system.
+        Haven is a soft luxury branding system blending Art Nouveau influence with modern minimal structure.
     </p>
 </section>
 
-<!-- SECTION 3 -->
+<!-- =========================
+     SECTION 3 (FIXED)
+========================= -->
 <section class="brand-section">
 
+    <!-- ROW 1 -->
     <div class="brand-grid">
 
         <div>
@@ -268,6 +245,10 @@ img{ display:block; max-width:100%; }
             <div class="color-item"><div class="color-swatch" style="background:#FFFCEF"></div>#FFFCEF Warm Ivory</div>
             <div class="color-item"><div class="color-swatch" style="background:#C9A08F"></div>#C9A08F Cherry Blossom</div>
             <div class="color-item"><div class="color-swatch" style="background:#A3BECF"></div>#A3BECF Dusty Blue</div>
+        </div>
+
+        <div>
+            <img src="haven-label-art.webp">
         </div>
 
         <div>
@@ -282,21 +263,16 @@ img{ display:block; max-width:100%; }
             </div>
         </div>
 
-        <div>
-            <div class="font-group">
-                <h3>System Notes</h3>
-                <p>Soft luxury identity design</p>
-            </div>
-        </div>
-
     </div>
 
+    <!-- ROW 2 -->
     <div class="labels-wrapper">
         <img src="haven-girl-label.webp">
         <img src="haven-boy-label.webp">
         <img src="haven-twin-label.webp">
     </div>
 
+    <!-- ROW 3 (CORRECTED) -->
     <div class="artwork-wrapper">
         <h3>Artwork</h3>
         <img src="haven-logo.webp">
@@ -308,6 +284,7 @@ img{ display:block; max-width:100%; }
 <section class="gallery-section">
 
     <div class="gallery-grid">
+
         <div>
             <img src="haven-package-girl.webp">
             <div class="gallery-caption">Girl Package</div>
@@ -327,11 +304,11 @@ img{ display:block; max-width:100%; }
             <img src="haven-pkg-open-twins.webp">
             <div class="gallery-caption">Twin Reveal</div>
         </div>
+
     </div>
 
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
     <p>© 2026 Ornella Dina Delia</p>
 </footer>
