@@ -22,30 +22,50 @@ body{
 
 img{ max-width:100%; display:block; }
 
-/* NAV */
-.navbar{
-    width:100%;
-    height:45px;
-    background:#FFFCEF;
-    padding:0 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    height: 45px;
+    background-color: #FFFCEF;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 10000;
+    overflow: visible; 
 }
 
-.logo{
-    font-size:16px;
-    font-weight:600;
-}
+.logo { font-size: 16px; font-weight: 130; letter-spacing: 1px; }
+.nav-links { display: flex; gap: 40px; font-size: 14px; font-weight: 130; letter-spacing: 0.5px; height: 100%; align-items: center; }
+.nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; position: relative; height: 100%; display: flex; align-items: center; }
 
-.nav-links a{
-    font-size:14px;
-    font-weight:300;
-    text-decoration:none;
-    color:#000;
+/* DROPDOWN */
+.dropdown {
+    position: absolute;
+    top: 45px; 
+    left: 0;
+    background: #FFFCEF;
+    border: 2px solid #E6D99C;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 160px;
+    z-index: 10001;
+    border-radius: 4px;
 }
+.nav-item:hover .dropdown { display: flex; }
+.dropdown a { 
+    text-decoration: none; 
+    color: #1a1a1a; 
+    font-size: 14px; 
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+.dropdown a:hover { background-color: #E6D99C; color: #FFFCEF; }
+
 
 /* HERO */
 .hero-section{
@@ -216,7 +236,18 @@ img{ max-width:100%; display:block; }
 
 <div class="navbar">
     <div class="logo">✦ ORNELLA DINA DELIA</div>
-    <div class="nav-links"><a href="index.html">Back to Home</a></div>
+    <div class="nav-links">
+        <div class="nav-item">Projects
+            <div class="dropdown">
+                <a href="project-haven.html">Haven Campaign</a>
+                <a href="project-aethel.html">Aethel Shopping App</a>
+                <a href="project-illumix.html">Illumix</a>
+                <a href="project-moonhive.html">MoonHive</a>
+            </div>
+        </div>
+        <a class="nav-item" href="#">Gallery</a>
+        <a class="nav-item" href="#">About</a>
+    </div>
 </div>
 
 <!-- HERO -->
