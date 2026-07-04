@@ -157,6 +157,7 @@
   .section-5 .row-1 {
     max-width: 900px;
     gap: 40px;
+    margin-bottom: 60px;
   }
   .section-5 .row-2 {
     display: grid;
@@ -183,22 +184,37 @@
     justify-content: center;
   }
   .section-6 img {
-    width: 1200px;
+    width: 80%;
     height: auto;
   }
 
   /* ============================================
      SECTION 7 — Three-column image carousel
      ============================================ */
-  .section-7 {
+.section-7 {
     width: 100%;
-    padding: 60px 60px;
+    padding: 60px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     align-items: center;
-  }
-  .section-7 img { width: 80%; }
+}
+
+.section-7 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+  @media (max-width: 768px) {
+    .section-7 {
+        grid-template-columns: 1fr;
+    }
+
+    .section-7 img {
+        width: 100%;
+    }
+}
 
   /* ============================================
      SECTION 8 — Two columns: image + design principles text
