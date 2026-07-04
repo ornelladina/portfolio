@@ -136,12 +136,16 @@
   .section-4 .col-text p { margin-bottom: 16px; }
   .section-4 .col-image {
     display: flex;
-  }
-  .section-4 .col-image img {
-    width: 85%;
-    height: 85%;
-    object-fit: cover;
-  }
+    justify-content: center;
+    align-items: center;
+}
+
+.section-4 .col-image img {
+    max-width: 500px;   /* Change this number to make it bigger/smaller */
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
 
   /* ============================================
      SECTION 5 — Two stacked rows (analysis + 3 findings)
