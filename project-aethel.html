@@ -14,8 +14,6 @@
 
   /* ============================================
      GLOBAL SETTINGS
-     - :root holds "variables" so colors/fonts can
-       be changed in ONE place instead of everywhere.
      ============================================ */
   :root {
     --burgundy: #3B1D1F;
@@ -29,6 +27,8 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
+  html { overflow-x: hidden; }
+
   body {
     font-family: var(--font-sora);
     color: #1a1a1a;
@@ -39,12 +39,9 @@
 
   img { display: block; max-width: 100%; height: auto; }
 
-  /* Sora is a "variable font" — instead of only regular/bold,
-     it can be set to any weight number (100–800).
-     Wherever the brief says "weight 120", this is what that means. */
   .sora-120 {
     font-family: var(--font-sora);
-    font-weight: 300; /* fallback for browsers that ignore variation settings */
+    font-weight: 300;
     font-variation-settings: 'wght' 120;
     font-size: 16px;
     line-height: 1.6;
@@ -61,6 +58,8 @@
     align-items: center;
     justify-content: center;
     color: var(--off-white);
+    padding: 0 20px;
+    text-align: center;
   }
   .section-1 h1 {
     font-family: var(--font-sora);
@@ -75,9 +74,9 @@
   .section-2 {
     position: relative;
     width: 100%;
-    /* Adjust this height to fit your hero image's real proportions */
     height: 70vh;
     min-height: 500px;
+    overflow: hidden;
   }
   .section-2 .hero-img {
     position: absolute;
@@ -90,7 +89,7 @@
     position: absolute;
     inset: 0;
     background-color: var(--burgundy);
-    opacity: 0.1; /* 10% overlay */
+    opacity: 0.1;
   }
   .section-2 .hero-text {
     position: relative;
@@ -106,7 +105,6 @@
     padding: 0 20px;
   }
 
-
   /* ============================================
      SECTION 4 — Two-column, solid burgundy background
      ============================================ */
@@ -119,7 +117,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    align-items: stretch; /* keeps both columns the same height */
+    align-items: stretch;
   }
   .section-4 .col-text {
     font-family: var(--font-sora);
@@ -132,20 +130,20 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: left;
   }
   .section-4 .col-text p { margin-bottom: 16px; }
   .section-4 .col-image {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.section-4 .col-image img {
-    max-width: 500px;   /* Change this number to make it bigger/smaller */
+  }
+  .section-4 .col-image img {
+    max-width: 500px;
     width: 50%;
     height: auto;
     object-fit: contain;
-}
+  }
 
   /* ============================================
      SECTION 5 — Two stacked rows (analysis + 3 findings)
@@ -185,36 +183,28 @@
   }
   .section-6 img {
     width: 80%;
+    max-width: 400px;
     height: auto;
   }
 
   /* ============================================
      SECTION 7 — Three-column image carousel
      ============================================ */
-.section-7 {
+  .section-7 {
     width: 100%;
     padding: 60px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     align-items: center;
-}
-
-.section-7 img {
+    justify-items: center;
+  }
+  .section-7 img {
     width: 100%;
     height: auto;
     display: block;
     object-fit: cover;
-}
-  @media (max-width: 768px) {
-    .section-7 {
-        grid-template-columns: 1fr;
-    }
-
-    .section-7 img {
-        width: 100%;
-    }
-}
+  }
 
   /* ============================================
      SECTION 8 — Two columns: image + design principles text
@@ -270,7 +260,7 @@
   }
   .section-9 .wf-col {
     flex: 1 1 0;
-    min-width: 0; /* lets flex children shrink instead of overflowing */
+    min-width: 0;
   }
   .section-9 .wf-col h3 {
     font-family: var(--font-sora);
@@ -281,9 +271,6 @@
   .section-9 .wf-before h3 { padding-left: 12%; }
   .section-9 .wf-after h3 { text-align: right; padding-right: 12%; }
 
-  /* Zigzag offsets are now percentages of the column width,
-     so images always stay inside the column instead of
-     overflowing past it (which was pushing "After" off-screen). */
   .section-9 .wf-before img {
     width: 55%;
     margin-bottom: 24px;
@@ -328,7 +315,6 @@
     margin-bottom: 30px;
   }
 
-  /* Row 1: color palette */
   .section-10 .palette {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -348,7 +334,6 @@
   .section-10 .swatch p { font-family: var(--font-sora); font-size: 14px; line-height: 1.5; }
   .section-10 .swatch p.hex { font-weight: 600; margin-bottom: 4px; }
 
-  /* Row 2: typography / logo */
   .section-10 .typography-row p.label {
     font-family: var(--font-sora);
     font-size: 14px;
@@ -365,15 +350,18 @@
     letter-spacing: 4px;
   }
 
-  /* Row 3: text / alphabet sample */
   .section-10 .text-row .inter-sample {
     font-family: var(--font-inter);
     font-size: 22px;
     letter-spacing: 2px;
+    word-break: break-word;
   }
 
   /* ============================================
      SECTION 11 & 12 — Full-width display images
+     Using aspect-ratio (instead of only a fixed px
+     height) so the box always scales proportionally
+     with the screen width, on any device.
      ============================================ */
   .section-11 {
     width: 100%;
@@ -391,18 +379,66 @@
   }
 
   /* ============================================
-     RESPONSIVE — stack columns on smaller screens
+     RESPONSIVE — tablets and phones (≤900px)
      ============================================ */
   @media (max-width: 900px) {
-    .section-4 .grid-2col,
-    .section-5 .row-2,
+
+    /* Unify left/right breathing room across every
+       content section so everything lines up on the
+       same left edge once stacked. */
+    .section-4,
+    .section-5,
+    .section-6,
     .section-7,
-    .section-8 {
-      grid-template-columns: 1fr;
+    .section-8,
+    .section-9,
+    .section-10 {
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-top: 48px;
+      padding-bottom: 48px;
     }
+
+    .section-1 { height: 64px; }
+    .section-1 h1 { font-size: 18px; }
+
+    /* Hero: vh-based height behaves badly on mobile
+       browsers (address bar resizing). Switch to a
+       ratio that scales cleanly with screen width. */
+    .section-2 {
+      height: auto;
+      aspect-ratio: 3 / 4;
+      min-height: 420px;
+    }
+    .section-2 .hero-text { font-size: 44px; }
+
+    .section-4 .grid-2col { grid-template-columns: 1fr; }
+    .section-4 .col-text { text-align: left; padding: 0 0 32px 0; }
+    .section-4 .col-image img {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .section-5 .row-2 { grid-template-columns: 1fr; }
+
+    /* Carousel: stack in one column, centered, capped
+       width so images don't stretch edge-to-edge. */
+    .section-7 {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 32px;
+    }
+    .section-7 img {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .section-8 { grid-template-columns: 1fr; }
+
     .section-9 .wf-wrapper {
       flex-direction: column;
       text-align: center;
+      padding: 0;
     }
     .section-9 .wf-before h3,
     .section-9 .wf-after h3 {
@@ -417,8 +453,27 @@
     }
     .section-9 .wf-after { align-items: center; }
     .section-9 .wf-arrow { transform: rotate(90deg); margin: 20px 0; }
+
     .section-10 .palette { grid-template-columns: 1fr; }
-    .section-2 .hero-text { font-size: 44px; }
+
+    /* Full-width display images: keep them
+       proportional instead of a huge fixed px height
+       on a narrow screen. */
+    .section-11 { height: auto; aspect-ratio: 1440 / 694; }
+    .section-12 { height: auto; aspect-ratio: 1440 / 703; }
+  }
+
+  /* ============================================
+     RESPONSIVE — small phones (≤480px)
+     ============================================ */
+  @media (max-width: 480px) {
+    .section-1 h1 { font-size: 15px; }
+    .section-2 .hero-text { font-size: 32px; }
+    .section-2 { aspect-ratio: 4 / 5; min-height: 380px; }
+    .section-9 h2 { font-size: 20px; }
+    .section-10 .typography-row .logo-sample { font-size: 30px; letter-spacing: 2px; }
+    .section-10 .typography-row .cinzel-sample { font-size: 17px; }
+    .section-10 .text-row .inter-sample { font-size: 16px; letter-spacing: 1px; }
   }
 
 </style>
