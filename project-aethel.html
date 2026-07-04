@@ -170,9 +170,6 @@
     font-size: 16px;
     margin-bottom: 12px;
   }
-  /* Invisible placeholder title in columns 2 & 3 so their
-     paragraph text lines up with column 1's paragraph
-     (which sits below a visible "Key Findings:" title). */
   .section-5 .finding .title-spacer {
     visibility: hidden;
     font-family: var(--font-sora);
@@ -202,7 +199,7 @@
      ============================================ */
   .section-7 {
     width: 100%;
-    padding: 60px;
+    padding: 60px 120px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
@@ -210,7 +207,7 @@
     justify-items: center;
   }
   .section-7 img {
-    width: 80%;
+    width: 55%;
     height: auto;
     display: block;
     object-fit: cover;
@@ -265,8 +262,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
-    padding: 0 40px;
+    gap: 14px;
+    padding: 0 16px;
   }
   .section-9 .wf-col {
     flex: 1 1 0;
@@ -281,31 +278,30 @@
   .section-9 .wf-before h3 { padding-left: 12%; }
   .section-9 .wf-after h3 { text-align: right; padding-right: 12%; }
 
-  /* All wireframe images share one fixed box size, so every
-     image is exactly equal size. object-fit:contain (instead
-     of cover) means the whole photo shows inside that box
-     with no cropping — if a photo's proportions don't match
-     the box exactly, it simply fits inside with a little
-     breathing room rather than getting cut off. */
+  /* Images enlarged (~1.3x) from the previous pass. Pushing
+     all the way to a full 1.5x would force the zigzag offset
+     to shrink to almost nothing (or the images would overlap
+     each other / the arrow), so this is the largest size that
+     keeps the staggered layout intact without overlap. */
   .section-9 .wf-before img,
   .section-9 .wf-after img {
-    width: 65%;
+    width: 85%;
     aspect-ratio: 4 / 3;
     object-fit: contain;
     margin-bottom: 24px;
   }
-  .section-9 .wf-before .wf-img-1 { margin-left: 5%; }
-  .section-9 .wf-before .wf-img-2 { margin-left: 30%; }
-  .section-9 .wf-before .wf-img-3 { margin-left: 5%; }
+  .section-9 .wf-before .wf-img-1 { margin-left: 2%; }
+  .section-9 .wf-before .wf-img-2 { margin-left: 13%; }
+  .section-9 .wf-before .wf-img-3 { margin-left: 2%; }
 
   .section-9 .wf-after {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
   }
-  .section-9 .wf-after .wf-img-1 { margin-right: 5%; }
-  .section-9 .wf-after .wf-img-2 { margin-right: 30%; }
-  .section-9 .wf-after .wf-img-3 { margin-right: 5%; }
+  .section-9 .wf-after .wf-img-1 { margin-right: 2%; }
+  .section-9 .wf-after .wf-img-2 { margin-right: 13%; }
+  .section-9 .wf-after .wf-img-3 { margin-right: 2%; }
 
   .section-9 .wf-arrow {
     font-size: 40px;
@@ -315,8 +311,6 @@
 
   /* ============================================
      SECTION 10 — Color / Typography / Type sample
-     Displayed as 3 side-by-side columns on desktop,
-     stacking to 1 column on mobile (see media query).
      ============================================ */
   .section-10 {
     width: 100%;
@@ -331,7 +325,7 @@
   .section-10 .row-title {
     font-family: var(--font-sora);
     font-size: 18px;
-    font-weight: 120;
+    font-weight: 500;
     margin-bottom: 30px;
   }
 
@@ -355,6 +349,14 @@
   .section-10 .swatch p { font-family: var(--font-sora); font-size: 14px; line-height: 1.5; }
   .section-10 .swatch p.hex { font-weight: 600; margin-bottom: 4px; }
 
+  /* Middle column centered so the whitespace on its left
+     (next to Color Palette) and right (next to Text) reads
+     as the same amount of space, instead of the leftover
+     space just piling up on whichever side its short lines
+     of text don't reach. */
+  .section-10 .typography-row {
+    text-align: center;
+  }
   .section-10 .typography-row p.label {
     font-family: var(--font-sora);
     font-size: 16px;
@@ -375,6 +377,7 @@
     font-family: var(--font-inter);
     font-size: 16px;
     letter-spacing: 1px;
+    max-width: 260px; /* forces the alphabet to wrap onto a few lines */
     word-break: break-word;
   }
 
@@ -417,14 +420,9 @@
     .section-1 { height: 64px; }
     .section-1 h1 { font-size: 18px; }
 
-    /* Hero: switched from aspect-ratio to the classic
-       "padding-bottom percentage" technique. This is
-       supported by every browser (even older mobile
-       ones) and reliably sizes the box even though the
-       image and overlay inside are position:absolute. */
     .section-2 {
       height: 0;
-      padding-bottom: 133%; /* roughly a 3:4 ratio */
+      padding-bottom: 133%;
       min-height: 0;
     }
     .section-2 .hero-text { font-size: 44px; }
@@ -462,7 +460,7 @@
     }
     .section-9 .wf-before img,
     .section-9 .wf-after img {
-      width: 75%;
+      width: 90%;
       margin-left: auto !important;
       margin-right: auto !important;
     }
@@ -470,6 +468,8 @@
     .section-9 .wf-arrow { transform: rotate(90deg); margin: 20px 0; }
 
     .section-10 .section-10-grid { grid-template-columns: 1fr; gap: 50px; }
+    .section-10 .typography-row { text-align: left; }
+    .section-10 .text-row .inter-sample { max-width: none; }
 
     .section-11 { height: auto; aspect-ratio: 1440 / 694; }
     .section-12 { height: auto; aspect-ratio: 1440 / 703; }
@@ -481,7 +481,7 @@
   @media (max-width: 480px) {
     .section-1 h1 { font-size: 15px; }
     .section-2 .hero-text { font-size: 32px; }
-    .section-2 { padding-bottom: 125%; } /* roughly a 4:5 ratio */
+    .section-2 { padding-bottom: 125%; }
     .section-9 h2 { font-size: 20px; }
     .section-10 .typography-row .logo-sample { font-size: 30px; letter-spacing: 2px; }
     .section-10 .typography-row .cinzel-sample { font-size: 17px; }
