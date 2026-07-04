@@ -20,6 +20,7 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 /* NAVBAR */
@@ -36,9 +37,9 @@ body {
     overflow: visible; 
 }
 
-.logo { font-size: 16px; font-weight: 130; letter-spacing: 1px; }
+.logo { font-size: 16px; font-weight: 130; letter-spacing: 1px; white-space: nowrap; }
 .nav-links { display: flex; gap: 40px; font-size: 14px; font-weight: 130; letter-spacing: 0.5px; height: 100%; align-items: center; }
-.nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; position: relative; height: 100%; display: flex; align-items: center; }
+.nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; position: relative; height: 100%; display: flex; align-items: center; white-space: nowrap; }
 
 /* DROPDOWN */
 .dropdown {
@@ -75,7 +76,7 @@ body {
 .hero-text p { margin: 18px 0 0; font-size: 13px; font-weight: 300; letter-spacing: .30em; text-transform: uppercase; opacity: .95; }
 
 /* CONTAINER & GRID */
-.container { flex: 1; max-width: 1100px; margin: 0 auto; padding: 55px 24px 70px; }
+.container { flex: 1; max-width: 1100px; margin: 0 auto; padding: 55px 24px 70px; width: 100%; box-sizing: border-box; }
 .section-title { margin: 20px 0 32px; font-size: 12px; letter-spacing: 2px; opacity: 0.5; }
 .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 .project { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 525 / 409; background: #fff; border: 1px solid rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: 0.3s ease; }
@@ -91,10 +92,46 @@ body {
 .about-text { font-size: 24px; line-height: 1.8; font-weight: 120; letter-spacing: .02em; color: #222; }
 
 /* FOOTER */
-.footer { padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid #E6D99C; background: #F8F5F1; }
+.footer { padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid #E6D99C; background: #F8F5F1; box-sizing: border-box; }
 .footer-col h4 { font-size: 14px; text-transform: uppercase; margin-bottom: 20px; }
 .footer-col a { display: block; color: #1a1a1a; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
 .social-icons { display: flex; gap: 15px; }
+
+
+/* ============================================
+   RESPONSIVE — tablets and phones (≤768px)
+   Same layout/structure throughout — only sizes,
+   spacing, and column counts adjust so nothing
+   overflows or gets crushed on a small screen.
+   ============================================ */
+@media (max-width: 768px) {
+
+  body { border-width: 8px; }
+
+  .navbar { padding: 0 16px; }
+  .logo { font-size: 12px; }
+  .nav-links { gap: 18px; font-size: 12px; }
+
+  .hero { height: 0; padding-bottom: 100%; } /* square-ish on phones, avoids mobile vh issues */
+  .hero-text { left: 6%; right: 6%; max-width: none; }
+  .hero-text h1 { font-size: 34px; letter-spacing: .08em; }
+  .hero-text p { font-size: 10px; letter-spacing: .18em; margin-top: 12px; }
+
+  .container { padding: 40px 20px 50px; }
+  .grid { grid-template-columns: 1fr; gap: 20px; }
+
+  .about-section { margin: 60px auto 50px; }
+  .about-text { font-size: 18px; line-height: 1.7; }
+
+  .footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
+}
+
+@media (max-width: 420px) {
+  .logo { font-size: 11px; }
+  .nav-links { gap: 12px; font-size: 11px; }
+  .hero-text h1 { font-size: 26px; }
+  .about-text { font-size: 16px; }
+}
 
 </style>
 </head>
@@ -119,7 +156,7 @@ body {
 
 <div class="hero">
     <div class="hero-overlay"></div>
-    <img class="hero-img" src="lemonhero.png">
+    <img class="hero-img" src="lemon-cover.webp">
     <div class="hero-text">
         <h1>ORNELLA DINA DELIA</h1>
         <p>UI/UX DESIGNER · VISUAL STORYTELLER · CREATIVE DESIGNER</p>
@@ -129,10 +166,10 @@ body {
 <div class="container">
     <div class="section-title">SELECTED WORK</div>
     <div class="grid">
-        <a href="project-aethel.html" class="project"><img src="Untitled.jpg"><div class="label"><span>UI/UX</span> AETHEL</div></a>
-        <a href="project-haven.html" class="project"><img src="havenpackageforgirl.png"><div class="label"><span>Branding/ Packaging</span> HAVEN</div></a>
-        <a href="project-moonhive.html" class="project"><img src="businesscardmoonhive.png"><div class="label"><span>Branding/ Web Design</span> MOONHIVE</div></a>
-        <a href="project-illumix.html" class="project"><img src="illumixcover.png"><div class="label"><span>UI/ Web Design</span> ILLUMIX</div></a>
+        <a href="project-aethel.html" class="project"><img src="aethel-display2.webp"><div class="label"><span>UI/UX</span> AETHEL</div></a>
+        <a href="project-haven.html" class="project"><img src="haven-package-girl.webp"><div class="label"><span>Branding/ Packaging</span> HAVEN</div></a>
+        <a href="project-moonhive.html" class="project"><img src="moonhive-bc.webp"><div class="label"><span>Branding/ Web Design</span> MOONHIVE</div></a>
+        <a href="project-illumix.html" class="project"><img src="illumix-cover.webp"><div class="label"><span>UI/ Web Design</span> ILLUMIX</div></a>
     </div>
 
     <div class="about-section">
