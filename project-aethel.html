@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +37,12 @@
     background: #fff;
     width: 100%;
     overflow-x: hidden;
+    /* Shared site frame — matches index.html / about.html */
+    border: 12px solid #E6D99C;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
   }
 
   img { display: block; max-width: 100%; height: auto; }
@@ -46,6 +54,59 @@
     font-size: 16px;
     line-height: 1.6;
   }
+
+  /* ============================================
+     SHARED NAVBAR / FOOTER LOOK
+     (same as index.html / about.html — the burger
+     menu behavior itself lives inside header.html)
+     ============================================ */
+  .navbar {
+    width: 100%;
+    height: 45px;
+    background-color: #FFFCEF;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 10000;
+    overflow: visible;
+    font-family: "Sora", sans-serif;
+  }
+  .logo { font-size: 16px; font-weight: 130; letter-spacing: 1px; white-space: nowrap; }
+  .nav-links { display: flex; gap: 40px; font-size: 14px; font-weight: 130; letter-spacing: 0.5px; height: 100%; align-items: center; }
+  .nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; position: relative; height: 100%; display: flex; align-items: center; white-space: nowrap; }
+
+  .dropdown {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFFCEF;
+    border: 2px solid #E6D99C;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 160px;
+    z-index: 10001;
+    border-radius: 4px;
+  }
+  .nav-item:hover .dropdown { display: flex; }
+  .dropdown a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+  }
+  .dropdown a:hover { background-color: #E6D99C; color: #FFFCEF; }
+
+  .footer { padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid #E6D99C; background: #F8F5F1; box-sizing: border-box; font-family: "Sora", sans-serif; }
+  .footer-col h4 { font-size: 14px; text-transform: uppercase; margin-bottom: 20px; }
+  .footer-col a { display: block; color: #1a1a1a; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
+  .social-icons { display: flex; gap: 15px; align-items: center; }
 
   /* ============================================
      SECTION 1 — Title bar
@@ -77,6 +138,7 @@
     height: 70vh;
     min-height: 500px;
     overflow: hidden;
+    background-color: var(--burgundy);
   }
   .section-2 .hero-img {
     position: absolute;
@@ -91,16 +153,22 @@
     background-color: var(--burgundy);
     opacity: 0.1;
   }
+  /* hero-text is now position:absolute + inset:0 (instead of
+     relying on height:100% of its parent) so it always centers
+     correctly no matter which sizing technique the parent uses
+     at different screen widths — this is what fixes the text
+     drifting up / disappearing on mobile. */
   .section-2 .hero-text {
-    position: relative;
+    position: absolute;
+    inset: 0;
     z-index: 2;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-family: var(--font-cinzel);
     font-size: 80px;
+    line-height: 1.05;
     color: var(--off-white);
     padding: 0 20px;
   }
@@ -190,7 +258,7 @@
     justify-content: center;
   }
   .section-6 img {
-    width: 98%;
+    width: 90%;
     height: auto;
   }
 
@@ -207,7 +275,7 @@
     justify-items: center;
   }
   .section-7 img {
-    width: 70%;
+    width: 85%;
     height: auto;
     display: block;
     object-fit: cover;
@@ -222,7 +290,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: center;
+    align-items: start; /* top-aligned instead of centered, so the image top lines up with the text top */
   }
   .section-8 .principles h2 {
     font-family: var(--font-sora);
@@ -278,30 +346,25 @@
   .section-9 .wf-before h3 { padding-left: 12%; }
   .section-9 .wf-after h3 { text-align: right; padding-right: 12%; }
 
-  /* Images enlarged (~1.3x) from the previous pass. Pushing
-     all the way to a full 1.5x would force the zigzag offset
-     to shrink to almost nothing (or the images would overlap
-     each other / the arrow), so this is the largest size that
-     keeps the staggered layout intact without overlap. */
   .section-9 .wf-before img,
   .section-9 .wf-after img {
-    width: 85%;
+    width: 90%;
     aspect-ratio: 4 / 3;
     object-fit: contain;
     margin-bottom: 24px;
   }
-  .section-9 .wf-before .wf-img-1 { margin-left: 2%; }
-  .section-9 .wf-before .wf-img-2 { margin-left: 13%; }
-  .section-9 .wf-before .wf-img-3 { margin-left: 2%; }
+  .section-9 .wf-before .wf-img-1 { margin-left: 1%; }
+  .section-9 .wf-before .wf-img-2 { margin-left: 8%; }
+  .section-9 .wf-before .wf-img-3 { margin-left: 1%; }
 
   .section-9 .wf-after {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
   }
-  .section-9 .wf-after .wf-img-1 { margin-right: 2%; }
-  .section-9 .wf-after .wf-img-2 { margin-right: 13%; }
-  .section-9 .wf-after .wf-img-3 { margin-right: 2%; }
+  .section-9 .wf-after .wf-img-1 { margin-right: 1%; }
+  .section-9 .wf-after .wf-img-2 { margin-right: 8%; }
+  .section-9 .wf-after .wf-img-3 { margin-right: 1%; }
 
   .section-9 .wf-arrow {
     font-size: 40px;
@@ -319,7 +382,7 @@
   .section-10 .section-10-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 60px;
+    gap: 60px; /* equal gap between every column, regardless of text alignment */
     align-items: start;
   }
   .section-10 .row-title {
@@ -349,13 +412,8 @@
   .section-10 .swatch p { font-family: var(--font-sora); font-size: 14px; line-height: 1.5; }
   .section-10 .swatch p.hex { font-weight: 600; margin-bottom: 4px; }
 
-  /* Middle column centered so the whitespace on its left
-     (next to Color Palette) and right (next to Text) reads
-     as the same amount of space, instead of the leftover
-     space just piling up on whichever side its short lines
-     of text don't reach. */
   .section-10 .typography-row {
-    text-align: center;
+    text-align: left;
   }
   .section-10 .typography-row p.label {
     font-family: var(--font-sora);
@@ -377,7 +435,7 @@
     font-family: var(--font-inter);
     font-size: 16px;
     letter-spacing: 1px;
-    max-width: 260px; /* forces the alphabet to wrap onto a few lines */
+    max-width: 260px;
     word-break: break-word;
   }
 
@@ -404,6 +462,10 @@
      ============================================ */
   @media (max-width: 900px) {
 
+    body { border-width: 8px; }
+    .navbar { padding: 0 16px; }
+    .logo { font-size: 12px; }
+
     .section-4,
     .section-5,
     .section-6,
@@ -425,7 +487,11 @@
       padding-bottom: 133%;
       min-height: 0;
     }
-    .section-2 .hero-text { font-size: 44px; }
+    /* Show the whole photo instead of cropping it to fill a
+       tall mobile box — the burgundy background fills in
+       any leftover space around the image. */
+    .section-2 .hero-img { object-fit: contain; }
+    .section-2 .hero-text { font-size: 32px; }
 
     .section-4 .grid-2col { grid-template-columns: 1fr; }
     .section-4 .col-text { text-align: left; padding: 0 0 32px 0; }
@@ -436,14 +502,22 @@
 
     .section-5 .row-2 { grid-template-columns: 1fr; }
 
+    /* Full width, framed with a thick burgundy border instead
+       of just shrinking the image down inside a lot of padding */
+    .section-6 { padding-left: 0; padding-right: 0; }
+    .section-6 img {
+      width: 100%;
+      border: 14px solid var(--burgundy);
+    }
+
     .section-7 {
       grid-template-columns: 1fr;
       justify-items: center;
       gap: 32px;
     }
     .section-7 img {
-      width: 100%;
-      max-width: 400px;
+      width: 60%;
+      max-width: 220px;
     }
 
     .section-8 { grid-template-columns: 1fr; }
@@ -468,7 +542,6 @@
     .section-9 .wf-arrow { transform: rotate(90deg); margin: 20px 0; }
 
     .section-10 .section-10-grid { grid-template-columns: 1fr; gap: 50px; }
-    .section-10 .typography-row { text-align: left; }
     .section-10 .text-row .inter-sample { max-width: none; }
 
     .section-11 { height: auto; aspect-ratio: 1440 / 694; }
@@ -480,17 +553,20 @@
      ============================================ */
   @media (max-width: 480px) {
     .section-1 h1 { font-size: 15px; }
-    .section-2 .hero-text { font-size: 32px; }
+    .section-2 .hero-text { font-size: 24px; }
     .section-2 { padding-bottom: 125%; }
     .section-9 h2 { font-size: 20px; }
     .section-10 .typography-row .logo-sample { font-size: 30px; letter-spacing: 2px; }
     .section-10 .typography-row .cinzel-sample { font-size: 17px; }
     .section-10 .text-row .inter-sample { font-size: 16px; letter-spacing: 1px; }
+    .footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
   }
 
 </style>
 </head>
 <body>
+
+{% include header.html %}
 
   <!-- SECTION 1: Title bar -->
   <section class="section-1">
@@ -636,6 +712,8 @@
 
   <!-- SECTION 12: Full-width display image -->
   <section class="section-12"></section>
+
+{% include footer.html %}
 
 </body>
 </html>
