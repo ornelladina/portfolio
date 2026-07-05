@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Case Study: Profix Handyman Services</title>
 
-<!-- Google Fonts: Inter and Sora -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -20,32 +19,52 @@
     --font-inter: 'Inter', sans-serif;
   }
 
-  /* Global Body */
-  body { 
-    margin: 0; background: #fff; color: var(--dark-grey); 
-    font-family: var(--font-sora); border: 12px solid var(--accent-gold);
-    min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; 
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--off-white);
+    color: #1a1a1a;
+    font-family: var(--font-sora);
+    border: 12px solid var(--accent-gold);
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
   }
 
-  /* Navbar Styles */
-  .navbar { width: 100%; height: 45px; background-color: #FFFCEF; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 10000; }
+  /* NAVBAR */
+  .navbar {
+    width: 100%;
+    height: 45px;
+    background-color: #FFFCEF;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 10000;
+  }
   .logo { font-size: 16px; font-weight: 500; letter-spacing: 1px; }
   .nav-links { display: flex; gap: 40px; font-size: 14px; align-items: center; }
-  .nav-item { cursor: pointer; color: #1a1a1a; text-decoration: none; }
+  .nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; }
 
-  /* Case Study Styles */
+  /* CASE STUDY SECTIONS */
   .section-1 { background-color: var(--dark-grey); height: 80px; display: flex; align-items: center; justify-content: center; color: white; }
+  
   .section-2 { position: relative; width: 100%; height: 60vh; overflow: hidden; background: #000; }
   .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
   .hero-text { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-family: var(--font-sora); font-size: 48px; text-align: center; }
+
   .container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; font-family: var(--font-inter); }
   .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-  .section-mockup { padding: 60px 20px; background: var(--off-white); text-align: center; }
-  .section-mockup img { max-width: 800px; width: 100%; margin: 0 auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+  
+  .section-mockup { padding: 60px 20px; background: white; text-align: center; }
+  .section-mockup img { max-width: 800px; width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+  
   h2 { font-family: var(--font-sora); margin-bottom: 20px; color: var(--brand-teal); }
 
-  /* Footer Styles */
+  /* FOOTER */
   .footer { padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid var(--accent-gold); background: var(--off-white); }
   .footer-col h4 { font-size: 14px; text-transform: uppercase; margin-bottom: 20px; }
   .footer-col a { display: block; color: #1a1a1a; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
@@ -59,7 +78,6 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">PROFIX</div>
     <div class="nav-links">
@@ -68,7 +86,6 @@
     </div>
   </nav>
 
-  <!-- Page Content -->
   <section class="section-1">
     <h1>Case Study: Profix Handyman Services CA</h1>
   </section>
@@ -78,30 +95,33 @@
     <div class="hero-text">RELIABLE REPAIRS, ELEVATED.</div>
   </section>
 
-  <div class="container">
+  <section class="container">
     <div class="grid-2col">
       <div>
         <h2>Project Overview</h2>
-        <p>Profix Handyman Services provides professional home maintenance and repair solutions in Orange County. The objective was to create a digital storefront that builds instant trust.</p>
+        <p>Profix Handyman Services provides professional home maintenance and repair solutions in Orange County. The objective was to create a digital storefront that builds instant trust and streamlines the lead generation process.</p>
       </div>
       <div>
         <h2>Design Strategy</h2>
-        <p>Focused on "conversion-first" design. By utilizing high-contrast call-to-actions and service-oriented imagery, the site bridges the gap between a browser and a booked client.</p>
+        <p>Focused on "conversion-first" design. By utilizing high-contrast call-to-actions and service-oriented imagery, the site bridges the gap between a casual browser and a booked client.</p>
       </div>
     </div>
-  </div>
+  </section>
 
   <section class="section-mockup">
-    <h2>Interface Design</h2>
+    <h2>Mobile & Desktop Interface</h2>
     <img src="Gemini_Generated_Image_qvwdceqvwdceqvwd.png" alt="Profix Laptop Mockup">
   </section>
 
   <section class="container">
-    <h2>Project Gallery</h2>
-    <p>We implemented a clean gallery system to showcase transformations like those in Screen Shot 2026-06-29 at 5.55.02 PM.png and Screen Shot 2026-06-29 at 5.55.06 PM.png.</p>
+    <h2>Project Gallery Approach</h2>
+    <p>To showcase expertise, we implemented a clean, card-based gallery system. This allows customers to view "Before & After" transformations like the ones found in Screen Shot 2026-06-29 at 5.55.02 PM.png and Screen Shot 2026-06-29 at 5.55.06 PM.png.</p>
   </section>
 
-  <!-- Footer -->
+  <section class="section-mockup">
+    <img src="Screen Shot 2026-06-29 at 6.15.06 PM.png" alt="Project Details">
+  </section>
+
   <footer class="footer">
     <div class="footer-col"><h4>Profix</h4><p>Handyman Services CA</p></div>
     <div class="footer-col"><h4>Navigation</h4><a href="#">Home</a><a href="#">Projects</a></div>
