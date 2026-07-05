@@ -247,19 +247,19 @@
   }
 
   /* ============================================
-     SECTION 6 — Background color, centered image
+     SECTION 6 — Full-width image with a thick
+     burgundy border (no separate background block)
      ============================================ */
   .section-6 {
-    background-color: var(--burgundy);
     width: 100%;
-    padding: 100px 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0;
   }
   .section-6 img {
-    width: 90%;
+    width: 100%;
     height: auto;
+    display: block;
+    border: 20px solid var(--burgundy);
+    box-sizing: border-box;
   }
 
   /* ============================================
@@ -470,7 +470,6 @@
 
     .section-4,
     .section-5,
-    .section-6,
     .section-7,
     .section-8,
     .section-9,
@@ -486,31 +485,22 @@
 
     .section-2 {
       height: 0;
-      padding-bottom: 133%;
+      padding-bottom: 85%; /* shorter box than before, keeps it closer to section 4 */
       min-height: 0;
     }
-    /* Show the whole photo instead of cropping it to fill a
-       tall mobile box — the burgundy background fills in
-       any leftover space around the image. */
-    .section-2 .hero-img { object-fit: contain; }
     .section-2 .hero-text { font-size: 32px; }
 
     .section-4 .grid-2col { grid-template-columns: 1fr; }
     .section-4 .col-text { text-align: left; padding: 0 0 32px 0; }
     .section-4 .col-image img {
-      width: 100%;
-      max-width: 400px;
+      width: 60%;
+      max-width: 220px;
     }
 
     .section-5 .row-2 { grid-template-columns: 1fr; }
 
-    /* Full width, framed with a thick burgundy border instead
-       of just shrinking the image down inside a lot of padding */
-    .section-6 { padding-left: 0; padding-right: 0; }
-    .section-6 img {
-      width: 100%;
-      border: 14px solid var(--burgundy);
-    }
+    /* Thinner border on small screens, still full width */
+    .section-6 img { border-width: 14px; }
 
     .section-7 {
       grid-template-columns: 1fr;
@@ -536,7 +526,7 @@
     }
     .section-9 .wf-before img,
     .section-9 .wf-after img {
-      width: 90%;
+      width: 100%;
       margin-left: auto !important;
       margin-right: auto !important;
     }
@@ -544,7 +534,7 @@
     .section-9 .wf-arrow { transform: rotate(90deg); margin: 20px 0; }
 
     .section-10 .section-10-grid { grid-template-columns: 1fr; gap: 50px; }
-    .section-10 .text-row .inter-sample { max-width: none; }
+    .section-10 .text-row .inter-sample { max-width: 220px; }
 
     .section-12 { height: auto; aspect-ratio: 1440 / 703; }
   }
@@ -555,7 +545,7 @@
   @media (max-width: 480px) {
     .section-1 h1 { font-size: 15px; }
     .section-2 .hero-text { font-size: 24px; }
-    .section-2 { padding-bottom: 125%; }
+    .section-2 { padding-bottom: 80%; }
     .section-9 h2 { font-size: 20px; }
     .section-10 .typography-row .logo-sample { font-size: 30px; letter-spacing: 2px; }
     .section-10 .typography-row .cinzel-sample { font-size: 17px; }
@@ -638,7 +628,6 @@
 
   <!-- SECTION 8: Design principles -->
   <section class="section-8">
-    <img src="aethel-display3.webp" alt="Aethel display 3">
     <div class="principles">
       <h2>VISUAL DESIGN PRINCIPLES</h2>
       <p><strong>Visual Hierarchy</strong>A clear, tiered layout guides the user's eye from the brand identity to product details, ensuring the most essential information is prioritized for seamless navigation.</p>
@@ -647,6 +636,7 @@
       <p><strong>Color Contrast &amp; Mood</strong>The dark-toned palette evokes sophistication and luxury, while carefully balanced light-colored typography ensures that primary calls to action remain accessible and legible.</p>
       <p><strong>Proximity &amp; Grouping</strong>Related elements, such as pricing and action buttons, are grouped together to reduce cognitive load, helping users intuitively understand the interface at a glance.</p>
     </div>
+    <img src="aethel-display3.webp" alt="Aethel display 3">
   </section>
 
   <!-- SECTION 9: Wireframing, Before/After zigzag -->
