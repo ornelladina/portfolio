@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -138,21 +140,7 @@ body {
 
 <body>
 
-<div class="navbar">
-    <div class="logo">✦ ORNELLA DINA DELIA</div>
-    <div class="nav-links">
-        <div class="nav-item">Projects
-            <div class="dropdown">
-                <a href="project-haven.html">Haven Campaign</a>
-                <a href="project-aethel.html">Aethel Shopping App</a>
-                <a href="project-illumix.html">Illumix</a>
-                <a href="project-moonhive.html">MoonHive</a>
-            </div>
-        </div>
-        <a class="nav-item" href="#">Gallery</a>
-        <a class="nav-item" href="#">About</a>
-    </div>
-</div>
+{% include header.html %}
 
 <div class="hero">
     <div class="hero-overlay"></div>
@@ -178,23 +166,7 @@ body {
     </div>
 </div>
 
-<footer class="footer">
-    <div class="footer-col">
-        <h4>Contact Info</h4>
-        <p>ornelladelia0@gmail.com<br>Tel: +961 76441543</p>
-    </div>
-    <div class="footer-col">
-        <h4>Menu</h4>
-        <a href="index.html">Selected work</a>
-        <a href="#">About</a>
-        <a href="#">Privacy policy</a>
-        <a href="#">Accessibility Statement</a>
-    </div>
-    <div class="footer-col social-icons">
-        <a href="#">Behance</a>
-        <a href="#">LinkedIn</a>
-    </div>
-</footer>
+ {% include footer.html %}
 
 </body>
 </html>
