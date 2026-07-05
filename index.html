@@ -97,7 +97,7 @@ body {
 .footer { padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid #E6D99C; background: #F8F5F1; box-sizing: border-box; }
 .footer-col h4 { font-size: 14px; text-transform: uppercase; margin-bottom: 20px; }
 .footer-col a { display: block; color: #1a1a1a; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
-.social-icons { display: flex; gap: 15px; }
+.social-icons { display: flex; gap: 15px; align-items: center; }
 
 
 /* ============================================
@@ -152,7 +152,7 @@ body {
 </div>
 
 <div class="container">
-    <div class="section-title">SELECTED WORK</div>
+    <div class="section-title" id="selected-work">SELECTED WORK</div>
     <div class="grid">
         <a href="project-aethel.html" class="project"><img src="aethel-display2.webp"><div class="label"><span>UI/UX</span> AETHEL</div></a>
         <a href="project-haven.html" class="project"><img src="haven-package-girl.webp"><div class="label"><span>Branding/ Packaging</span> HAVEN</div></a>
@@ -166,7 +166,7 @@ body {
     </div>
 </div>
 
- {% include footer.html %}
+{% include footer.html %}
 
 </body>
 </html>
