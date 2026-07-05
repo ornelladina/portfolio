@@ -1,7 +1,13 @@
 <div class="navbar">
-    <div class="logo">✦ ORNELLA DINA DELIA</div>
-    <div class="nav-links">
-        <div class="nav-item">Projects
+    <a href="index.html" class="logo">✦ ORNELLA DINA DELIA</a>
+
+    <button class="burger" id="burgerBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
+        <div class="nav-item" id="projectsItem">
+            Projects
             <div class="dropdown">
                 <a href="project-haven.html">Haven Campaign</a>
                 <a href="project-aethel.html">Aethel Shopping App</a>
@@ -9,7 +15,101 @@
                 <a href="project-moonhive.html">MoonHive</a>
             </div>
         </div>
-        <a class="nav-item" href="#">Gallery</a>
-        <a class="nav-item" href="#">About</a>
+        <a class="nav-item" href="about.html">About</a>
     </div>
 </div>
+
+<style>
+  /* Reset default link styling on the logo now that it's clickable */
+  .logo { text-decoration: none; color: inherit; }
+
+  .navbar { position: relative; }
+
+  /* Burger icon — hidden on desktop, shown only on mobile below */
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  .burger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .burger { display: flex; }
+
+    /* Nav links become a dropdown panel triggered by the burger,
+       instead of sitting inline next to the logo */
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 45px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      height: auto;
+      background: #FFFCEF;
+      border-bottom: 2px solid #E6D99C;
+      padding: 10px 20px 16px;
+    }
+    .nav-links.open { display: flex; }
+
+    .nav-item {
+      height: auto;
+      width: 100%;
+      padding: 12px 0;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    /* The Projects dropdown becomes part of the burger panel
+       instead of a hover flyout, and only opens on tap */
+    .nav-item:hover .dropdown { display: none; }
+    .dropdown {
+      position: static;
+      display: none;
+      border: none;
+      padding: 8px 0 0 14px;
+      min-width: 0;
+      width: 100%;
+    }
+    .nav-item.dropdown-open .dropdown { display: flex !important; }
+  }
+</style>
+
+<script>
+(function () {
+  var burger = document.getElementById('burgerBtn');
+  var navLinks = document.getElementById('navLinks');
+  var projectsItem = document.getElementById('projectsItem');
+
+  burger.addEventListener('click', function () {
+    navLinks.classList.toggle('open');
+  });
+
+  projectsItem.addEventListener('click', function () {
+    if (window.innerWidth <= 768) {
+      projectsItem.classList.toggle('dropdown-open');
+    }
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove('open');
+      projectsItem.classList.remove('dropdown-open');
+    }
+  });
+})();
+</script>
