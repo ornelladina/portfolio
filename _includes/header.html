@@ -85,6 +85,8 @@
     .nav-item:hover .dropdown { display: none; }
     .dropdown {
       position: static;
+      left: auto;
+      transform: none; /* cancels the desktop centering transform, which was shoving this off-screen on mobile */
       display: none;
       border: none;
       padding: 8px 0 0 14px;
@@ -92,6 +94,19 @@
       width: 100%;
     }
     .nav-item.dropdown-open .dropdown { display: flex !important; }
+
+    /* Remove the default blue tap-highlight flash on mobile —
+       taps now just show the same champagne hover color */
+    .nav-item,
+    .dropdown a,
+    .burger,
+    .logo {
+      -webkit-tap-highlight-color: transparent;
+    }
+    .dropdown a:active {
+      background-color: #E6D99C;
+      color: #FFFCEF;
+    }
   }
 </style>
 
