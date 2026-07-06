@@ -18,3 +18,363 @@ body {
     min-height: 100vh;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    height: 45px;
+    background-color: #FFFCEF;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 10000;
+    overflow: visible;
+}
+.logo { font-size: 16px; font-weight: 130; letter-spacing: 1px; white-space: nowrap; text-decoration: none; color: #1a1a1a; }
+.nav-links { display: flex; gap: 40px; font-size: 14px; font-weight: 130; letter-spacing: 0.5px; height: 100%; align-items: center; }
+.nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; position: relative; height: 100%; display: flex; align-items: center; white-space: nowrap; }
+.dropdown {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFFCEF;
+    border: 2px solid #E6D99C;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 160px;
+    z-index: 10001;
+    border-radius: 4px;
+}
+.nav-item:hover .dropdown { display: flex; }
+.dropdown a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+.dropdown a:hover { background-color: #E6D99C; color: #FFFCEF; }
+
+/* FOOTER */
+.footer { padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid #E6D99C; background: #F8F5F1; box-sizing: border-box; }
+.footer-col h4 { font-size: 14px; text-transform: uppercase; margin-bottom: 20px; }
+.footer-col a { display: block; color: #1a1a1a; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
+.social-icons { display: flex; gap: 15px; align-items: center; }
+.social-icons a { color: #1a1a1a; text-decoration: none; font-size: 14px; }
+
+/* ============================================
+   MOONHIVE-SPECIFIC FONTS
+   ============================================ */
+@font-face {
+  font-family: 'Magensburg';
+  src: url('fonts/Magensburg.woff2') format('woff2'),
+       url('fonts/Magensburg.ttf') format('truetype');
+  font-display: swap;
+}
+.font-magensburg { font-family: 'Magensburg', serif; }
+.font-quattrocento { font-family: 'Quattrocento', serif; }
+.font-instrument { font-family: 'Instrument Sans', sans-serif; }
+
+.mh-title {
+  font-family: "Sora", sans-serif;
+  font-weight: 300;
+  font-variation-settings: 'wght' 130;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+.mh-text {
+  font-family: "Sora", sans-serif;
+  font-weight: 300;
+  font-variation-settings: 'wght' 120;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* SECTION 0 — Page header */
+.section-0 {
+  background-color: #FDF9EE;
+  width: 100%;
+  padding: 50px 31px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.section-0 h1 {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+/* SECTION 1 — Full-width hero image */
+.section-1 { width: 100%; line-height: 0; }
+.section-1 img { width: 100%; height: auto; display: block; }
+
+/* SECTION 2 — Two columns: mission text + logo image */
+.section-2 {
+  width: 100%;
+  padding: 90px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  box-sizing: border-box;
+}
+.section-2 .col-image img {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* SECTION 3 — Three columns: typography, palette, brand DNA */
+.section-3 {
+  background-color: #FDF9EE;
+  width: 100%;
+  padding: 90px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+  box-sizing: border-box;
+}
+.section-3 .mh-text p { margin-bottom: 10px; }
+.section-3 .col-palette img,
+.section-3 .col-dna img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.section-3 .col-palette img { max-width: 255px; } /* 1.5x the original 170px */
+.section-3 .col-dna img { max-width: 220px; }
+
+/* SECTION 4 — Packaging: text + two side-by-side images, zoomed out */
+.section-4 {
+  width: 100%;
+  padding: 90px 60px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+  box-sizing: border-box;
+}
+.section-4 .col-images {
+  display: flex;
+  gap: 20px;
+  min-width: 0;
+}
+.section-4 .img-box {
+  width: 50%;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F8F5F1;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.section-4 .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* SECTION 5 — Two full-bleed images side by side, 31px margins */
+.section-5 {
+  width: 100%;
+  padding: 0 31px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #F8F5F1;
+}
+.section-5 > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.section-5 .col-bc {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F8F5F1;
+  padding: 40px;
+  box-sizing: border-box;
+}
+.section-5 .col-bc img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* SECTION 6 — Centered logo mark */
+.section-6 {
+  background-color: #FDF9EE;
+  width: 100%;
+  padding: 60px 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.section-6 img {
+  height: 100px;
+  width: auto;
+  max-width: 90%;
+  object-fit: contain;
+}
+
+/* RESPONSIVE — tablets and phones */
+@media (max-width: 768px) {
+  body { border-width: 8px; }
+  .navbar { padding: 0 16px; }
+  .logo { font-size: 12px; }
+  .footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 31px; }
+
+  .section-0 { padding: 36px 31px; }
+  .section-0 h1 { font-size: 22px; }
+
+  .section-2,
+  .section-4 {
+    grid-template-columns: 1fr;
+    padding: 50px 31px;
+    gap: 32px;
+  }
+  .section-2 .col-image { order: -1; }
+
+  .section-3 {
+    grid-template-columns: 1fr;
+    padding: 50px 31px;
+    gap: 40px;
+  }
+
+  .section-4 .col-images { gap: 14px; }
+  .section-4 .img-box { padding: 10px; }
+
+  .section-5 { grid-template-columns: 1fr; padding: 0 31px; }
+  .section-5 > img { height: auto; aspect-ratio: 4 / 3; }
+  .section-5 .col-bc { aspect-ratio: 4 / 3; padding: 24px; }
+
+  .section-6 { padding: 40px 31px; }
+  .section-6 img { height: 65px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <a href="index.html" class="logo">MOONHIVE STUDIO</a>
+    <div class="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <div class="nav-item">Work
+            <div class="dropdown">
+                <a href="moonhive.html">Moonhive</a>
+                <a href="#">Another Project</a>
+            </div>
+        </div>
+        <a href="contact.html" class="nav-item">Contact</a>
+    </div>
+</div>
+
+<!-- SECTION 0: Page header -->
+<section class="section-0">
+    <h1>MOONHIVE</h1>
+</section>
+
+<!-- SECTION 1: Full-width hero image -->
+<section class="section-1">
+    <img src="moonhive-hero.webp" alt="Moonhive hero">
+</section>
+
+<!-- SECTION 2: Brand mission + logo image -->
+<section class="section-2">
+    <div class="col-text">
+        <p class="mh-title">Brand Mission &amp; Concept</p>
+        <p class="mh-text">Moonhive is a wellness brand, bridging ancient apothecary traditions with mindful recovery. Moonhive offers immersive self-care experiences centered on nature and the lunar cycle.</p>
+    </div>
+    <div class="col-image">
+        <img src="moonhive-logogold.webp" alt="Moonhive gold logo">
+    </div>
+</section>
+
+<!-- SECTION 3: Typography / Color Palette / Brand DNA -->
+<section class="section-3">
+    <div class="col-typography">
+        <p class="mh-title">Brand Typography</p>
+        <div class="mh-text">
+            <p>1. Logo Font: <span class="font-magensburg">Magensburg</span></p>
+            <p>2. Title Font: <span class="font-quattrocento">Quattrocento</span></p>
+            <p>3. Text Font: <span class="font-instrument">Instrument Sans</span></p>
+        </div>
+    </div>
+    <div class="col-palette">
+        <p class="mh-title">Color Palette</p>
+        <img src="moonhive-cp.webp" alt="Moonhive color palette">
+    </div>
+    <div class="col-dna">
+        <p class="mh-title">Brand DNA</p>
+        <img src="moonhive-logocolor.webp" alt="Moonhive brand DNA">
+    </div>
+</section>
+
+<!-- SECTION 4: Packaging design -->
+<section class="section-4">
+    <div class="col-text">
+        <p class="mh-title">Packaging Design</p>
+        <p class="mh-text">The packaging focuses on material contrast to align with the brand's visual identity. By combining raw, textured paper with a metallic gold wax seal, the design creates a tactile link between the brand logo and the product, reinforcing the established aesthetic.</p>
+    </div>
+    <div class="col-images">
+        <div class="img-box"><img src="moonhive-soap.webp" alt="Moonhive soap packaging"></div>
+        <div class="img-box"><img src="moonhive-notebook.webp" alt="Moonhive notebook packaging"></div>
+    </div>
+</section>
+
+<!-- SECTION 5: Website + business card -->
+<section class="section-5">
+    <img src="moonhive-website.webp" alt="Moonhive website design">
+    <div class="col-bc">
+        <img src="moonhive-bc.webp" alt="Moonhive business card">
+    </div>
+</section>
+
+<!-- SECTION 6: Centered logo mark -->
+<section class="section-6">
+    <img src="moonhive-logo.webp" alt="Moonhive logo">
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+    <div class="footer-col">
+        <h4>Studio</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+        <h4>Work</h4>
+        <a href="moonhive.html">Moonhive</a>
+    </div>
+    <div class="footer-col">
+        <h4>Follow</h4>
+        <div class="social-icons">
+            <a href="#">Instagram</a>
+            <a href="#">Behance</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
