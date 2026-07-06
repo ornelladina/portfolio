@@ -149,6 +149,14 @@ img{ max-width:100%; display:block; }
     gap:60px;
 }
 
+/* Titles inside this row: Color Palette / Label Art / Reveal Font / Logo Font / Artwork
+   — overridden to Sora, 16px, weight 120 (instead of the default hv-title size) */
+.brand-grid .hv-title {
+  font-size: 16px;
+  font-weight: 300;
+  font-variation-settings: 'wght' 120;
+}
+
 /* COLORS */
 .color-item{
     display:flex;
@@ -162,6 +170,12 @@ img{ max-width:100%; display:block; }
     height:48px;
     border-radius:8px;
     flex-shrink:0;
+}
+
+/* LABEL ART IMAGE — made smaller, centered in its column */
+.label-art-wrap{
+    max-width:70%;
+    margin:0 auto;
 }
 
 /* FONTS */
@@ -251,6 +265,8 @@ img{ max-width:100%; display:block; }
 
     .brand-grid{ grid-template-columns:1fr; padding:0 31px; }
 
+    .label-art-wrap{ max-width:60%; }
+
     .labels-wrapper{ grid-template-columns:1fr; padding:0 31px; max-width:100%; }
     .label-item{ height:260px; }
 
@@ -301,7 +317,9 @@ img{ max-width:100%; display:block; }
 
         <div>
             <p class="hv-title">Label Art</p>
-            <img src="haven-label-art.webp">
+            <div class="label-art-wrap">
+                <img src="haven-label-art.webp">
+            </div>
         </div>
 
         <div>
@@ -323,7 +341,7 @@ img{ max-width:100%; display:block; }
 
     </div>
 
-    <!-- ROW 2: label images, all aligned to the same top line -->
+    <!-- ROW 2: label images (scaled ~1.5x via container width) -->
     <div class="labels-wrapper">
         <div class="label-item"><img src="haven-girl-label.webp"></div>
         <div class="label-item"><img src="haven-boy-label.webp"></div>
