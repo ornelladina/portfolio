@@ -70,6 +70,17 @@ body {
 .footer-col a { display: block; color: #1a1a1a; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
 .social-icons { display: flex; gap: 15px; align-items: center; }
 
+/* ============================================
+   MOONHIVE-SPECIFIC FONTS
+   Quattrocento + Instrument Sans are loaded from
+   Google Fonts above. "Magensburg" is a paid/
+   personal-use display font — it is NOT on Google
+   Fonts, so it can't be linked the same way. The
+   @font-face below is ready to go the moment you
+   add the font FILE yourself (see note under the
+   page). Until then, it quietly falls back to a
+   plain serif so nothing looks broken.
+   ============================================ */
 @font-face {
   font-family: 'Magensburg';
   src: url('fonts/Magensburg.woff2') format('woff2'),
@@ -80,6 +91,11 @@ body {
 .font-quattrocento { font-family: 'Quattrocento', serif; }
 .font-instrument { font-family: 'Instrument Sans', sans-serif; }
 
+/* Shared title/text styles used across every section.
+   Titles: Sora, weight 130. Text: Sora, weight 120
+   (both set via font-variation-settings since Sora is
+   a variable font and 130/120 aren't standard CSS
+   font-weight values). */
 .mh-title {
   font-family: "Sora", sans-serif;
   font-weight: 300;
@@ -95,47 +111,166 @@ body {
   line-height: 1.7;
 }
 
-/* SECTION 0 — Page header */
-.section-0 { background-color: #FDF9EE; width: 100%; padding: 50px 31px; text-align: center; box-sizing: border-box; }
-.section-0 h1 { font-family: "Sora", sans-serif; font-weight: 600; font-size: 28px; letter-spacing: 1px; }
+/* ============================================
+   SECTION 0 — Page header
+   ============================================ */
+.section-0 {
+  background-color: #FDF9EE;
+  width: 100%;
+  padding: 50px 31px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.section-0 h1 {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
 
-/* SECTION 1 — Full-width hero image */
-.section-1 { width: calc(100% - 62px); margin: 0 auto; line-height: 0; }
+/* ============================================
+   SECTION 1 — Full-width hero image (intentionally
+   full-bleed, no side margin — this is the one
+   exception to the 31px rule)
+   ============================================ */
+.section-1 { width: 100%; line-height: 0; }
 .section-1 img { width: 100%; height: auto; display: block; }
 
-/* SECTION 2 — Two columns: mission text + logo image */
-.section-2 { width: calc(100% - 62px); margin: 0 auto; padding: 90px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.section-2 .col-image img { width: 100%; max-width: 320px; margin: 0 auto; display: block; }
+/* ============================================
+   SECTION 2 — Two columns: mission text + logo image
+   ============================================ */
+.section-2 {
+  width: 100%;
+  padding: 90px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  box-sizing: border-box;
+}
+.section-2 .col-image img {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  display: block;
+}
 
-/* SECTION 3 — Three columns: typography, palette, brand DNA */
-.section-3 { background-color: #FDF9EE; width: calc(100% - 62px); margin: 0 auto; padding: 90px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 50px; }
+/* ============================================
+   SECTION 3 — Three columns: typography, palette, brand DNA
+   ============================================ */
+.section-3 {
+  background-color: #FDF9EE;
+  width: 100%;
+  padding: 90px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+  box-sizing: border-box;
+}
 .section-3 .mh-text p { margin-bottom: 10px; }
-.section-3 .col-palette, .section-3 .col-dna { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.section-3 .col-palette img, .section-3 .col-dna img { display: block; margin-top: 20px; }
-.section-3 .col-palette img { max-width: 170px; width: 100%; height: auto; }
-.section-3 .col-dna img { max-width: 220px; width: 100%; height: auto; }
+.section-3 .col-palette img,
+.section-3 .col-dna img {
+  display: block;
+  max-width: 170px;
+  width: 100%;
+  height: auto;
+}
+.section-3 .col-dna img { max-width: 220px; }
 
-/* SECTION 4 — Packaging: text + two side-by-side images */
-.section-4 { width: calc(100% - 62px); margin: 0 auto; padding: 90px 0; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; align-items: center; }
-.section-4 .col-images { display: flex; gap: 20px; }
-.section-4 .col-images img { width: 100%; height: auto; object-fit: contain; }
+/* ============================================
+   SECTION 4 — Packaging: text + two side-by-side images
+   ============================================ */
+.section-4 {
+  width: 100%;
+  padding: 90px 60px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+  box-sizing: border-box;
+}
+.section-4 .col-images {
+  display: flex;
+  gap: 20px;
+  min-width: 0;
+}
+.section-4 .col-images img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  min-width: 0;
+}
 
-/* SECTION 5 — Images with margins */
-.section-5 { width: calc(100% - 62px); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.section-5 img { width: 100%; height: auto; object-fit: cover; display: block; }
+/* ============================================
+   SECTION 5 — Two full-bleed images side by side
+   ============================================ */
+.section-5 {
+  width: 100%;
+  padding: 0 31px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #F8F5F1;
+}
+.section-5 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-/* SECTION 6 — Centered logo mark */
-.section-6 { background-color: #FDF9EE; width: calc(100% - 62px); margin: 0 auto; padding: 60px 0; display: flex; align-items: center; justify-content: center; }
-.section-6 img { height: 100px; width: auto; max-width: 90%; object-fit: contain; }
+/* ============================================
+   SECTION 6 — Centered logo mark
+   ============================================ */
+.section-6 {
+  background-color: #FDF9EE;
+  width: 100%;
+  padding: 60px 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.section-6 img {
+  height: 100px;
+  width: auto;
+  max-width: 90%;
+  object-fit: contain;
+}
 
-/* RESPONSIVE — tablets and phones */
+/* ============================================
+   RESPONSIVE — tablets and phones
+   ============================================ */
 @media (max-width: 768px) {
   body { border-width: 8px; }
   .navbar { padding: 0 16px; }
-  .section-1, .section-2, .section-3, .section-4, .section-5, .section-6 { width: 100%; padding-left: 20px; padding-right: 20px; box-sizing: border-box; }
-  .section-2, .section-4 { grid-template-columns: 1fr; }
-  .section-3 { grid-template-columns: 1fr; }
-  .section-5 { grid-template-columns: 1fr; }
+  .logo { font-size: 12px; }
+  .footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 31px; }
+
+  .section-0 { padding: 36px 31px; }
+  .section-0 h1 { font-size: 22px; }
+
+  .section-2,
+  .section-4 {
+    grid-template-columns: 1fr;
+    padding: 50px 31px;
+    gap: 32px;
+  }
+  .section-2 .col-image { order: -1; } /* image above text on mobile */
+
+  .section-3 {
+    grid-template-columns: 1fr;
+    padding: 50px 31px;
+    gap: 40px;
+  }
+
+  .section-4 .col-images { gap: 14px; }
+
+  .section-5 { grid-template-columns: 1fr; padding: 0 31px; }
+  .section-5 img { height: auto; aspect-ratio: 4 / 3; }
+
+  .section-6 { padding: 40px 31px; }
+  .section-6 img { height: 65px; }
 }
 </style>
 </head>
@@ -144,14 +279,17 @@ body {
 
 {% include header.html %}
 
+<!-- SECTION 0: Page header -->
 <section class="section-0">
     <h1>MOONHIVE</h1>
 </section>
 
+<!-- SECTION 1: Full-width hero image -->
 <section class="section-1">
     <img src="moonhive-hero.webp" alt="Moonhive hero">
 </section>
 
+<!-- SECTION 2: Brand mission + logo image -->
 <section class="section-2">
     <div class="col-text">
         <p class="mh-title">Brand Mission &amp; Concept</p>
@@ -162,6 +300,7 @@ body {
     </div>
 </section>
 
+<!-- SECTION 3: Typography / Color Palette / Brand DNA -->
 <section class="section-3">
     <div class="col-typography">
         <p class="mh-title">Brand Typography</p>
@@ -181,6 +320,7 @@ body {
     </div>
 </section>
 
+<!-- SECTION 4: Packaging design -->
 <section class="section-4">
     <div class="col-text">
         <p class="mh-title">Packaging Design</p>
@@ -192,11 +332,13 @@ body {
     </div>
 </section>
 
+<!-- SECTION 5: Website + business card -->
 <section class="section-5">
     <img src="moonhive-website.webp" alt="Moonhive website design">
     <img src="moonhive-bc.webp" alt="Moonhive business card">
 </section>
 
+<!-- SECTION 6: Centered logo mark -->
 <section class="section-6">
     <img src="moonhive-logo.webp" alt="Moonhive logo">
 </section>
