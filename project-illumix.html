@@ -1,17 +1,14 @@
----
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Study: Profix Website</title>
+<title>Case Study: Illumix</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
 <style>
-
-/* GLOBAL — matches index.html / about.html */
+/* GLOBAL — matches index.html / about.html / moonhive.html */
 body {
     margin: 0;
     background: #F8F5F1;
@@ -41,7 +38,6 @@ body {
 .logo { font-size: 16px; font-weight: 130; letter-spacing: 1px; white-space: nowrap; }
 .nav-links { display: flex; gap: 40px; font-size: 14px; font-weight: 130; letter-spacing: 0.5px; height: 100%; align-items: center; }
 .nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; position: relative; height: 100%; display: flex; align-items: center; white-space: nowrap; }
-
 .dropdown {
     position: absolute;
     top: 45px;
@@ -74,23 +70,304 @@ body {
 .footer-col a { display: block; color: #1a1a1a; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
 .social-icons { display: flex; gap: 15px; align-items: center; }
 
-/* PAGE CONTENT — empty placeholder for now */
-.page-content {
-    flex: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 70px 24px 80px;
-    width: 100%;
-    box-sizing: border-box;
+/* ============================================
+   Shared title/text styles (same sizing logic as Moonhive)
+   ============================================ */
+.il-title {
+  font-family: "Sora", sans-serif;
+  font-weight: 300;
+  font-variation-settings: 'wght' 130;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+.il-text {
+  font-family: "Sora", sans-serif;
+  font-weight: 300;
+  font-variation-settings: 'wght' 120;
+  font-size: 16px;
+  line-height: 1.7;
+}
+/* light-colored variants for use on the dark #4D3A40 sections */
+.il-title-light { color: #FDF9EE; }
+.il-text-light { color: #FDF9EE; }
+
+/* ============================================
+   SECTION 0 — Page header (same size/padding as Moonhive's)
+   ============================================ */
+.section-0 {
+  background-color: #4D3A40;
+  width: 100%;
+  padding: 50px 31px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.section-0 h1 {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: #FDF9EE;
+  margin: 0;
 }
 
+/* ============================================
+   SECTION 1 — Intro row (image + bullet list) + hero image w/ overlay
+   ============================================ */
+.section-1 { width: 100%; }
+.il-intro-row {
+  width: 100%;
+  padding: 90px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  box-sizing: border-box;
+}
+.il-intro-row .col-image img {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  display: block;
+}
+.il-bullets {
+  font-family: "Sora", sans-serif;
+  font-weight: 300;
+  font-variation-settings: 'wght' 120;
+  font-size: 18px;
+  line-height: 1.7;
+  list-style: disc;
+  padding-left: 22px;
+  margin: 0;
+}
+.il-bullets li { margin-bottom: 14px; }
+
+.il-hero {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+.il-hero img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+}
+.il-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #4D3A40;
+  opacity: 0.75;
+}
+
+/* ============================================
+   SECTION 2 — Project overview (40/60) + before/after images
+   ============================================ */
+.section-2 {
+  width: 100%;
+  padding: 90px 60px;
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  gap: 60px;
+  align-items: start;
+  box-sizing: border-box;
+}
+.section-2 .col-images {
+  display: flex;
+  gap: 20px;
+}
+.section-2 .col-images figure {
+  margin: 0;
+  width: 50%;
+}
+.section-2 .col-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.section-2 .col-images figcaption {
+  font-family: "Sora", sans-serif;
+  font-weight: 300;
+  font-variation-settings: 'wght' 120;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* ============================================
+   SECTION 3 — Project phases & process (50/50)
+   ============================================ */
+.section-3 {
+  width: 100%;
+  padding: 90px 60px;
+  box-sizing: border-box;
+}
+.section-3 .il-section-title {
+  font-family: "Sora", sans-serif;
+  font-weight: 300;
+  font-variation-settings: 'wght' 150;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+.section-3 .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.section-3 .stage-title {
+  font-family: "Sora", sans-serif;
+  font-weight: 300;
+  font-variation-settings: 'wght' 130;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.section-3 .col-1 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   SECTION 4 — AI-assisted art direction (dark bg, 2 col)
+   ============================================ */
+.section-4 {
+  background-color: #4D3A40;
+  width: 100%;
+  padding: 90px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  box-sizing: border-box;
+}
+.section-4 .stage-title {
+  font-family: "Sora", sans-serif;
+  font-weight: 300;
+  font-variation-settings: 'wght' 130;
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #FDF9EE;
+}
+.section-4 .small-images {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.section-4 .small-images img {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   SECTION 5 — Problem / Solution (2 col)
+   ============================================ */
+.section-5 {
+  width: 100%;
+  padding: 90px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  box-sizing: border-box;
+}
+.section-5 .col-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.section-5 .il-text strong { display: block; margin-top: 20px; margin-bottom: 6px; }
+.section-5 .il-text strong:first-child { margin-top: 0; }
+
+/* ============================================
+   SECTION 6 — Mockup + display gallery (2 col)
+   ============================================ */
+.section-6 {
+  width: 100%;
+  padding: 90px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  box-sizing: border-box;
+}
+.section-6 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.section-6 .il-caption {
+  font-family: "Sora", sans-serif;
+  font-weight: 300;
+  font-variation-settings: 'wght' 120;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* ============================================
+   SECTION 7 — Key findings (dark bg, left-aligned)
+   ============================================ */
+.section-7 {
+  background-color: #4D3A40;
+  width: 100%;
+  padding: 90px 60px;
+  box-sizing: border-box;
+  text-align: left;
+}
+.section-7 .il-title { color: #FDF9EE; }
+.section-7 .il-text { color: #FDF9EE; max-width: 800px; }
+
+/* ============================================
+   RESPONSIVE — tablets and phones
+   ============================================ */
 @media (max-width: 768px) {
   body { border-width: 8px; }
   .navbar { padding: 0 16px; }
   .logo { font-size: 12px; }
-  .footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
-}
+  .footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 31px; }
 
+  .section-0 { padding: 36px 31px; }
+  .section-0 h1 { font-size: 22px; }
+
+  .il-intro-row {
+    grid-template-columns: 1fr;
+    padding: 50px 31px;
+    gap: 32px;
+  }
+  .il-hero img { height: 320px; }
+
+  .section-2 {
+    grid-template-columns: 1fr;
+    padding: 50px 31px;
+    gap: 32px;
+  }
+
+  .section-3 { padding: 50px 31px; }
+  .section-3 .row { grid-template-columns: 1fr; gap: 32px; }
+
+  .section-4 {
+    grid-template-columns: 1fr;
+    padding: 50px 31px;
+    gap: 32px;
+  }
+  .section-4 .small-images img { width: 140px; }
+
+  .section-5 {
+    grid-template-columns: 1fr;
+    padding: 50px 31px;
+    gap: 32px;
+  }
+
+  .section-6 {
+    grid-template-columns: 1fr;
+    padding: 50px 31px;
+    gap: 32px;
+  }
+
+  .section-7 { padding: 50px 31px; }
+}
 </style>
 </head>
 
@@ -98,9 +375,109 @@ body {
 
 {% include header.html %}
 
-<div class="page-content">
-    <!-- Build the Profix case study content here -->
-</div>
+<!-- SECTION 0: Page header -->
+<section class="section-0">
+    <h1>ILLUMIX</h1>
+</section>
+
+<!-- SECTION 1: Intro row + hero image with overlay -->
+<section class="section-1">
+    <div class="il-intro-row">
+        <div class="col-image">
+            <img src="illumix-laptop1.webp" alt="Illumix laptop mockup">
+        </div>
+        <div class="col-text">
+            <ul class="il-bullets">
+                <li>THE ROLE: Lead UI designer &amp; Visual Strategist</li>
+                <li>THE TOOLS: Figma, Photoshop, Illustrator</li>
+                <li>PROJECT TYPE: Digital wellness asset library</li>
+            </ul>
+        </div>
+    </div>
+    <div class="il-hero">
+        <img src="illumix-hero.webp" alt="Illumix hero">
+    </div>
+</section>
+
+<!-- SECTION 2: Project overview + before/after images -->
+<section class="section-2">
+    <div class="col-text">
+        <p class="il-title">Project Overview: Illumix Asset Library</p>
+        <p class="il-text">Illumix is a digital storefront for high-end 3D botanical assets. The objective was to replace the standard, cluttered UI of traditional asset marketplaces with a streamlined, "soft luxury" experience. I focused on a high-contrast, clean layout that highlights the quality of the assets without visual noise, utilizing organic 3D-inspired forms and glassmorphism to mirror the nature of the products being sold.</p>
+    </div>
+    <div class="col-images">
+        <figure>
+            <img src="illumix-before.webp" alt="Illumix before redesign">
+            <figcaption>BEFORE: Low Contrast &amp; Accessibility Issues</figcaption>
+        </figure>
+        <figure>
+            <img src="illumix-after.webp" alt="Illumix after redesign">
+            <figcaption>AFTER: Legibility and Narrative Focus (Repositioned Asset, Cream text)</figcaption>
+        </figure>
+    </div>
+</section>
+
+<!-- SECTION 3: Project phases & process -->
+<section class="section-3">
+    <p class="il-section-title">PROJECT PHASES &amp; PROCESS</p>
+    <div class="row">
+        <div class="col-1">
+            <p class="stage-title">STAGE 01: Wireframing &amp; Iteration</p>
+            <img src="illumix-wf.webp" alt="Illumix wireframe">
+        </div>
+        <div class="col-2">
+            <p class="il-text">Initial Figma Wireframe - Focusing on hierarchy</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 4: AI-assisted art direction -->
+<section class="section-4">
+    <div class="col-text">
+        <p class="il-title il-title-light">AI-Assisted Art Direction</p>
+        <p class="il-text il-text-light">To move beyond generic stock imagery, I acted as an Art Director using Gemini to generate a custom suite of organic assets. By carefully prompting for "soft luxury" aesthetics and specific color palettes, I curated a cohesive library of digital botanicals. This allowed me to rapidly prototype high-fidelity visuals that perfectly aligned with the brand's immersive wellness theme without the need for traditional 3D modeling.</p>
+    </div>
+    <div class="col-images">
+        <p class="stage-title">STAGE 02: Generative Asset Creation</p>
+        <div class="small-images">
+            <img src="illumix-a.webp" alt="Illumix generative asset A">
+            <img src="illumix-b.webp" alt="Illumix generative asset B">
+            <img src="illumix-c.webp" alt="Illumix generative asset C">
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 5: Problem / Solution -->
+<section class="section-5">
+    <div class="col-image">
+        <img src="illumix-book.webp" alt="Illumix book mockup">
+    </div>
+    <div class="col-text">
+        <p class="il-text">
+            <strong>THE PROBLEM: The "Clinical" Fatigue</strong>
+            Most wellness and mental health apps feel sterile, flat, and overly medical. This "clinical" aesthetic often creates a barrier for users seeking a premium, restorative experience. Furthermore, current asset libraries lack cohesive, high-end 3D elements that can scale across luxury digital platforms without looking like "stock" graphics.
+            <strong>THE SOLUTION: Organic Digital Models</strong>
+            A 3D asset library that uses "Digital Light" and "Organic Form" as its primary design language. By providing designers with hyper-realistic, botanical-inspired 3D models, Illumix enables the creation of "Immersive Wellness", interfaces that feel alive, premium, and deeply human rather than mechanical.
+        </p>
+    </div>
+</section>
+
+<!-- SECTION 6: Mockup + display gallery -->
+<section class="section-6">
+    <div class="col-1">
+        <img src="illimux-mockup.webp" alt="Illumix mockup">
+    </div>
+    <div class="col-2">
+        <img src="illumix-display.webp" alt="Illumix display gallery">
+        <p class="il-caption">Immersive Gallery Navigation: I implemented a custom horizontal scroll indicator to provide clear visual feedback as users explore the 3D asset library, ensuring a fluid and intuitive browsing experience.</p>
+    </div>
+</section>
+
+<!-- SECTION 7: Key findings -->
+<section class="section-7">
+    <p class="il-title">Key Findings</p>
+    <p class="il-text">The main takeaway from this project is that for a design-focused store, the site itself shouldn't fight the products for attention. By trading the usual crowded, grid-heavy layout for a more spacious, gallery-like feel, I found that designers were less overwhelmed and actually took the time to look at the details of the assets. It proved that a cleaner, more intentional interface doesn't just look better; it helps people actually see the value in what they're buying and makes the whole experience of browsing feel a lot more fluid.</p>
+</section>
 
 {% include footer.html %}
 
