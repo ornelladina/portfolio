@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
 <style>
+/* GLOBAL — matches index.html / about.html / moonhive.html / project-illumix.html */
 body{
     margin:0;
     background:#F8F5F1;
     color:#1a1a1a;
     font-family:"Sora", sans-serif;
     border:12px solid #E6D99C;
+    min-height:100vh;
     box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
     overflow-x:hidden;
 }
 
@@ -22,30 +28,53 @@ body{
 
 img{ max-width:100%; display:block; }
 
-/* NAV */
-.navbar{
-    width:100%;
-    height:45px;
-    background:#FFFCEF;
-    padding:0 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
+/* NAVBAR (shared look — burger behavior lives in header.html) */
+.navbar {
+    width: 100%;
+    height: 45px;
+    background-color: #FFFCEF;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 10000;
+    overflow: visible;
 }
+.logo { font-size: 16px; font-weight: 130; letter-spacing: 1px; white-space: nowrap; }
+.nav-links { display: flex; gap: 40px; font-size: 14px; font-weight: 130; letter-spacing: 0.5px; height: 100%; align-items: center; }
+.nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; position: relative; height: 100%; display: flex; align-items: center; white-space: nowrap; }
+.dropdown {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFFCEF;
+    border: 2px solid #E6D99C;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 160px;
+    z-index: 10001;
+    border-radius: 4px;
+}
+.nav-item:hover .dropdown { display: flex; }
+.dropdown a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+.dropdown a:hover { background-color: #E6D99C; color: #FFFCEF; }
 
-.logo{
-    font-size:16px;
-    font-weight:600;
-}
-
-.nav-links a{
-    font-size:14px;
-    font-weight:300;
-    text-decoration:none;
-    color:#000;
-}
+/* FOOTER (shared look) */
+.footer { padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid #E6D99C; background: #F8F5F1; box-sizing: border-box; }
+.footer-col h4 { font-size: 14px; text-transform: uppercase; margin-bottom: 20px; }
+.footer-col a { display: block; color: #1a1a1a; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
+.social-icons { display: flex; gap: 15px; align-items: center; }
 
 /* HERO */
 .hero-section{
@@ -58,6 +87,7 @@ img{ max-width:100%; display:block; }
     font-weight:500;
     max-width:800px;
     margin:60px auto 40px auto;
+    padding:0 31px;
 }
 
 .hero-image{
@@ -80,7 +110,7 @@ img{ max-width:100%; display:block; }
 }
 
 /* =========================
-   SECTION 3 (RESTORED STRUCTURE)
+   SECTION 3 — colors / fonts / label art
 ========================= */
 
 .brand-section{
@@ -109,6 +139,7 @@ img{ max-width:100%; display:block; }
     width:48px;
     height:48px;
     border-radius:8px;
+    flex-shrink:0;
 }
 
 /* FONTS */
@@ -127,36 +158,25 @@ img{ max-width:100%; display:block; }
     font-weight:300;
 }
 
-/* ROW 2 */
-.labels-wrapper{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-    max-width:1000px;
-    margin:80px auto 0 auto;
-    padding:0 80px;
-}
-
-/* ROW 3 */
-.artwork-wrapper{
-    text-align:center;
-    margin-top:100px;
-}
-
-.artwork-wrapper h3{
-    font-size:16px;
-    font-weight:500;
-    margin-bottom:20px;
-}
-
-.artwork-wrapper img{
+.artwork-group img{
     width:183px;
     height:61px;
     object-fit:contain;
 }
 
+/* ROW 2 — label images, scaled ~1.5x via wider container
+   instead of a fixed pixel size on the images themselves */
+.labels-wrapper{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    max-width:1500px;
+    margin:80px auto 0 auto;
+    padding:0 80px;
+}
+
 /* =========================
-   SECTION 4 (STRICT 500x500 GRID)
+   SECTION 4 — Gallery, smaller containers + zoomed-out images
 ========================= */
 
 .gallery-section{
@@ -171,11 +191,23 @@ img{ max-width:100%; display:block; }
     gap:20px;
 }
 
-.gallery-grid img{
-    width:100%;
-    height:800px;
-    object-fit:cover;
+.gallery-item{
+    background:#FFFCEF;
+    border:1px solid #E6D99C;
     border-radius:10px;
+    padding:24px;
+    box-sizing:border-box;
+    aspect-ratio:1 / 1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
 }
 
 .gallery-caption{
@@ -183,41 +215,36 @@ img{ max-width:100%; display:block; }
     margin-top:8px;
     font-weight:300;
     opacity:0.7;
-}
-
-/* FOOTER */
-.footer{
-    padding:60px 80px;
-    border-top:1px solid #E6D99C;
-    font-size:14px;
-    font-weight:300;
+    text-align:center;
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
-    .project-title{ font-size:32px; padding:0 20px; }
+    body { border-width: 8px; }
+    .navbar { padding: 0 16px; }
+    .logo { font-size: 12px; }
+    .footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 31px; }
 
-    .paragraph-section{ margin:0 20px 80px 20px; }
+    .project-title{ font-size:32px; padding:0 31px; }
 
-    .brand-grid{ grid-template-columns:1fr; padding:0 20px; }
+    .paragraph-section{ margin:0 31px 80px 31px; }
 
-    .labels-wrapper{ grid-template-columns:1fr; padding:0 20px; }
+    .brand-grid{ grid-template-columns:1fr; padding:0 31px; }
 
-    .gallery-section{ padding:0 20px; }
+    .labels-wrapper{ grid-template-columns:1fr; padding:0 31px; max-width:100%; }
+
+    .gallery-section{ padding:0 31px; }
 
     .gallery-grid{ grid-template-columns:1fr; }
 
-    .gallery-grid img{ height:350px; }
+    .gallery-item{ aspect-ratio:4 / 3; padding:16px; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="logo">✦ ORNELLA DINA DELIA</div>
-    <div class="nav-links"><a href="index.html">Back to Home</a></div>
-</div>
+{% include header.html %}
 
 <!-- HERO -->
 <section class="hero-section">
@@ -232,9 +259,7 @@ img{ max-width:100%; display:block; }
     </p>
 </section>
 
-<!-- =========================
-     SECTION 3 (FIXED)
-========================= -->
+<!-- SECTION 3: Colors / Fonts / Label art -->
 <section class="brand-section">
 
     <!-- ROW 1 -->
@@ -260,45 +285,47 @@ img{ max-width:100%; display:block; }
             <div class="font-group">
                 <h3>Logo Font</h3>
                 <p>OLICIY</p>
+            </div>
+
+            <div class="font-group artwork-group">
                 <h3>Artwork</h3>
-        <img src="haven-logo.webp">
+                <img src="haven-logo.webp">
             </div>
         </div>
 
     </div>
 
-    <!-- ROW 2 -->
+    <!-- ROW 2: label images (scaled ~1.5x via container width) -->
     <div class="labels-wrapper">
         <img src="haven-girl-label.webp">
         <img src="haven-boy-label.webp">
         <img src="haven-twin-label.webp">
     </div>
 
-
 </section>
 
-<!-- SECTION 4 -->
+<!-- SECTION 4: Gallery -->
 <section class="gallery-section">
 
     <div class="gallery-grid">
 
         <div>
-            <img src="haven-package-girl.webp">
+            <div class="gallery-item"><img src="haven-package-girl.webp"></div>
             <div class="gallery-caption">Girl Package</div>
         </div>
 
         <div>
-            <img src="haven-cards-girl.webp">
+            <div class="gallery-item"><img src="haven-cards-girl.webp"></div>
             <div class="gallery-caption">Girl Card</div>
         </div>
 
         <div>
-            <img src="haven-cards-boy.webp">
+            <div class="gallery-item"><img src="haven-cards-boy.webp"></div>
             <div class="gallery-caption">Boy Card</div>
         </div>
 
         <div>
-            <img src="haven-pkg-open-twins.webp">
+            <div class="gallery-item"><img src="haven-pkg-open-twins.webp"></div>
             <div class="gallery-caption">Twin Reveal</div>
         </div>
 
@@ -306,9 +333,7 @@ img{ max-width:100%; display:block; }
 
 </section>
 
-<footer class="footer">
-    <p>© 2026 Ornella Dina Delia</p>
-</footer>
+{% include footer.html %}
 
 </body>
 </html>
