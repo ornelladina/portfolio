@@ -72,7 +72,11 @@ body {
 
 /* HERO */
 .hero { position: relative; width: 100%; height: 60vh; overflow: hidden; }
-.hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* hero-img is now position:absolute (like hero-overlay) instead of a
+   normal-flow block with height:100% — this is what makes it reliably
+   fill the box on every screen size, including the mobile aspect-ratio
+   trick below, where a non-absolute height:100% child collapses to 0. */
+.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(77, 58, 64, 0.15); z-index: 1; }
 .hero-text { position: absolute; top: 50%; left: 10%; transform: translateY(-50%); z-index: 2; color: #FFFCEF; text-align: left; max-width: 720px; }
 .hero-text h1 { margin: 0; font-size: 66px; font-weight: 250; letter-spacing: .12em; line-height: 0.95; text-transform: uppercase; }
