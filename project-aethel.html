@@ -153,11 +153,6 @@
     background-color: var(--burgundy);
     opacity: 0.1;
   }
-  /* hero-text is now position:absolute + inset:0 (instead of
-     relying on height:100% of its parent) so it always centers
-     correctly no matter which sizing technique the parent uses
-     at different screen widths — this is what fixes the text
-     drifting up / disappearing on mobile. */
   .section-2 .hero-text {
     position: absolute;
     inset: 0;
@@ -227,7 +222,7 @@
   }
   .section-5 .row-2 {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* was: 1fr 1fr 1fr — now 2 findings, not 3 */
+    grid-template-columns: 1fr 1fr;
     margin: 0 auto 35px auto;
     gap: 40px;
     align-items: start;
@@ -290,7 +285,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: start; /* top-aligned instead of centered, so the image top lines up with the text top */
+    align-items: start;
   }
   .section-8 .principles h2 {
     font-family: var(--font-sora);
@@ -324,8 +319,19 @@
     font-size: 24px;
     font-weight: 600;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+    padding: 0 20px;
   }
+  /* New: wireframing intro copy, sits between the heading and the images */
+  .section-9 .wf-intro {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+    text-align: left;
+  }
+  .section-9 .wf-intro p { margin-bottom: 16px; }
+  .section-9 .wf-intro p:last-child { margin-bottom: 0; }
+
   .section-9 .wf-wrapper {
     display: flex;
     flex-direction: row;
@@ -379,10 +385,30 @@
     width: 100%;
     padding: 80px 60px;
   }
+  /* New: "Visual Design System" intro copy above the 3-column grid */
+  .section-10 .section-10-intro {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    text-align: left;
+  }
+  .section-10 .section-10-intro h2 {
+    font-family: var(--font-sora);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .section-10 .section-10-intro p {
+    font-family: var(--font-sora);
+    font-weight: 300;
+    font-variation-settings: 'wght' 120;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
   .section-10 .section-10-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 60px; /* equal gap between every column, regardless of text alignment */
+    gap: 60px;
     align-items: start;
   }
   .section-10 .row-title {
@@ -410,7 +436,7 @@
     border: 1px solid rgba(0,0,0,0.1);
   }
   .section-10 .swatch p { font-family: var(--font-sora); font-size: 14px; line-height: 1.5; }
-  .section-10 .swatch p.hex { font-weight: 600; margin-bottom: 4px; }
+  .section-10 .swatch p.hex { font-weight: 600; margin-bottom: 4px; display: block; }
 
   .section-10 .typography-row {
     text-align: left;
@@ -429,6 +455,14 @@
     font-family: var(--font-cinzel);
     font-size: 40px;
     letter-spacing: 4px;
+    margin-bottom: 20px;
+  }
+  .section-10 .typography-row .type-desc {
+    font-family: var(--font-sora);
+    font-weight: 300;
+    font-variation-settings: 'wght' 120;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   .section-10 .text-row .inter-sample {
@@ -437,6 +471,40 @@
     letter-spacing: 1px;
     max-width: 260px;
     word-break: break-word;
+    margin-bottom: 20px;
+  }
+  .section-10 .text-row .type-desc {
+    font-family: var(--font-sora);
+    font-weight: 300;
+    font-variation-settings: 'wght' 120;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     SECTION 13 — Design Outcome (new)
+     ============================================ */
+  .section-13 {
+    width: 100%;
+    padding: 80px 60px;
+  }
+  .section-13 .outcome-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .section-13 .outcome-content h2 {
+    font-family: var(--font-sora);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .section-13 .outcome-content p {
+    font-family: var(--font-sora);
+    font-weight: 300;
+    font-variation-settings: 'wght' 120;
+    font-size: 16px;
+    line-height: 1.7;
   }
 
   /* ============================================
@@ -444,7 +512,7 @@
      ============================================ */
   .section-11 {
     width: 100%;
-    line-height: 0; /* removes the tiny gap under inline images */
+    line-height: 0;
   }
   .section-11 img {
     width: 100%;
@@ -473,7 +541,8 @@
     .section-7,
     .section-8,
     .section-9,
-    .section-10 {
+    .section-10,
+    .section-13 {
       padding-left: 24px;
       padding-right: 24px;
       padding-top: 48px;
@@ -485,7 +554,7 @@
 
     .section-2 {
       height: 0;
-      padding-bottom: 85%; /* shorter box than before, keeps it closer to section 4 */
+      padding-bottom: 85%;
       min-height: 0;
     }
     .section-2 .hero-text { font-size: 32px; }
@@ -499,7 +568,6 @@
 
     .section-5 .row-2 { grid-template-columns: 1fr; }
 
-    /* Thinner border on small screens, still full width */
     .section-6 img { border-width: 14px; }
 
     .section-7 {
@@ -513,6 +581,8 @@
     }
 
     .section-8 { grid-template-columns: 1fr; }
+
+    .section-9 .wf-intro { padding: 0; }
 
     .section-9 .wf-wrapper {
       flex-direction: column;
@@ -550,6 +620,8 @@
     .section-10 .typography-row .logo-sample { font-size: 30px; letter-spacing: 2px; }
     .section-10 .typography-row .cinzel-sample { font-size: 17px; }
     .section-10 .text-row .inter-sample { font-size: 16px; letter-spacing: 1px; }
+    .section-10 .section-10-intro h2,
+    .section-13 .outcome-content h2 { font-size: 20px; }
     .footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
   }
 
@@ -637,7 +709,11 @@
 
   <!-- SECTION 9: Wireframing, Before/After zigzag -->
   <section class="section-9">
-    <h2>WIREFRAMING</h2>
+    <h2>Wireframing &amp; Design Evolution</h2>
+    <div class="wf-intro sora-120">
+      <p>After defining the structure and core user experience, I created initial wireframes to explore the layout, content hierarchy, and overall navigation flow.</p>
+      <p>Through iteration, I refined the interface by improving information organization, visual balance, and the clarity of key elements. The final wireframes focused on creating a smoother browsing experience while maintaining Aethel's premium and elegant identity.</p>
+    </div>
     <div class="wf-wrapper">
       <div class="wf-col wf-before">
         <h3>Before</h3>
@@ -657,6 +733,12 @@
 
   <!-- SECTION 10: Color palette / Typography / Type sample -->
   <section class="section-10">
+
+    <div class="section-10-intro">
+      <h2>Visual Design System</h2>
+      <p>To create a cohesive experience, I developed a visual system that reflects Aethel's luxury positioning while keeping the interface clean and easy to navigate.</p>
+    </div>
+
     <div class="section-10-grid">
 
       <div class="row">
@@ -664,15 +746,15 @@
         <div class="palette">
           <div class="swatch">
             <div class="swatch-box" style="background-color:#2A1B1B;"></div>
-            <p><span class="hex">Deep Burgundy: #2A1B1B</span>Main backgrounds</p>
+            <p><span class="hex">Deep Burgundy — #2A1B1B</span>Used for main backgrounds to create a sophisticated and premium atmosphere.</p>
           </div>
           <div class="swatch">
             <div class="swatch-box" style="background-color:#EAE3D5;"></div>
-            <p><span class="hex">Off-White: #EAE3D5</span>Product cards &amp; search</p>
+            <p><span class="hex">Off-White — #EAE3D5</span>Applied to product cards and search areas to provide contrast and maintain readability.</p>
           </div>
           <div class="swatch">
             <div class="swatch-box" style="background-color:#C5A880;"></div>
-            <p><span class="hex">Champagne: #C5A880</span>Typography &amp; Icons</p>
+            <p><span class="hex">Champagne — #C5A880</span>Used for typography and icons to add subtle luxury accents and reinforce the brand identity.</p>
           </div>
         </div>
       </div>
@@ -683,14 +765,24 @@
         <p class="label">Font: Cinzel Regular</p>
         <p class="cinzel-sample">Cinzel Regular</p>
         <p class="logo-sample">AETHEL</p>
+        <p class="type-desc">Chosen for the Aethel logo to communicate elegance, heritage, and a high-end aesthetic.</p>
       </div>
 
       <div class="row text-row">
-        <p class="row-title">Text</p>
+        <p class="row-title">Interface Text</p>
         <p class="label">Font: Inter Regular</p>
         <p class="inter-sample">a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
+        <p class="type-desc">Used for product information and interface elements to ensure readability and provide a clean, modern user experience across screens.</p>
       </div>
 
+    </div>
+  </section>
+
+  <!-- SECTION 13: Design Outcome -->
+  <section class="section-13">
+    <div class="outcome-content">
+      <h2>Design Outcome</h2>
+      <p>The final design combines a refined visual identity with a structured user interface, balancing a luxury brand feel with usability and clarity.</p>
     </div>
   </section>
 
