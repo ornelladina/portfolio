@@ -214,7 +214,7 @@
   }
 
   /* ============================================
-     SECTION 5 — Two stacked rows (analysis + 3 findings)
+     SECTION 5 — Two stacked rows (analysis + findings)
      ============================================ */
   .section-5 {
     width: 100%;
@@ -227,7 +227,7 @@
   }
   .section-5 .row-2 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* was: 1fr 1fr 1fr — now 2 findings, not 3 */
     margin: 0 auto 35px auto;
     gap: 40px;
     align-items: start;
@@ -605,11 +605,7 @@
       </div>
       <div class="finding sora-120">
         <h3 class="title-spacer">Key Findings:</h3>
-        <p>B. The "Soft Luxury" Gap: There is an opportunity for a platform that balances a refined, minimalist aesthetic with intuitive mobile-first patterns, specifically by using whitespace and controlled typography to elevate the perceived value of items.</p>
-      </div>
-      <div class="finding sora-120">
-        <h3 class="title-spacer">Key Findings:</h3>
-        <p>C. Inconsistent Visual Hierarchy: Competitors frequently struggle to balance editorial content with functional navigation, leading to a fragmented user experience where the brand identity feels disconnected from the shopping utility.</p>
+        <p>B. Inconsistent Visual Hierarchy: Competitors frequently struggle to balance editorial content with functional navigation, leading to a fragmented user experience where the brand identity feels disconnected from the shopping utility.</p>
       </div>
     </div>
   </section>
