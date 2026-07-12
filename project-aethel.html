@@ -322,11 +322,12 @@
     margin-bottom: 40px;
     padding: 0 20px;
   }
-  /* New: wireframing intro copy, sits between the heading and the images */
+  /* Wireframing intro copy, sits between the heading and the images —
+     now flush to the same left edge as .wf-wrapper below (padding 0 16px,
+     no auto-centering) instead of floating as a centered narrow block */
   .section-9 .wf-intro {
-    max-width: 800px;
-    margin: 0 auto 60px auto;
-    padding: 0 20px;
+    margin: 0 0 60px 0;
+    padding: 0 16px;
     text-align: left;
   }
   .section-9 .wf-intro p { margin-bottom: 16px; }
@@ -385,10 +386,11 @@
     width: 100%;
     padding: 80px 60px;
   }
-  /* New: "Visual Design System" intro copy above the 3-column grid */
+  /* "Visual Design System" intro copy above the 3-column grid —
+     now flush to the same left edge as .section-10-grid below
+     (no max-width/auto-centering) */
   .section-10 .section-10-intro {
-    max-width: 800px;
-    margin: 0 auto 60px auto;
+    margin: 0 0 60px 0;
     text-align: left;
   }
   .section-10 .section-10-intro h2 {
@@ -489,8 +491,7 @@
     padding: 80px 60px;
   }
   .section-13 .outcome-content {
-    max-width: 900px;
-    margin: 0 auto;
+    margin: 0;
     text-align: left;
   }
   .section-13 .outcome-content h2 {
