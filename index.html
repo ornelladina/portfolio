@@ -77,8 +77,8 @@ body {
     height: 60vh;
     overflow: hidden;
     background:
-        radial-gradient(circle at 82% 18%, rgba(230,217,156,0.20) 0%, transparent 45%),
-        linear-gradient(160deg, #2A1B2C 0%, #35223A 55%, #241627 100%);
+        radial-gradient(circle at 82% 18%, rgba(255,252,239,0.55) 0%, transparent 50%),
+        linear-gradient(160deg, #C9A08F 0%, #DDBCA9 45%, #FFFCEF 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,7 +88,7 @@ body {
 #starfield { position: absolute; inset: 0; z-index: 1; display: block; }
 
 /* corner bracket marks — HUD-style framing, kept thin and quiet */
-.hero-corner { position: absolute; width: 34px; height: 34px; border-color: rgba(230,217,156,0.55); z-index: 2; }
+.hero-corner { position: absolute; width: 34px; height: 34px; border-color: rgba(42,27,44,0.4); z-index: 2; }
 .hero-corner.tl { top: 28px; left: 28px; border-top: 1px solid; border-left: 1px solid; }
 .hero-corner.br { bottom: 28px; right: 28px; border-bottom: 1px solid; border-right: 1px solid; }
 
@@ -107,7 +107,7 @@ body {
 @keyframes hero-rotate { from { transform: translateY(-50%) rotate(0deg); } to { transform: translateY(-50%) rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .hero-ring { animation: none; } }
 
-.hero-text { position: relative; z-index: 3; color: #F8F5F1; text-align: center; max-width: 760px; padding: 0 24px; }
+.hero-text { position: relative; z-index: 3; color: #2A1B2C; text-align: center; max-width: 760px; padding: 0 24px; }
 .hero-text .eyebrow {
     display: block;
     margin-bottom: 22px;
@@ -116,11 +116,11 @@ body {
     font-weight: 400;
     letter-spacing: .35em;
     text-transform: uppercase;
-    color: #E6D99C;
+    color: #8B5A46;
 }
 .hero-text h1 { margin: 0; font-size: 62px; font-weight: 150; letter-spacing: .14em; line-height: 1; text-transform: uppercase; }
-.hero-text .rule { width: 64px; height: 1px; background: rgba(230,217,156,0.55); margin: 26px auto 0; }
-.hero-text p { margin: 22px 0 0; font-size: 12px; font-weight: 300; letter-spacing: .28em; text-transform: uppercase; opacity: .7; }
+.hero-text .rule { width: 64px; height: 1px; background: rgba(42,27,44,0.35); margin: 26px auto 0; }
+.hero-text p { margin: 22px 0 0; font-size: 12px; font-weight: 300; letter-spacing: .28em; text-transform: uppercase; opacity: .65; }
 
 /* CONTAINER & GRID */
 .container { flex: 1; max-width: 1100px; margin: 0 auto; padding: 55px 24px 70px; width: 100%; box-sizing: border-box; }
@@ -217,15 +217,15 @@ body {
     <div class="hero-corner br"></div>
 
     <svg class="hero-ring outer" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(230,217,156,0.14)" stroke-width="1"/>
-        <circle cx="150" cy="150" r="140" fill="none" stroke="#F8F5F1" stroke-width="1.5" stroke-dasharray="26 852" stroke-linecap="round"/>
-        <circle cx="150" cy="10" r="2.5" fill="#F8F5F1"/>
+        <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(42,27,44,0.14)" stroke-width="1"/>
+        <circle cx="150" cy="150" r="140" fill="none" stroke="#2A1B2C" stroke-width="1.5" stroke-dasharray="26 852" stroke-linecap="round"/>
+        <circle cx="150" cy="10" r="2.5" fill="#2A1B2C"/>
     </svg>
 
     <svg class="hero-ring" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="110" cy="110" r="100" fill="none" stroke="rgba(230,217,156,0.18)" stroke-width="1"/>
-        <circle cx="110" cy="110" r="100" fill="none" stroke="#E6D99C" stroke-width="1.5" stroke-dasharray="40 588" stroke-linecap="round"/>
-        <circle cx="110" cy="10" r="3" fill="#E6D99C"/>
+        <circle cx="110" cy="110" r="100" fill="none" stroke="rgba(139,90,70,0.25)" stroke-width="1"/>
+        <circle cx="110" cy="110" r="100" fill="none" stroke="#8B5A46" stroke-width="1.5" stroke-dasharray="40 588" stroke-linecap="round"/>
+        <circle cx="110" cy="10" r="3" fill="#8B5A46"/>
     </svg>
 
     <div class="hero-text">
@@ -272,7 +272,7 @@ body {
     var stars = [];
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    var palette = ['#F8F5F1', '#E6D99C', '#D8C9A3'];
+    var palette = ['#2A1B2C', '#8B5A46', '#5C3A2E'];
 
     function sizeCanvas() {
         var rect = hero.getBoundingClientRect();
