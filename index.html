@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ORNELLA DINA DELIA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -70,17 +70,65 @@ body {
 }
 .dropdown a:hover { background-color: #E6D99C; color: #FFFCEF; }
 
-/* HERO */
-.hero { position: relative; width: 100%; height: 60vh; overflow: hidden; }
-/* hero-img is now position:absolute (like hero-overlay) instead of a
-   normal-flow block with height:100% — this is what makes it reliably
-   fill the box on every screen size, including the mobile aspect-ratio
-   trick below, where a non-absolute height:100% child collapses to 0. */
-.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(77, 58, 64, 0.15); z-index: 1; }
-.hero-text { position: absolute; top: 50%; left: 10%; transform: translateY(-50%); z-index: 2; color: #FFFCEF; text-align: left; max-width: 720px; }
-.hero-text h1 { margin: 0; font-size: 66px; font-weight: 250; letter-spacing: .12em; line-height: 0.95; text-transform: uppercase; }
-.hero-text p { margin: 18px 0 0; font-size: 13px; font-weight: 300; letter-spacing: .30em; text-transform: uppercase; opacity: .95; }
+/* HERO — futuristic / minimal, no photo */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 82% 18%, rgba(230,217,156,0.16) 0%, transparent 45%),
+        linear-gradient(160deg, #14120F 0%, #1A1712 60%, #14120F 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* faint dot grid, fading toward the edges */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(230,217,156,0.35) 1px, transparent 1px);
+    background-size: 28px 28px;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 0%, transparent 72%);
+    mask-image: radial-gradient(ellipse at center, #000 0%, transparent 72%);
+    z-index: 1;
+}
+
+/* corner bracket marks — HUD-style framing, kept thin and quiet */
+.hero-corner { position: absolute; width: 34px; height: 34px; border-color: rgba(230,217,156,0.55); z-index: 2; }
+.hero-corner.tl { top: 28px; left: 28px; border-top: 1px solid; border-left: 1px solid; }
+.hero-corner.br { bottom: 28px; right: 28px; border-bottom: 1px solid; border-right: 1px solid; }
+
+/* slow rotating ring — the single signature element */
+.hero-ring {
+    position: absolute;
+    top: 50%;
+    right: 9%;
+    width: 220px;
+    height: 220px;
+    transform: translateY(-50%);
+    z-index: 1;
+    animation: hero-rotate 50s linear infinite;
+}
+@keyframes hero-rotate { from { transform: translateY(-50%) rotate(0deg); } to { transform: translateY(-50%) rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .hero-ring { animation: none; } }
+
+.hero-text { position: relative; z-index: 3; color: #F8F5F1; text-align: center; max-width: 760px; padding: 0 24px; }
+.hero-text .eyebrow {
+    display: block;
+    margin-bottom: 22px;
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: #E6D99C;
+}
+.hero-text h1 { margin: 0; font-size: 62px; font-weight: 150; letter-spacing: .14em; line-height: 1; text-transform: uppercase; }
+.hero-text .rule { width: 64px; height: 1px; background: rgba(230,217,156,0.55); margin: 26px auto 0; }
+.hero-text p { margin: 22px 0 0; font-size: 12px; font-weight: 300; letter-spacing: .28em; text-transform: uppercase; opacity: .7; }
 
 /* CONTAINER & GRID */
 .container { flex: 1; max-width: 1100px; margin: 0 auto; padding: 55px 24px 70px; width: 100%; box-sizing: border-box; }
@@ -135,10 +183,16 @@ body {
   .logo { font-size: 12px; }
   .nav-links { gap: 18px; font-size: 12px; }
 
-  .hero { height: 0; padding-bottom: 100%; } /* square-ish on phones, avoids mobile vh issues */
-  .hero-text { left: 6%; right: 6%; max-width: none; }
-  .hero-text h1 { font-size: 34px; letter-spacing: .08em; }
-  .hero-text p { font-size: 10px; letter-spacing: .18em; margin-top: 12px; }
+  .hero { height: 68vh; min-height: 420px; }
+  .hero-ring { width: 140px; height: 140px; right: 50%; top: 20%; transform: translate(50%, 0); opacity: 0.5; }
+  @keyframes hero-rotate { from { transform: translate(50%, 0) rotate(0deg); } to { transform: translate(50%, 0) rotate(360deg); } }
+  .hero-corner { width: 22px; height: 22px; }
+  .hero-corner.tl { top: 18px; left: 18px; }
+  .hero-corner.br { bottom: 18px; right: 18px; }
+  .hero-text { max-width: none; padding: 0 28px; }
+  .hero-text .eyebrow { font-size: 9px; letter-spacing: .28em; margin-bottom: 16px; }
+  .hero-text h1 { font-size: 32px; letter-spacing: .08em; }
+  .hero-text p { font-size: 10px; letter-spacing: .18em; margin-top: 18px; }
 
   .container { padding: 40px 20px 50px; }
   .grid { grid-template-columns: 1fr; gap: 20px; }
@@ -166,10 +220,19 @@ body {
 {% include header.html %}
 
 <div class="hero">
-    <div class="hero-overlay"></div>
-    <img class="hero-img" src="lemon-cover.webp">
+    <div class="hero-corner tl"></div>
+    <div class="hero-corner br"></div>
+
+    <svg class="hero-ring" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="110" cy="110" r="100" fill="none" stroke="rgba(230,217,156,0.18)" stroke-width="1"/>
+        <circle cx="110" cy="110" r="100" fill="none" stroke="#E6D99C" stroke-width="1.5" stroke-dasharray="40 588" stroke-linecap="round"/>
+        <circle cx="110" cy="10" r="3" fill="#E6D99C"/>
+    </svg>
+
     <div class="hero-text">
+        <span class="eyebrow">Portfolio · 2026</span>
         <h1>ORNELLA DINA DELIA</h1>
+        <div class="rule"></div>
         <p>UI/UX DESIGNER · VISUAL STORYTELLER · CREATIVE DESIGNER</p>
     </div>
 </div>
