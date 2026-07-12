@@ -85,6 +85,22 @@ body {
 /* CONTAINER & GRID */
 .container { flex: 1; max-width: 1100px; margin: 0 auto; padding: 55px 24px 70px; width: 100%; box-sizing: border-box; }
 .section-title { margin: 20px 0 32px; font-size: 12px; letter-spacing: 2px; opacity: 0.5; }
+
+/* CATEGORY GROUPS */
+.category-group { margin-bottom: 56px; }
+.category-group:last-child { margin-bottom: 0; }
+.category-title {
+    margin: 0 0 20px;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    opacity: 0.85;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E6D99C;
+}
+
 .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 .project { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 525 / 409; background: #fff; border: 1px solid rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: 0.3s ease; }
 .project img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s ease; }
@@ -126,6 +142,8 @@ body {
 
   .container { padding: 40px 20px 50px; }
   .grid { grid-template-columns: 1fr; gap: 20px; }
+  .category-group { margin-bottom: 40px; }
+  .category-title { font-size: 11px; margin-bottom: 16px; }
 
   .about-section { margin: 60px auto 50px; }
   .about-text { font-size: 18px; line-height: 1.7; }
@@ -158,11 +176,21 @@ body {
 
 <div class="container">
     <div class="section-title" id="selected-work">SELECTED WORK</div>
-    <div class="grid">
-        <a href="project-aethel.html" class="project"><img src="aethel-display2.webp"><div class="label"><span>UI/UX</span> AETHEL</div></a>
-        <a href="project-haven.html" class="project"><img src="haven-package-girl.webp"><div class="label"><span>Branding/ Packaging</span> HAVEN</div></a>
-        <a href="project-moonhive.html" class="project"><img src="moonhive-bc.webp"><div class="label"><span>Branding/ Web Design</span> MOONHIVE</div></a>
-        <a href="project-illumix.html" class="project"><img src="illumix-cover.webp"><div class="label"><span>UI/ Web Design</span> ILLUMIX</div></a>
+
+    <div class="category-group">
+        <div class="category-title">UI/UX</div>
+        <div class="grid">
+            <a href="project-aethel.html" class="project"><img src="aethel-display2.webp"><div class="label"><span>UI/UX</span> AETHEL</div></a>
+        </div>
+    </div>
+
+    <div class="category-group">
+        <div class="category-title">Branding & Web Design</div>
+        <div class="grid">
+            <a href="project-haven.html" class="project"><img src="haven-package-girl.webp"><div class="label"><span>Branding/ Packaging</span> HAVEN</div></a>
+            <a href="project-moonhive.html" class="project"><img src="moonhive-bc.webp"><div class="label"><span>Branding/ Web Design</span> MOONHIVE</div></a>
+            <a href="project-illumix.html" class="project"><img src="illumix-cover.webp"><div class="label"><span>UI/ Web Design</span> ILLUMIX</div></a>
+        </div>
     </div>
 
     <div class="about-section">
