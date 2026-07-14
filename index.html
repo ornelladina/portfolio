@@ -5,18 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Illumix: Botanical 3D Assets</title>
+<title>ORNELLA DINA DELIA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* GLOBAL — matches index.html / about.html / moonhive.html */
+
+/* GLOBAL */
 body {
     margin: 0;
     background: #F8F5F1;
     color: #1a1a1a;
     font-family: "Sora", sans-serif;
-    border: 12px solid #E6D99C;
+    border: 12px solid #E6D99C; 
     min-height: 100vh;
     box-sizing: border-box;
     display: flex;
@@ -24,7 +25,7 @@ body {
     overflow-x: hidden;
 }
 
-/* NAVBAR (shared look — burger behavior lives in header.html) */
+/* NAVBAR */
 .navbar {
     width: 100%;
     height: 45px;
@@ -35,14 +36,17 @@ body {
     align-items: center;
     box-sizing: border-box;
     z-index: 10000;
-    overflow: visible;
+    overflow: visible; 
 }
+
 .logo { font-size: 16px; font-weight: 130; letter-spacing: 1px; white-space: nowrap; }
 .nav-links { display: flex; gap: 40px; font-size: 14px; font-weight: 130; letter-spacing: 0.5px; height: 100%; align-items: center; }
 .nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; position: relative; height: 100%; display: flex; align-items: center; white-space: nowrap; }
+
+/* DROPDOWN */
 .dropdown {
     position: absolute;
-    top: 45px;
+    top: 45px; 
     left: 50%;
     transform: translateX(-50%);
     background: #FFFCEF;
@@ -56,330 +60,148 @@ body {
     border-radius: 4px;
 }
 .nav-item:hover .dropdown { display: flex; }
-.dropdown a {
-    text-decoration: none;
-    color: #1a1a1a;
-    font-size: 14px;
+.dropdown a { 
+    text-decoration: none; 
+    color: #1a1a1a; 
+    font-size: 14px; 
     padding: 6px 10px;
     border-radius: 4px;
     transition: 0.3s ease;
 }
 .dropdown a:hover { background-color: #E6D99C; color: #FFFCEF; }
 
-/* FOOTER (shared look) */
+/* HERO — futuristic / minimal, no photo */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FFFCEF 0%, #EDD9C9 55%, #DDBFA9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* starfield canvas sits behind the rings and text */
+#starfield { position: absolute; inset: 0; z-index: 1; display: block; }
+
+/* corner bracket marks — HUD-style framing, kept thin and quiet */
+.hero-corner { position: absolute; width: 34px; height: 34px; border-color: rgba(42,27,44,0.4); z-index: 2; }
+.hero-corner.tl { top: 28px; left: 28px; border-top: 1px solid; border-left: 1px solid; }
+.hero-corner.br { bottom: 28px; right: 28px; border-bottom: 1px solid; border-right: 1px solid; }
+
+/* two slow-orbiting rings — a quiet solar-system echo behind the name */
+.hero-ring {
+    position: absolute;
+    top: 50%;
+    right: 9%;
+    width: 220px;
+    height: 220px;
+    transform: translateY(-50%);
+    z-index: 1;
+    animation: hero-rotate 50s linear infinite;
+}
+.hero-ring.outer { width: 300px; height: 300px; animation-duration: 80s; animation-direction: reverse; opacity: 0.6; }
+@keyframes hero-rotate { from { transform: translateY(-50%) rotate(0deg); } to { transform: translateY(-50%) rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .hero-ring { animation: none; } }
+
+.hero-text { position: relative; z-index: 3; color: #2A1B2C; text-align: center; max-width: 760px; padding: 0 24px; }
+.hero-text .eyebrow {
+    display: block;
+    margin-bottom: 22px;
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: #8B5A46;
+}
+.hero-text h1 { margin: 0; font-size: 62px; font-weight: 100; letter-spacing: .14em; line-height: 1; text-transform: uppercase; }
+.hero-text .rule { width: 64px; height: 1px; background: rgba(42,27,44,0.35); margin: 26px auto 0; }
+.hero-text p { margin: 22px 0 0; font-size: 12px; font-weight: 300; letter-spacing: .28em; text-transform: uppercase; opacity: .65; }
+
+/* CONTAINER & GRID */
+.container { flex: 1; max-width: 1100px; margin: 0 auto; padding: 55px 24px 70px; width: 100%; box-sizing: border-box; }
+.section-title { margin: 20px 0 32px; font-size: 12px; letter-spacing: 2px; opacity: 0.5; }
+
+/* CATEGORY GROUPS */
+.category-group { margin-bottom: 56px; }
+.category-group:last-child { margin-bottom: 0; }
+.category-title {
+    margin: 0 0 20px;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    opacity: 0.85;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E6D99C;
+}
+
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.project { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 525 / 409; background: #fff; border: 1px solid rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: 0.3s ease; }
+.project img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s ease; }
+.project:hover { transform: translateY(-4px); border-color: rgba(0,0,0,0.2); }
+.project:hover img { transform: scale(1.03); }
+.label { position: absolute; bottom: 14px; left: 14px; font-size: 13px; background: rgba(248,245,241,0.9); padding: 8px 12px; border-radius: 6px; }
+.label span { display: block; font-size: 10px; opacity: 0.6; text-transform: uppercase; margin-bottom: 2px; }
+
+/* ABOUT */
+.about-section { max-width: 900px; margin: 90px auto 80px; }
+.about-title { font-size: 12px; letter-spacing: .25em; text-transform: uppercase; font-weight: 300; margin-bottom: 22px; opacity: .65; }
+.about-text { font-size: 18px; line-height: 1.8; font-weight: 120; letter-spacing: .02em; color: #222; }
+
+/* FOOTER */
 .footer { padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid #E6D99C; background: #F8F5F1; box-sizing: border-box; }
 .footer-col h4 { font-size: 14px; text-transform: uppercase; margin-bottom: 20px; }
 .footer-col a { display: block; color: #1a1a1a; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
 .social-icons { display: flex; gap: 15px; align-items: center; }
 
-/* ============================================
-   Shared title/text styles (same sizing logic as Moonhive)
-   ============================================ */
-.il-title {
-  font-family: "Sora", sans-serif;
-  font-weight: 300;
-  font-variation-settings: 'wght' 130;
-  font-size: 20px;
-  margin-bottom: 18px;
-}
-.il-text {
-  font-family: "Sora", sans-serif;
-  font-weight: 300;
-  font-variation-settings: 'wght' 120;
-  font-size: 16px;
-  line-height: 1.7;
-}
-/* light-colored variants for use on the dark #4D3A40 sections */
-.il-title-light { color: #FDF9EE; }
-.il-text-light { color: #FDF9EE; }
 
 /* ============================================
-   SECTION 0 — Page header (same size/padding as Moonhive's)
-   ============================================ */
-.section-0 {
-  background-color: #4D3A40;
-  width: 100%;
-  padding: 50px 31px;
-  text-align: center;
-  box-sizing: border-box;
-}
-.section-0 h1 {
-  font-family: "Sora", sans-serif;
-  font-weight: 600;
-  font-size: 28px;
-  letter-spacing: 1px;
-  color: #FDF9EE;
-  margin: 0;
-}
-
-/* ============================================
-   SECTION 1 — Hero: intro row (image + bullet list) sits
-   on top of the full-bleed background image + dark overlay,
-   both occupying the same space instead of stacking as you scroll
-   ============================================ */
-.section-1 {
-  position: relative;
-  width: 100%;
-}
-.il-intro-row {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding: 90px 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  box-sizing: border-box;
-}
-.il-intro-row .col-image img {
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-  display: block;
-}
-.il-bullets {
-  font-family: "Sora", sans-serif;
-  font-weight: 300;
-  font-variation-settings: 'wght' 120;
-  font-size: 18px;
-  line-height: 1.7;
-  color: #FDF9EE;
-  list-style: disc;
-  padding-left: 22px;
-  margin: 0;
-}
-.il-bullets li { margin-bottom: 14px; }
-
-.il-hero {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  line-height: 0;
-}
-.il-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.il-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: #4D3A40;
-  opacity: 0.75;
-}
-
-/* ============================================
-   SECTION 2 — Project overview (40/60) + before/after images
-   ============================================ */
-.section-2 {
-  width: 100%;
-  padding: 90px 60px;
-  display: grid;
-  grid-template-columns: 0.4fr 0.6fr;
-  gap: 60px;
-  align-items: start;
-  box-sizing: border-box;
-}
-.section-2 .col-images {
-  display: flex;
-  gap: 20px;
-}
-.section-2 .col-images figure {
-  margin: 0;
-  width: 50%;
-}
-.section-2 .col-images img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.section-2 .col-images figcaption {
-  font-family: "Sora", sans-serif;
-  font-weight: 300;
-  font-variation-settings: 'wght' 120;
-  font-size: 12px;
-  line-height: 1.5;
-  margin-top: 10px;
-}
-
-/* ============================================
-   SECTION 3 — Project phases & process (50/50)
-   ============================================ */
-.section-3 {
-  width: 100%;
-  padding: 90px 60px;
-  box-sizing: border-box;
-}
-.section-3 .il-section-title {
-  font-family: "Sora", sans-serif;
-  font-weight: 300;
-  font-variation-settings: 'wght' 150;
-  font-size: 18px;
-  margin-bottom: 40px;
-}
-.section-3 .row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-.section-3 .stage-title {
-  font-family: "Sora", sans-serif;
-  font-weight: 300;
-  font-variation-settings: 'wght' 130;
-  font-size: 16px;
-  margin-bottom: 16px;
-}
-.section-3 .col-1 img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ============================================
-   SECTION 4 — AI-assisted art direction (dark bg, 2 col)
-   ============================================ */
-.section-4 {
-  background-color: #4D3A40;
-  width: 100%;
-  padding: 90px 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  box-sizing: border-box;
-}
-.section-4 .stage-title {
-  font-family: "Sora", sans-serif;
-  font-weight: 300;
-  font-variation-settings: 'wght' 130;
-  font-size: 16px;
-  margin-bottom: 16px;
-  color: #FDF9EE;
-}
-.section-4 .small-images {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.section-4 .small-images img {
-  width: 200px;
-  height: auto;
-  display: block;
-}
-
-/* ============================================
-   SECTION 5 — Problem / Solution (2 col)
-   ============================================ */
-.section-5 {
-  width: 100%;
-  padding: 90px 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  box-sizing: border-box;
-}
-.section-5 .col-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.section-5 .il-text strong { display: block; margin-top: 20px; margin-bottom: 6px; }
-.section-5 .il-text strong:first-child { margin-top: 0; }
-
-/* ============================================
-   SECTION 6 — Mockup + display gallery (2 col)
-   ============================================ */
-.section-6 {
-  width: 100%;
-  padding: 90px 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  box-sizing: border-box;
-}
-.section-6 img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.section-6 .il-caption {
-  font-family: "Sora", sans-serif;
-  font-weight: 300;
-  font-variation-settings: 'wght' 120;
-  font-size: 12px;
-  line-height: 1.5;
-  margin-top: 10px;
-}
-
-/* ============================================
-   SECTION 7 — Key findings (dark bg, left-aligned)
-   ============================================ */
-.section-7 {
-  background-color: #4D3A40;
-  width: 100%;
-  padding: 90px 60px;
-  box-sizing: border-box;
-  text-align: left;
-}
-.section-7 .il-title { color: #FDF9EE; }
-.section-7 .il-text { color: #FDF9EE; max-width: 800px; }
-
-/* ============================================
-   RESPONSIVE — tablets and phones
+   RESPONSIVE — tablets and phones (≤768px)
+   Same layout/structure throughout — only sizes,
+   spacing, and column counts adjust so nothing
+   overflows or gets crushed on a small screen.
    ============================================ */
 @media (max-width: 768px) {
+
   body { border-width: 8px; }
+
   .navbar { padding: 0 16px; }
   .logo { font-size: 12px; }
-  .footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 31px; }
+  .nav-links { gap: 18px; font-size: 12px; }
 
-  .section-0 { padding: 36px 31px; }
-  .section-0 h1 { font-size: 22px; }
+  .hero { height: 68vh; min-height: 420px; }
+  .hero-ring { width: 140px; height: 140px; right: 50%; top: 20%; transform: translate(50%, 0); opacity: 0.5; }
+  @keyframes hero-rotate { from { transform: translate(50%, 0) rotate(0deg); } to { transform: translate(50%, 0) rotate(360deg); } }
+  .hero-corner { width: 22px; height: 22px; }
+  .hero-corner.tl { top: 18px; left: 18px; }
+  .hero-corner.br { bottom: 18px; right: 18px; }
+  .hero-text { max-width: none; padding: 0 28px; }
+  .hero-text .eyebrow { font-size: 9px; letter-spacing: .28em; margin-bottom: 16px; }
+  .hero-text h1 { font-size: 32px; letter-spacing: .08em; }
+  .hero-text p { font-size: 10px; letter-spacing: .18em; margin-top: 18px; }
 
-  .il-intro-row {
-    grid-template-columns: 1fr;
-    padding: 50px 31px;
-    gap: 32px;
-  }
+  .container { padding: 40px 20px 50px; }
+  .grid { grid-template-columns: 1fr; gap: 20px; }
+  .category-group { margin-bottom: 40px; }
+  .category-title { font-size: 11px; margin-bottom: 16px; }
 
-  .section-2 {
-    grid-template-columns: 1fr;
-    padding: 50px 31px;
-    gap: 32px;
-  }
+  .about-section { margin: 60px auto 50px; }
+  .about-text { font-size: 16px;}
 
-  .section-3 { padding: 50px 31px; }
-  .section-3 .row { grid-template-columns: 1fr; gap: 32px; }
-
-  .section-4 {
-    grid-template-columns: 1fr;
-    padding: 50px 31px;
-    gap: 32px;
-  }
-  .section-4 .small-images img { width: 140px; }
-
-  .section-5 {
-    grid-template-columns: 1fr;
-    padding: 50px 31px;
-    gap: 32px;
-  }
-
-  .section-6 {
-    grid-template-columns: 1fr;
-    padding: 50px 31px;
-    gap: 32px;
-  }
-
-  .section-7 { padding: 50px 31px; }
+  .footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
 }
+
+@media (max-width: 420px) {
+  .logo { font-size: 11px; }
+  .nav-links { gap: 12px; font-size: 11px; }
+  .hero-text h1 { font-size: 26px; }
+  .about-text { font-size: 16px; }
+}
+
 </style>
 </head>
 
@@ -387,111 +209,111 @@ body {
 
 {% include header.html %}
 
-<!-- SECTION 0: Page header -->
-<section class="section-0">
-    <h1>ILLUMIX</h1>
-</section>
+<div class="hero">
+    <canvas id="starfield"></canvas>
+    <div class="hero-corner tl"></div>
+    <div class="hero-corner br"></div>
 
-<!-- SECTION 1: Intro row overlaid on top of full-bleed hero image -->
-<section class="section-1">
-    <div class="il-hero">
-        <img src="illumix-herobg.webp" alt="Illumix hero">
-    </div>
-    <div class="il-intro-row">
-        <div class="col-image">
-            <img src="illumix-laptop1.webp" alt="Illumix laptop mockup">
-        </div>
-        <div class="col-text">
-            <ul class="il-bullets">
-                <li>THE ROLE: Lead UI designer &amp; Visual Strategist</li>
-                <li>THE TOOLS: Figma, Photoshop, Illustrator</li>
-                <li>PROJECT TYPE: Digital wellness asset library</li>
-            </ul>
-        </div>
-    </div>
-</section>
+    <svg class="hero-ring outer" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(42,27,44,0.14)" stroke-width="1"/>
+        <circle cx="150" cy="150" r="140" fill="none" stroke="#2A1B2C" stroke-width="1.5" stroke-dasharray="26 852" stroke-linecap="round"/>
+        <circle cx="150" cy="10" r="2.5" fill="#2A1B2C"/>
+    </svg>
 
-<!-- SECTION 2: Project overview + before/after images -->
-<section class="section-2">
-    <div class="col-text">
-        <p class="il-title">Project Overview: Illumix Asset Library</p>
-        <p class="il-text">Illumix is a digital storefront for high-end 3D botanical assets. The objective was to replace the standard, cluttered UI of traditional asset marketplaces with a streamlined, "soft luxury" experience. I focused on a high-contrast, clean layout that highlights the quality of the assets without visual noise, utilizing organic 3D-inspired forms and glassmorphism to mirror the nature of the products being sold.</p>
-    </div>
-    <div class="col-images">
-        <figure>
-            <img src="illumix-before.webp" alt="Illumix before redesign">
-            <figcaption>BEFORE: Low Contrast &amp; Accessibility Issues</figcaption>
-        </figure>
-        <figure>
-            <img src="illumix-after.webp" alt="Illumix after redesign">
-            <figcaption>AFTER: Legibility and Narrative Focus (Repositioned Asset, Cream text)</figcaption>
-        </figure>
-    </div>
-</section>
+    <svg class="hero-ring" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="110" cy="110" r="100" fill="none" stroke="rgba(139,90,70,0.25)" stroke-width="1"/>
+        <circle cx="110" cy="110" r="100" fill="none" stroke="#8B5A46" stroke-width="1.5" stroke-dasharray="40 588" stroke-linecap="round"/>
+        <circle cx="110" cy="10" r="3" fill="#8B5A46"/>
+    </svg>
 
-<!-- SECTION 3: Project phases & process -->
-<section class="section-3">
-    <p class="il-section-title">PROJECT PHASES &amp; PROCESS</p>
-    <div class="row">
-        <div class="col-1">
-            <p class="stage-title">STAGE 01: Wireframing &amp; Iteration</p>
-            <img src="illumix-wf.webp" alt="Illumix wireframe">
-        </div>
-        <div class="col-2">
-            <p class="il-text">Initial Figma Wireframe - Focusing on hierarchy</p>
+    <div class="hero-text">
+        <span class="eyebrow">Portfolio · 2026</span>
+        <h1>ORNELLA DINA DELIA</h1>
+        <div class="rule"></div>
+        <p>UI/UX DESIGNER · VISUAL STORYTELLER · CREATIVE DESIGNER</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section-title" id="selected-work">SELECTED WORK</div>
+
+    <div class="category-group">
+        <div class="category-title">UI/UX</div>
+        <div class="grid">
+            <a href="project-aethel.html" class="project"><img src="aethel-display2.webp"><div class="label"><span>UI/UX</span> AETHEL</div></a>
+            <a href="project-illumix.html" class="project"><img src="illumix-cover.webp"><div class="label"><span>UI/ Web Design</span> ILLUMIX</div></a>
         </div>
     </div>
-</section>
 
-<!-- SECTION 4: AI-assisted art direction -->
-<section class="section-4">
-    <div class="col-text">
-        <p class="il-title il-title-light">AI-Assisted Art Direction</p>
-        <p class="il-text il-text-light">To move beyond generic stock imagery, I acted as an Art Director using Gemini to generate a custom suite of organic assets. By carefully prompting for "soft luxury" aesthetics and specific color palettes, I curated a cohesive library of digital botanicals. This allowed me to rapidly prototype high-fidelity visuals that perfectly aligned with the brand's immersive wellness theme without the need for traditional 3D modeling.</p>
-    </div>
-    <div class="col-images">
-        <p class="stage-title">STAGE 02: Generative Asset Creation</p>
-        <div class="small-images">
-            <img src="illumix-a.webp" alt="Illumix generative asset A">
-            <img src="illumix-b.webp" alt="Illumix generative asset B">
-            <img src="illumix-c.webp" alt="Illumix generative asset C">
+    <div class="category-group">
+        <div class="category-title">Branding & Web Design</div>
+        <div class="grid">
+            <a href="project-haven.html" class="project"><img src="haven-package-girl.webp"><div class="label"><span>Branding/ Packaging</span> HAVEN</div></a>
+            <a href="project-moonhive.html" class="project"><img src="moonhive-bc.webp"><div class="label"><span>Branding/ Web Design</span> MOONHIVE</div></a>
         </div>
     </div>
-</section>
 
-<!-- SECTION 5: Problem / Solution -->
-<section class="section-5">
-    <div class="col-image">
-        <img src="illumix-book.webp" alt="Illumix book mockup">
+    <div class="about-section">
+        <div class="about-title">About Ornella</div>
+        <div class="about-text">Visual Designer specializing in high-end branding and UI/UX. I create sophisticated digital experiences that merge organic, Art Nouveau-inspired aesthetics with refined functionality.</div>
     </div>
-    <div class="col-text">
-        <p class="il-text">
-            <strong>THE PROBLEM: The "Clinical" Fatigue</strong>
-            Most wellness and mental health apps feel sterile, flat, and overly medical. This "clinical" aesthetic often creates a barrier for users seeking a premium, restorative experience. Furthermore, current asset libraries lack cohesive, high-end 3D elements that can scale across luxury digital platforms without looking like "stock" graphics.
-            <strong>THE SOLUTION: Organic Digital Models</strong>
-            A 3D asset library that uses "Digital Light" and "Organic Form" as its primary design language. By providing designers with hyper-realistic, botanical-inspired 3D models, Illumix enables the creation of "Immersive Wellness", interfaces that feel alive, premium, and deeply human rather than mechanical.
-        </p>
-    </div>
-</section>
-
-<!-- SECTION 6: Mockup + display gallery -->
-<section class="section-6">
-    <div class="col-1">
-        <img src="illumix-mockup.webp" alt="Illumix mockup">
-    </div>
-    <div class="col-2">
-        <img src="illumix-display2.webp" alt="Illumix display gallery">
-        <p class="il-caption">Immersive Gallery Navigation: I implemented a custom horizontal scroll indicator to provide clear visual feedback as users explore the 3D asset library, ensuring a fluid and intuitive browsing experience.</p>
-    </div>
-</section>
-
-<!-- SECTION 7: Key findings -->
-<section class="section-7">
-    <p class="il-title">Key Findings</p>
-    <p class="il-text">The main takeaway from this project is that for a design-focused store, the site itself shouldn't fight the products for attention. By trading the usual crowded, grid-heavy layout for a more spacious, gallery-like feel, I found that designers were less overwhelmed and actually took the time to look at the details of the assets. It proved that a cleaner, more intentional interface doesn't just look better; it helps people actually see the value in what they're buying and makes the whole experience of browsing feel a lot more fluid.</p>
-</section>
+</div>
 
 {% include footer.html %}
+
+<script>
+(function () {
+    var canvas = document.getElementById('starfield');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var hero = canvas.parentElement;
+    var stars = [];
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var palette = ['#2A1B2C', '#8B5A46', '#5C3A2E'];
+
+    function sizeCanvas() {
+        var rect = hero.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        buildStars(rect.width, rect.height);
+    }
+
+    function buildStars(w, h) {
+        var count = Math.round((w * h) / 9000);
+        stars = [];
+        for (var i = 0; i < count; i++) {
+            stars.push({
+                x: Math.random() * w,
+                y: Math.random() * h,
+                r: Math.random() * 1.2 + 0.4,
+                color: palette[Math.floor(Math.random() * palette.length)],
+                phase: Math.random() * Math.PI * 2,
+                speed: 0.006 + Math.random() * 0.01
+            });
+        }
+    }
+
+    function draw(time) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < stars.length; i++) {
+            var s = stars[i];
+            var twinkle = reduceMotion ? 0.7 : 0.5 + 0.5 * Math.sin(s.phase + time * s.speed);
+            ctx.globalAlpha = 0.15 + twinkle * 0.55;
+            ctx.fillStyle = s.color;
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+        if (!reduceMotion) requestAnimationFrame(draw);
+    }
+
+    sizeCanvas();
+    draw(0);
+    window.addEventListener('resize', sizeCanvas);
+})();
+</script>
 
 </body>
 </html>
