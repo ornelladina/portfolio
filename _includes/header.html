@@ -1,10 +1,8 @@
 <div class="navbar">
     <a href="index.html" class="logo">✦ ORNELLA DINA DELIA</a>
-
     <button class="burger" id="burgerBtn" aria-label="Open menu">
         <span></span><span></span><span></span>
     </button>
-
     <div class="nav-links" id="navLinks">
         <div class="nav-item" id="projectsItem">
             Projects
@@ -18,13 +16,10 @@
         <a class="nav-item" href="about.html">About</a>
     </div>
 </div>
-
 <style>
   /* Reset default link styling on the logo now that it's clickable */
   .logo { text-decoration: none; color: inherit; }
-
   .navbar { position: relative; }
-
   /* Burger icon — hidden on desktop, shown only on mobile below */
   .burger {
     display: none;
@@ -50,10 +45,8 @@
     border-radius: 2px;
     flex-shrink: 0;
   }
-
   @media (max-width: 768px) {
     .burger { display: flex; }
-
     /* Nav links become a dropdown panel triggered by the burger,
        instead of sitting inline next to the logo */
     .nav-links {
@@ -71,7 +64,6 @@
       padding: 10px 20px 16px;
     }
     .nav-links.open { display: flex; }
-
     .nav-item {
       height: auto;
       width: 100%;
@@ -79,7 +71,6 @@
       flex-direction: column;
       align-items: flex-start;
     }
-
     /* The Projects dropdown becomes part of the burger panel
        instead of a hover flyout, and only opens on tap */
     .nav-item:hover .dropdown { display: none; }
@@ -94,7 +85,6 @@
       width: 100%;
     }
     .nav-item.dropdown-open .dropdown { display: flex !important; }
-
     /* Remove the default blue tap-highlight flash on mobile —
        taps now just show the same champagne hover color */
     .nav-item,
@@ -109,23 +99,19 @@
     }
   }
 </style>
-
 <script>
 (function () {
   var burger = document.getElementById('burgerBtn');
   var navLinks = document.getElementById('navLinks');
   var projectsItem = document.getElementById('projectsItem');
-
   burger.addEventListener('click', function () {
     navLinks.classList.toggle('open');
   });
-
   projectsItem.addEventListener('click', function () {
     if (window.innerWidth <= 768) {
       projectsItem.classList.toggle('dropdown-open');
     }
   });
-
   window.addEventListener('resize', function () {
     if (window.innerWidth > 768) {
       navLinks.classList.remove('open');
@@ -134,3 +120,7 @@
   });
 })();
 </script>
+
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "64957f48891e49a0abc73d9fe4d5a742"}'></script>
+<!-- End Cloudflare Web Analytics -->
