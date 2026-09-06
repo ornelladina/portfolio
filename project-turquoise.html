@@ -1,0 +1,277 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turquoise Accessories — ORNELLA DINA DELIA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL — same tokens as the homepage, so this page matches it exactly */
+body {
+    margin: 0;
+    background: #F8F5F1;
+    color: #1a1a1a;
+    font-family: "Sora", sans-serif;
+    border: 12px solid #E6D99C;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* PROJECT HERO — same teal/navy gradient as the homepage hero, so the
+   portfolio reads as one consistent set rather than each page inventing
+   its own palette. */
+.project-hero {
+    position: relative;
+    width: 100%;
+    padding: 90px 24px 70px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0F3D42 0%, #123554 55%, #0A1B33 100%);
+    text-align: center;
+    color: #F5F1E8;
+}
+.project-hero .eyebrow {
+    display: block;
+    margin-bottom: 18px;
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: #E6D99C;
+}
+.project-hero h1 { margin: 0; font-size: 48px; font-weight: 100; letter-spacing: .12em; text-transform: uppercase; }
+.project-hero .subtitle { margin: 18px 0 0; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; opacity: .75; }
+.project-hero .rule { width: 64px; height: 1px; background: rgba(245,241,232,0.35); margin: 26px auto 0; }
+
+.project-hero .visit-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 28px;
+    border: 1px solid #E6D99C;
+    color: #F5F1E8;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    transition: 0.3s ease;
+}
+.project-hero .visit-btn:hover { background: #E6D99C; color: #0A1B33; }
+
+/* CONTAINER */
+.container { flex: 1; max-width: 1000px; margin: 0 auto; padding: 60px 24px 80px; width: 100%; box-sizing: border-box; }
+
+.cover-shot { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 70px; border: 1px solid rgba(0,0,0,0.08); }
+.cover-shot img { width: 100%; display: block; }
+
+/* SECTIONS — same label style as the homepage's category-title */
+.pj-section { margin-bottom: 64px; }
+.pj-section:last-child { margin-bottom: 0; }
+.pj-label {
+    margin: 0 0 18px;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E6D99C;
+}
+.pj-section p {
+    font-size: 17px;
+    line-height: 1.8;
+    font-weight: 300;
+    letter-spacing: .01em;
+    color: #222;
+    max-width: 760px;
+}
+
+/* Quick facts row under the intro */
+.pj-facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin: 36px 0 0;
+    padding-top: 28px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+.pj-fact span { display: block; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; opacity: .55; margin-bottom: 8px; }
+.pj-fact strong { font-size: 15px; font-weight: 400; }
+
+/* Feature list — Figma → build → admin, etc. */
+.pj-feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.pj-feature h3 { font-size: 15px; font-weight: 500; margin: 0 0 10px; letter-spacing: .02em; }
+.pj-feature p { font-size: 15px; line-height: 1.7; opacity: .85; margin: 0; }
+
+/* Gallery grid — screenshots of the actual site/admin */
+.pj-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.pj-gallery figure { margin: 0; border-radius: 10px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #fff; }
+.pj-gallery img { width: 100%; display: block; }
+.pj-gallery figcaption { padding: 12px 14px; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; opacity: .6; }
+
+.pj-gallery.full { grid-template-columns: 1fr; }
+
+/* Video section */
+.pj-video { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #000; }
+.pj-video video { width: 100%; display: block; }
+
+.pj-nextlink { text-align: center; margin-top: 80px; }
+.pj-nextlink a { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #E6D99C; padding-bottom: 4px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  body { border-width: 8px; }
+  .project-hero { padding: 60px 20px 50px; }
+  .project-hero h1 { font-size: 30px; }
+  .container { padding: 40px 20px 60px; }
+  .pj-facts { grid-template-columns: 1fr 1fr; }
+  .pj-feature-grid { grid-template-columns: 1fr; }
+  .pj-gallery { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+{% include header.html %}
+
+<div class="project-hero">
+    <span class="eyebrow">Case Study</span>
+    <h1>Turquoise Accessories</h1>
+    <div class="rule"></div>
+    <p class="subtitle">E-Commerce · UI/UX Design · Photography · Web Development</p>
+    <a class="visit-btn" href="https://womanlywebsite.vercel.app" target="_blank" rel="noopener">Visit Live Site →</a>
+</div>
+
+<div class="container">
+
+    <div class="cover-shot">
+        <img src="turquoise-cover.webp" alt="Turquoise Accessories homepage">
+    </div>
+
+    <div class="pj-section">
+        <div class="pj-label">Overview</div>
+        <p>
+            Turquoise Accessories is a full e-commerce site for a Lebanese fashion accessories brand,
+            designed and built end to end — from the first Figma wireframes through to a live store
+            with its own admin dashboard for day-to-day management. The scope covered visual design,
+            UI/UX, product photography, and the front-end build itself, with every layout, carousel,
+            and page division worked out and refined by hand rather than dropped in from a template.
+        </p>
+
+        <div class="pj-facts">
+            <div class="pj-fact"><span>Role</span><strong>Design &amp; Build</strong></div>
+            <div class="pj-fact"><span>Tools</span><strong>Figma</strong></div>
+            <div class="pj-fact"><span>Deliverable</span><strong>Live E-Commerce Site</strong></div>
+            <div class="pj-fact"><span>Year</span><strong>2026</strong></div>
+        </div>
+    </div>
+
+    <div class="pj-section">
+        <div class="pj-label">Process</div>
+        <div class="pj-feature-grid">
+            <div class="pj-feature">
+                <h3>Design in Figma</h3>
+                <p>
+                    Every page started as a Figma layout — the visual identity, color palette,
+                    typography, and page structure were all worked out there first, before a single
+                    line of the actual site was built.
+                </p>
+            </div>
+            <div class="pj-feature">
+                <h3>UI/UX by iteration</h3>
+                <p>
+                    Rather than following a fixed UX framework, the interaction design was worked
+                    out hands-on — testing how navigation, product browsing, and checkout actually
+                    felt to use, then refining each flow based on that until it felt intuitive.
+                </p>
+            </div>
+            <div class="pj-feature">
+                <h3>Original photography</h3>
+                <p>
+                    All product photography across the site was shot and selected in-house, rather
+                    than sourced from a supplier — giving the catalog a consistent, cohesive look
+                    from one product page to the next.
+                </p>
+            </div>
+            <div class="pj-feature">
+                <h3>Site architecture</h3>
+                <p>
+                    The division of the site — how categories, collections, and style pages relate
+                    to each other, and how a visitor moves between them — was planned out
+                    deliberately rather than left to whatever a template provided.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="pj-section">
+        <div class="pj-label">Key Screens</div>
+        <div class="pj-gallery">
+            <figure>
+                <img src="turquoise-homepage.webp" alt="Turquoise Accessories homepage">
+                <figcaption>Homepage</figcaption>
+            </figure>
+            <figure>
+                <img src="turquoise-product.webp" alt="Turquoise Accessories product page">
+                <figcaption>Product Page</figcaption>
+            </figure>
+            <figure>
+                <img src="turquoise-carousel.webp" alt="Turquoise Accessories homepage carousels">
+                <figcaption>Featured &amp; Category Carousels</figcaption>
+            </figure>
+            <figure>
+                <img src="turquoise-cart.webp" alt="Turquoise Accessories cart and checkout">
+                <figcaption>Cart &amp; Checkout</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="pj-section">
+        <div class="pj-label">Admin Dashboard</div>
+        <p>
+            Beyond the storefront, the project includes a full admin dashboard built for daily
+            management — adding and editing products, organizing them by category and style,
+            curating homepage sections, and tracking orders — so the site can be run day to day
+            without touching any code.
+        </p>
+        <div class="pj-gallery full" style="margin-top: 24px;">
+            <figure>
+                <img src="turquoise-admin.webp" alt="Turquoise Accessories admin dashboard">
+                <figcaption>Admin Dashboard — Product Management</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <!-- Optional walkthrough video — see chat for whether to include one
+         and what to record. Drop the file in as turquoise-walkthrough.mp4
+         next to your images and uncomment this block; otherwise delete it. -->
+    <!--
+    <div class="pj-section">
+        <div class="pj-label">Walkthrough</div>
+        <div class="pj-video">
+            <video controls poster="turquoise-cover.webp">
+                <source src="turquoise-walkthrough.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    -->
+
+    <div class="pj-nextlink">
+        <a href="index.html">← Back to All Work</a>
+    </div>
+
+</div>
+
+{% include footer.html %}
+
+</body>
+</html>
