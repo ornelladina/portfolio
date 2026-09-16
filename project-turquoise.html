@@ -250,23 +250,15 @@ body {
 .pj-result h4 { font-size: 15px; font-weight: 500; margin: 0 0 10px; letter-spacing: .01em; }
 .pj-result p { font-size: 14.5px; line-height: 1.7; opacity: .8; margin: 0; max-width: none; }
 
-/* Gallery grid — screenshots of the actual site/admin. Fixed box so
-   images stay a consistent, reasonable size, but object-fit: contain
-   (not cover) so nothing gets cropped — the full screenshot always shows. */
+/* Gallery grid — screenshots of the actual site/admin, shown as
+   regular images at their own natural size, with the caption sitting
+   in normal flow underneath (not boxed or centered). */
 .pj-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .pj-gallery figure { margin: 0; border-radius: 10px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #fff; }
-.pj-gallery img { width: 100%; display: block; }
-.pj-gallery:not(.full) figure { aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; }
-.pj-gallery:not(.full) img { width: 100%; height: 100%; object-fit: contain; }
+.pj-gallery img { width: 100%; height: auto; display: block; }
 .pj-gallery figcaption { padding: 12px 14px; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; opacity: .6; }
 
-/* The admin dashboard shot (.full) is its own single wide screenshot —
-   capped by max-height instead of a fixed aspect-ratio, so it shows in
-   full without dominating the page or getting blown up past its own
-   resolution. */
 .pj-gallery.full { grid-template-columns: 1fr; }
-.pj-gallery.full figure { display: flex; align-items: center; justify-content: center; max-height: 560px; }
-.pj-gallery.full img { width: auto; max-width: 100%; height: auto; max-height: 560px; object-fit: contain; }
 
 /* Video section */
 .pj-video { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #000; }
