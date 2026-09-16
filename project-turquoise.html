@@ -195,6 +195,7 @@ body {
 /* Challenge illustration — screenshot + one-line caption under each pair */
 .pj-challenge figure {
     margin: 24px 0 0;
+    max-width: 420px;
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid rgba(0,0,0,0.08);
@@ -257,8 +258,7 @@ body {
 /* Gallery grid — screenshots of the actual site/admin, each its own
    natural height (align-items: start stops the grid from stretching
    every figure to match the tallest in its row, which was pushing
-   captions down unevenly). Every image is a link that opens the
-   full-size photo in a new tab. */
+   captions down unevenly). Every image opens in the lightbox on click. */
 .pj-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
 .pj-gallery figure { display: block; margin: 0; border-radius: 10px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #fff; }
 .pj-gallery figure a { display: block; cursor: pointer; }
@@ -267,6 +267,13 @@ body {
 
 .pj-gallery.full { grid-template-columns: 1fr; }
 .pj-gallery.full figure { max-width: 640px; }
+
+/* Featured pair — Carousel + Product Card get their own row, equal
+   size, above the rest of the gallery. */
+.pj-gallery.featured { grid-template-columns: 1fr 1fr; margin-bottom: 20px; }
+.pj-gallery.featured figure { aspect-ratio: 4 / 3; }
+.pj-gallery.featured figure a, .pj-gallery.featured figure img { height: 100%; }
+.pj-gallery.featured figure img { object-fit: cover; }
 
 /* Video section */
 .pj-video { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #000; }
@@ -292,6 +299,40 @@ body {
 .pj-nextlink { text-align: center; margin-top: 40px; }
 .pj-nextlink a { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #E6D99C; padding-bottom: 4px; }
 
+/* Lightbox — click any project image to see it full-size without
+   leaving the page; click the backdrop or the × to close. */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 12, 12, 0.9);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+    cursor: zoom-out;
+}
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    cursor: default;
+}
+.lightbox .lightbox-close {
+    position: fixed;
+    top: 22px;
+    right: 30px;
+    font-size: 32px;
+    line-height: 1;
+    color: #F5F1E8;
+    cursor: pointer;
+    font-family: "Sora", sans-serif;
+    font-weight: 200;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   body { border-width: 8px; }
@@ -307,6 +348,7 @@ body {
   .pj-challenge .prob-sol { grid-template-columns: 1fr; gap: 16px; }
   .pj-results { grid-template-columns: 1fr; }
   .pj-gallery { grid-template-columns: 1fr; }
+  .pj-gallery.featured { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -414,8 +456,8 @@ body {
                     </div>
                 </div>
                 <div class="media-pair">
-                    <a href="turquoise-challenge-admin.webp" target="_blank" rel="noopener"><img src="turquoise-challenge-admin.webp" alt="Turquoise Accessories custom admin dashboard"></a>
-                    <a href="turquoise-challenge-admin1.webp" target="_blank" rel="noopener"><img src="turquoise-challenge-admin1.webp" alt="Turquoise Accessories admin dashboard detail"></a>
+                    <a href="javascript:void(0);" onclick="openLightbox('turquoise-challenge-admin.webp')"><img src="turquoise-challenge-admin.webp" alt="Turquoise Accessories custom admin dashboard"></a>
+                    <a href="javascript:void(0);" onclick="openLightbox('turquoise-challenge-admin1.webp')"><img src="turquoise-challenge-admin1.webp" alt="Turquoise Accessories admin dashboard detail"></a>
                 </div>
                 <p class="media-caption">The custom Admin Dashboard — drag-and-drop uploads and real-time inventory search, built to replace the old fragmented workflow.</p>
             </div>
@@ -476,7 +518,7 @@ body {
                     </div>
                 </div>
                 <figure>
-                    <a href="turquoise-challenge-shoplook.webp" target="_blank" rel="noopener"><img src="turquoise-challenge-shoplook.webp" alt="Turquoise Accessories Shop the Look collection card"></a>
+                    <a href="javascript:void(0);" onclick="openLightbox('turquoise-challenge-shoplook.webp')"><img src="turquoise-challenge-shoplook.webp" alt="Turquoise Accessories Shop the Look collection card"></a>
                     <figcaption>The "Shop the Look" Collection Card, grouping every item from one styled photo onto a single page.</figcaption>
                 </figure>
             </div>
@@ -486,29 +528,31 @@ body {
 
     <div class="pj-section">
         <div class="pj-label">Key Screens</div>
-        <div class="pj-gallery">
+        <div class="pj-gallery featured">
             <figure>
-                <a href="turquoise-carousel.webp" target="_blank" rel="noopener"><img src="turquoise-carousel.webp" alt="Turquoise Accessories homepage carousels"></a>
+                <a href="javascript:void(0);" onclick="openLightbox('turquoise-carousel.webp')"><img src="turquoise-carousel.webp" alt="Turquoise Accessories homepage carousels"></a>
                 <figcaption>Featured &amp; Category Carousels</figcaption>
             </figure>
             <figure>
-                <a href="turquoise-productcard.webp" target="_blank" rel="noopener"><img src="turquoise-productcard.webp" alt="Turquoise Accessories product card"></a>
+                <a href="javascript:void(0);" onclick="openLightbox('turquoise-productcard.webp')"><img src="turquoise-productcard.webp" alt="Turquoise Accessories product card"></a>
                 <figcaption>Product Card</figcaption>
             </figure>
+        </div>
+        <div class="pj-gallery">
             <figure>
-                <a href="turquoise-homepage.webp" target="_blank" rel="noopener"><img src="turquoise-homepage.webp" alt="Turquoise Accessories homepage"></a>
+                <a href="javascript:void(0);" onclick="openLightbox('turquoise-homepage.webp')"><img src="turquoise-homepage.webp" alt="Turquoise Accessories homepage"></a>
                 <figcaption>Homepage</figcaption>
             </figure>
             <figure>
-                <a href="turquoise-product.webp" target="_blank" rel="noopener"><img src="turquoise-product.webp" alt="Turquoise Accessories product page"></a>
+                <a href="javascript:void(0);" onclick="openLightbox('turquoise-product.webp')"><img src="turquoise-product.webp" alt="Turquoise Accessories product page"></a>
                 <figcaption>Product Page</figcaption>
             </figure>
             <figure>
-                <a href="turquoise-cart.webp" target="_blank" rel="noopener"><img src="turquoise-cart.webp" alt="Turquoise Accessories cart and checkout"></a>
+                <a href="javascript:void(0);" onclick="openLightbox('turquoise-cart.webp')"><img src="turquoise-cart.webp" alt="Turquoise Accessories cart and checkout"></a>
                 <figcaption>Cart &amp; Checkout</figcaption>
             </figure>
             <figure>
-                <a href="turquoise-bestsellers.webp" target="_blank" rel="noopener"><img src="turquoise-bestsellers.webp" alt="Turquoise Accessories best sellers section"></a>
+                <a href="javascript:void(0);" onclick="openLightbox('turquoise-bestsellers.webp')"><img src="turquoise-bestsellers.webp" alt="Turquoise Accessories best sellers section"></a>
                 <figcaption>Best Sellers</figcaption>
             </figure>
         </div>
@@ -524,7 +568,7 @@ body {
         </p>
         <div class="pj-gallery full" style="margin-top: 24px;">
             <figure>
-                <a href="turquoise-admin.webp" target="_blank" rel="noopener"><img src="turquoise-admin.webp" alt="Turquoise Accessories admin dashboard"></a>
+                <a href="javascript:void(0);" onclick="openLightbox('turquoise-admin.webp')"><img src="turquoise-admin.webp" alt="Turquoise Accessories admin dashboard"></a>
                 <figcaption>Admin Dashboard — Product Management</figcaption>
             </figure>
         </div>
@@ -597,6 +641,28 @@ body {
     </div>
 
 </div>
+
+<!-- Lightbox overlay — shared by every clickable project image on this page -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.getElementById('lightbox-img').src = '';
+    document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+});
+</script>
 
 {% include footer.html %} 
 
