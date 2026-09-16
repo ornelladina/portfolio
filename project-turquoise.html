@@ -154,10 +154,65 @@ body {
 .pj-fact span { display: block; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; opacity: .55; margin-bottom: 8px; }
 .pj-fact strong { font-size: 15px; font-weight: 400; }
 
+/* Workflow line — Figma -> AI engineering -> GitHub -> Vercel -> Supabase */
+.pj-workflow {
+    margin: 20px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+.pj-workflow span.label { display: block; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; opacity: .55; margin-bottom: 10px; }
+.pj-workflow .steps { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-family: "Space Mono", monospace; font-size: 12.5px; }
+.pj-workflow .steps .arrow { opacity: .4; }
+
 /* Feature list — Figma → build → admin, etc. */
 .pj-feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 .pj-feature h3 { font-size: 15px; font-weight: 500; margin: 0 0 10px; letter-spacing: .02em; }
 .pj-feature p { font-size: 15px; line-height: 1.7; opacity: .85; margin: 0; }
+
+/* Challenge / Solution blocks — used for the three UX case-study problems */
+.pj-challenge-list { display: flex; flex-direction: column; gap: 44px; }
+.pj-challenge .num {
+    display: block;
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #B9A24E;
+    margin-bottom: 8px;
+}
+.pj-challenge h3 { font-size: 19px; font-weight: 500; margin: 0 0 16px; letter-spacing: .01em; }
+.pj-challenge .prob-sol { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.pj-challenge .prob-sol h4 {
+    font-size: 11px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    opacity: .55;
+    margin: 0 0 8px;
+    font-weight: 500;
+}
+.pj-challenge .prob-sol p { font-size: 15px; line-height: 1.75; opacity: .9; margin: 0; max-width: none; }
+
+/* Challenge illustration — screenshot + one-line caption under each pair */
+.pj-challenge figure {
+    margin: 24px 0 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+    background: #fff;
+}
+.pj-challenge figure img { width: 100%; display: block; }
+.pj-challenge figcaption {
+    padding: 12px 14px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    opacity: .65;
+    max-width: none;
+}
+
+/* Results row */
+.pj-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 8px; }
+.pj-result h4 { font-size: 15px; font-weight: 500; margin: 0 0 10px; letter-spacing: .01em; }
+.pj-result p { font-size: 14.5px; line-height: 1.7; opacity: .8; margin: 0; max-width: none; }
 
 /* Gallery grid — screenshots of the actual site/admin */
 .pj-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
@@ -171,7 +226,24 @@ body {
 .pj-video { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #000; }
 .pj-video video { width: 100%; display: block; }
 
-.pj-nextlink { text-align: center; margin-top: 80px; }
+/* Bottom CTA — same pill button as the hero's "Visit Live Site" */
+.pj-cta { text-align: center; margin-top: 70px; padding-top: 60px; border-top: 1px solid rgba(0,0,0,0.08); }
+.pj-cta p { margin: 0 auto 24px; }
+.pj-cta .visit-btn {
+    display: inline-block;
+    padding: 14px 34px;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    transition: 0.3s ease;
+}
+.pj-cta .visit-btn:hover { background: #1a1a1a; color: #F8F5F1; }
+
+.pj-nextlink { text-align: center; margin-top: 40px; }
 .pj-nextlink a { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #E6D99C; padding-bottom: 4px; }
 
 /* RESPONSIVE */
@@ -185,6 +257,8 @@ body {
   .container { padding: 40px 20px 60px; }
   .pj-facts { grid-template-columns: 1fr 1fr; }
   .pj-feature-grid { grid-template-columns: 1fr; }
+  .pj-challenge .prob-sol { grid-template-columns: 1fr; gap: 16px; }
+  .pj-results { grid-template-columns: 1fr; }
   .pj-gallery { grid-template-columns: 1fr; }
 }
 </style>
@@ -198,8 +272,8 @@ body {
     <span class="eyebrow">Case Study</span>
     <h1>Turquoise Accessories</h1>
     <div class="rule"></div>
-    <p class="subtitle">E-Commerce · UI/UX Design · Photography · Web Development</p>
-    <a class="visit-btn" href="https://womanlywebsite.vercel.app" target="_blank" rel="noopener">Visit Live Site →</a>
+    <p class="subtitle">Brand Identity · E-Commerce · UI/UX Design · Web Development</p>
+    <a class="visit-btn" href="https://turquoiseaccessories.vercel.app" target="_blank" rel="noopener">Visit Live Site →</a>
 </div>
 
 <div class="container">
@@ -226,56 +300,137 @@ body {
     <div class="pj-section">
         <div class="pj-label">Overview</div>
         <p>
-            Turquoise Accessories is a full e-commerce site for a Lebanese fashion accessories brand,
-            designed and built end to end — from the first Figma wireframes through to a live store
-            with its own admin dashboard for day-to-day management. The scope covered visual design,
-            UI/UX, product photography, and the front-end build itself, with every layout, carousel,
-            and page division worked out and refined by hand rather than dropped in from a template.
+            Turquoise Accessories is a full brand identity and e-commerce web app for a Lebanese
+            accessories brand — founded, designed, and built end to end, from the first Figma
+            wireframes through to a live store with its own admin dashboard for day-to-day
+            management. The scope covered brand identity, a typography system, e-commerce UI/UX,
+            and the live frontend deployment itself, with every layout, navigation pattern, and
+            product flow worked out and refined by hand rather than dropped in from a template.
         </p>
 
         <div class="pj-facts">
-            <div class="pj-fact"><span>Role</span><strong>Design &amp; Build</strong></div>
-            <div class="pj-fact"><span>Tools</span><strong>Figma</strong></div>
-            <div class="pj-fact"><span>Deliverable</span><strong>Live E-Commerce Site</strong></div>
+            <div class="pj-fact"><span>Role</span><strong>Brand &amp; Web Designer, Founder</strong></div>
+            <div class="pj-fact"><span>Deliverables</span><strong>Brand Identity, Typography System, E-Commerce UI/UX</strong></div>
+            <div class="pj-fact"><span>Tools &amp; Tech</span><strong>Figma, React, Next.js 14, TypeScript, Supabase, GitHub, Vercel</strong></div>
             <div class="pj-fact"><span>Year</span><strong>2026</strong></div>
+        </div>
+
+        <div class="pj-workflow">
+            <span class="label">Workflow</span>
+            <div class="steps">
+                <span>UI/UX Design (Figma)</span><span class="arrow">➔</span>
+                <span>AI-Assisted Engineering (Claude AI)</span><span class="arrow">➔</span>
+                <span>Version Control (GitHub)</span><span class="arrow">➔</span>
+                <span>Cloud Deployment (Vercel)</span><span class="arrow">➔</span>
+                <span>Headless Backend (Supabase)</span>
+            </div>
         </div>
     </div>
 
     <div class="pj-section">
-        <div class="pj-label">Process</div>
-        <div class="pj-feature-grid">
-            <div class="pj-feature">
-                <h3>Design in Figma</h3>
-                <p>
-                    Every page started as a Figma layout — the visual identity, color palette,
-                    typography, and page structure were all worked out there first, before a single
-                    line of the actual site was built.
-                </p>
+        <div class="pj-label">The Challenge</div>
+        <p>
+            Turquoise Accessories launched as a boutique local brand, building a highly engaged
+            organic community across social media. But relying purely on Instagram and Facebook
+            direct messages for sales created a real operational bottleneck. The brand needed a
+            self-contained digital space of its own — a fast, responsive e-commerce app built to
+            handle high-volume product browsing while accommodating local buying habits, like a
+            streamlined cash-on-delivery checkout.
+        </p>
+    </div>
+
+    <div class="pj-section">
+        <div class="pj-label">Design &amp; UX Challenges</div>
+        <div class="pj-challenge-list">
+
+            <div class="pj-challenge">
+                <span class="num">01</span>
+                <h3>Fragmented Database Workflows</h3>
+                <div class="prob-sol">
+                    <div>
+                        <h4>The Problem</h4>
+                        <p>
+                            The native database backend for uploading multi-attribute inventory,
+                            linking asset URLs, and managing relational IDs was fragmented, slow, and
+                            prone to formatting errors during day-to-day stock changes.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>The Solution</h4>
+                        <p>
+                            Designed and built a dedicated internal Admin Dashboard for backend
+                            operations — unifying product management onto a single page, with
+                            drag-and-drop image uploading, visual editing, and a real-time inventory
+                            search bar. It removed the need to manually query ID keys and noticeably
+                            sped up daily internal workflows.
+                        </p>
+                    </div>
+                </div>
+                <figure>
+                    <img src="turquoise-challenge-admin.webp" alt="Turquoise Accessories custom admin dashboard">
+                    <figcaption>The custom Admin Dashboard — drag-and-drop uploads and real-time inventory search, built to replace the old fragmented workflow.</figcaption>
+                </figure>
             </div>
-            <div class="pj-feature">
-                <h3>UI/UX by iteration</h3>
-                <p>
-                    Rather than following a fixed UX framework, the interaction design was worked
-                    out hands-on — testing how navigation, product browsing, and checkout actually
-                    felt to use, then refining each flow based on that until it felt intuitive.
-                </p>
+
+            <div class="pj-challenge">
+                <span class="num">02</span>
+                <h3>Multi-Attribute Navigation Friction</h3>
+                <div class="prob-sol">
+                    <div>
+                        <h4>The Problem</h4>
+                        <p>
+                            The inventory spans overlapping attributes — matching categories like
+                            Necklaces with material compositions like Gold-Plated, Stainless Steel, or
+                            Vintage. A standard flat menu forced users to toggle through repetitive
+                            pages just to confirm material, causing real drop-off.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>The Solution</h4>
+                        <p>
+                            Built a dynamic, dual-layered navigation: a sticky, interactive horizontal
+                            tab structure lets users swipe or click between material types instantly,
+                            with no full page reload. At the component level, the frontend pulls
+                            directly from the admin panel's choices, rendering a clear material label
+                            on every product card beneath the price.
+                        </p>
+                    </div>
+                </div>
+                <figure>
+                    <img src="turquoise-challenge-navigation.webp" alt="Turquoise Accessories material navigation tabs">
+                    <figcaption>Sticky material tabs — Gold-Plated, Stainless Steel, Vintage — with the active material labeled directly on each product card.</figcaption>
+                </figure>
             </div>
-            <div class="pj-feature">
-                <h3>Original photography</h3>
-                <p>
-                    All product photography across the site was shot and selected in-house, rather
-                    than sourced from a supplier — giving the catalog a consistent, cohesive look
-                    from one product page to the next.
-                </p>
+
+            <div class="pj-challenge">
+                <span class="num">03</span>
+                <h3>Visual Presentation Bottlenecks</h3>
+                <div class="prob-sol">
+                    <div>
+                        <h4>The Problem</h4>
+                        <p>
+                            Campaign photography often features multi-piece styled jewelry stacks in
+                            a single shot. Showing these only as individual product listings confused
+                            users who wanted the entire coordinated look, adding unnecessary searching.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>The Solution</h4>
+                        <p>
+                            Created a "Shop the Look" system that treats styled group photography as
+                            its own Collection Card, separate from normal product links. Clicking it
+                            routes to a page where every item in that photo is grouped together, so
+                            users can browse materials and add multiple pieces from one photo straight
+                            to their cart.
+                        </p>
+                    </div>
+                </div>
+                <figure>
+                    <img src="turquoise-challenge-shoplook.webp" alt="Turquoise Accessories Shop the Look collection card">
+                    <figcaption>The "Shop the Look" Collection Card, grouping every item from one styled photo onto a single page.</figcaption>
+                </figure>
             </div>
-            <div class="pj-feature">
-                <h3>Site architecture</h3>
-                <p>
-                    The division of the site — how categories, collections, and style pages relate
-                    to each other, and how a visitor moves between them — was planned out
-                    deliberately rather than left to whatever a template provided.
-                </p>
-            </div>
+
         </div>
     </div>
 
@@ -309,7 +464,7 @@ body {
         <div class="pj-label">Admin Dashboard</div>
         <p>
             Beyond the storefront, the project includes a full admin dashboard built for daily
-            management — adding and editing products, organizing them by category and style,
+            management — adding and editing products, organizing them by category and material,
             curating homepage sections, and tracking orders — so the site can be run day to day
             without touching any code.
         </p>
@@ -319,6 +474,68 @@ body {
                 <figcaption>Admin Dashboard — Product Management</figcaption>
             </figure>
         </div>
+    </div>
+
+    <div class="pj-section">
+        <div class="pj-label">Technical Implementation &amp; Deployment Pipeline</div>
+        <p>
+            To bring the Figma blueprints to a live production state safely, the build followed a
+            structured, professional development pipeline:
+        </p>
+        <div class="pj-feature-grid" style="margin-top: 30px;">
+            <div class="pj-feature">
+                <h3>AI-Assisted Engineering</h3>
+                <p>
+                    Used Claude AI to translate the visual layouts into structured component
+                    architecture with React, Next.js 14, and TypeScript.
+                </p>
+            </div>
+            <div class="pj-feature">
+                <h3>Version Control &amp; Repository Management</h3>
+                <p>
+                    Managed the full source code through GitHub — handling code branches, testing,
+                    and version history safely throughout the build.
+                </p>
+            </div>
+            <div class="pj-feature">
+                <h3>Headless Backend &amp; Live Storage</h3>
+                <p>
+                    Configured a Supabase database to securely manage live inventory quantities,
+                    product metadata, visual uploads, and incoming customer orders.
+                </p>
+            </div>
+            <div class="pj-feature">
+                <h3>Performance &amp; Cloud Hosting</h3>
+                <p>
+                    Built an asset pipeline converting all photography to compressed WebP for fast
+                    mobile loading. The app is deployed and hosted on Vercel, connected directly to
+                    the GitHub main branch for automated live updates.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="pj-section">
+        <div class="pj-label">Results</div>
+        <div class="pj-results">
+            <div class="pj-result">
+                <h4>Live Deployment</h4>
+                <p>A fully operational, installable Progressive Web App running on Vercel.</p>
+            </div>
+            <div class="pj-result">
+                <h4>Community Scale</h4>
+                <p>A combined audience of 23,000+ followers across Instagram and Facebook, built through targeted visual marketing and consistent content layout.</p>
+            </div>
+            <div class="pj-result">
+                <h4>Localized Logistics</h4>
+                <p>A streamlined, single-page checkout built around local cash-on-delivery orders.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="pj-cta">
+        <p>See the store running live, end to end.</p>
+        <a class="visit-btn" href="https://turquoiseaccessories.vercel.app" target="_blank" rel="noopener">Visit Live Site →</a>
     </div>
 
     <div class="pj-nextlink">
