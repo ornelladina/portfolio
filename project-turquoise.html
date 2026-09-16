@@ -209,6 +209,34 @@ body {
     max-width: none;
 }
 
+/* Two-photo pair inside a challenge block (Admin Dashboard) */
+.pj-challenge .media-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+}
+.pj-challenge .media-pair > div {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+    background: #fff;
+    aspect-ratio: 4 / 3;
+}
+.pj-challenge .media-pair img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Shared one-line caption under a pair or a video */
+.pj-challenge .media-caption {
+    margin: 12px 0 0;
+    font-size: 12.5px;
+    line-height: 1.5;
+    opacity: .65;
+    max-width: none;
+}
+
+/* Video block inside a challenge (Material Navigation) */
+.pj-challenge .pj-video { margin-top: 24px; }
+
 /* Results row */
 .pj-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 8px; }
 .pj-result h4 { font-size: 15px; font-weight: 500; margin: 0 0 10px; letter-spacing: .01em; }
@@ -218,6 +246,7 @@ body {
 .pj-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .pj-gallery figure { margin: 0; border-radius: 10px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #fff; }
 .pj-gallery img { width: 100%; display: block; }
+.pj-gallery:not(.full) img { aspect-ratio: 4 / 3; object-fit: cover; }
 .pj-gallery figcaption { padding: 12px 14px; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; opacity: .6; }
 
 .pj-gallery.full { grid-template-columns: 1fr; }
@@ -366,10 +395,11 @@ body {
                         </p>
                     </div>
                 </div>
-                <figure>
-                    <img src="turquoise-challenge-admin.webp" alt="Turquoise Accessories custom admin dashboard">
-                    <figcaption>The custom Admin Dashboard — drag-and-drop uploads and real-time inventory search, built to replace the old fragmented workflow.</figcaption>
-                </figure>
+                <div class="media-pair">
+                    <div><img src="turquoise-challenge-admin.webp" alt="Turquoise Accessories custom admin dashboard"></div>
+                    <div><img src="turquoise-challenge-admin1.webp" alt="Turquoise Accessories admin dashboard detail"></div>
+                </div>
+                <p class="media-caption">The custom Admin Dashboard — drag-and-drop uploads and real-time inventory search, built to replace the old fragmented workflow.</p>
             </div>
 
             <div class="pj-challenge">
@@ -396,10 +426,12 @@ body {
                         </p>
                     </div>
                 </div>
-                <figure>
-                    <img src="turquoise-challenge-navigation.webp" alt="Turquoise Accessories material navigation tabs">
-                    <figcaption>Sticky material tabs — Gold-Plated, Stainless Steel, Vintage — with the active material labeled directly on each product card.</figcaption>
-                </figure>
+                <div class="pj-video">
+                    <video controls>
+                        <source src="turquoise-challenge-navigation.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p class="media-caption">Sticky material tabs — Gold-Plated, Stainless Steel, Vintage — with the active material labeled directly on each product card.</p>
             </div>
 
             <div class="pj-challenge">
