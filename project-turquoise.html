@@ -117,7 +117,7 @@ body {
 /* CONTAINER */
 .container { flex: 1; max-width: 1000px; margin: 0 auto; padding: 60px 24px 80px; width: 100%; box-sizing: border-box; }
 
-.cover-shot { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 70px; border: 1px solid rgba(0,0,0,0.08); }
+.cover-shot { width: 100%; max-width: 720px; margin: 0 auto 70px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); }
 .cover-shot img { width: 100%; display: block; }
 
 /* SECTIONS — same label style as the homepage's category-title */
@@ -212,19 +212,19 @@ body {
 /* Two-photo pair inside a challenge block (Admin Dashboard) — shown in
    full, uncropped, at their own natural proportions */
 .pj-challenge .media-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 16px;
     margin-top: 24px;
-    align-items: start;
 }
 .pj-challenge .media-pair > div {
+    display: block;
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid rgba(0,0,0,0.08);
     background: #fff;
 }
-.pj-challenge .media-pair img { width: 100%; height: auto; display: block; }
+.pj-challenge .media-pair img { display: block; float: none; width: 100%; height: auto; margin: 0; }
 
 /* Shared one-line caption under a pair or a video */
 .pj-challenge .media-caption {
@@ -252,11 +252,14 @@ body {
 
 /* Gallery grid — screenshots of the actual site/admin, shown as
    regular images at their own natural size, with the caption sitting
-   in normal flow underneath (not boxed or centered). */
+   in normal flow underneath (not boxed, not floated, not beside it).
+   Selectors are written specifically and with explicit display/float
+   resets in case a site-wide stylesheet from header.html sets
+   defaults on img/figure/figcaption elsewhere on the site. */
 .pj-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.pj-gallery figure { margin: 0; border-radius: 10px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #fff; }
-.pj-gallery img { width: 100%; height: auto; display: block; }
-.pj-gallery figcaption { padding: 12px 14px; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; opacity: .6; }
+.pj-gallery figure { display: block; margin: 0; border-radius: 10px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #fff; }
+.pj-gallery figure img { display: block; float: none; width: 100%; height: auto; margin: 0; }
+.pj-gallery figure figcaption { display: block; float: none; clear: both; width: 100%; box-sizing: border-box; padding: 12px 14px; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; opacity: .6; }
 
 .pj-gallery.full { grid-template-columns: 1fr; }
 
@@ -293,6 +296,7 @@ body {
   .project-hero { padding: 60px 20px 50px; }
   .project-hero h1 { font-size: 30px; }
   .container { padding: 40px 20px 60px; }
+  .cover-shot { max-width: 100%; margin-bottom: 40px; }
   .pj-facts { grid-template-columns: 1fr 1fr; }
   .pj-feature-grid { grid-template-columns: 1fr; }
   .pj-challenge .prob-sol { grid-template-columns: 1fr; gap: 16px; }
