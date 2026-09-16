@@ -200,6 +200,7 @@ body {
     border: 1px solid rgba(0,0,0,0.08);
     background: #fff;
 }
+.pj-challenge figure a { display: block; cursor: pointer; }
 .pj-challenge figure img { width: 100%; display: block; }
 .pj-challenge figcaption {
     padding: 12px 14px;
@@ -212,20 +213,22 @@ body {
 /* Two-photo pair inside a challenge block (Admin Dashboard) — shown in
    full, uncropped, at their own natural proportions */
 .pj-challenge .media-pair {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-top: 24px;
     max-width: 420px;
 }
-.pj-challenge .media-pair > div {
+.pj-challenge .media-pair > a {
     display: block;
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid rgba(0,0,0,0.08);
     background: #fff;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
 }
-.pj-challenge .media-pair img { display: block; float: none; width: 100%; height: auto; margin: 0; }
+.pj-challenge .media-pair img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 /* Shared one-line caption under a pair or a video */
 .pj-challenge .media-caption {
@@ -251,18 +254,19 @@ body {
 .pj-result h4 { font-size: 15px; font-weight: 500; margin: 0 0 10px; letter-spacing: .01em; }
 .pj-result p { font-size: 14.5px; line-height: 1.7; opacity: .8; margin: 0; max-width: none; }
 
-/* Gallery grid — screenshots of the actual site/admin, shown as
-   regular images at their own natural size, with the caption sitting
-   in normal flow underneath (not boxed, not floated, not beside it).
-   Selectors are written specifically and with explicit display/float
-   resets in case a site-wide stylesheet from header.html sets
-   defaults on img/figure/figcaption elsewhere on the site. */
-.pj-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+/* Gallery grid — screenshots of the actual site/admin, each its own
+   natural height (align-items: start stops the grid from stretching
+   every figure to match the tallest in its row, which was pushing
+   captions down unevenly). Every image is a link that opens the
+   full-size photo in a new tab. */
+.pj-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
 .pj-gallery figure { display: block; margin: 0; border-radius: 10px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #fff; }
+.pj-gallery figure a { display: block; cursor: pointer; }
 .pj-gallery figure img { display: block; float: none; width: 100%; height: auto; margin: 0; }
 .pj-gallery figure figcaption { display: block; float: none; clear: both; width: 100%; box-sizing: border-box; padding: 12px 14px; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; opacity: .6; }
 
 .pj-gallery.full { grid-template-columns: 1fr; }
+.pj-gallery.full figure { max-width: 640px; }
 
 /* Video section */
 .pj-video { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #000; }
@@ -410,8 +414,8 @@ body {
                     </div>
                 </div>
                 <div class="media-pair">
-                    <div><img src="turquoise-challenge-admin.webp" alt="Turquoise Accessories custom admin dashboard"></div>
-                    <div><img src="turquoise-challenge-admin1.webp" alt="Turquoise Accessories admin dashboard detail"></div>
+                    <a href="turquoise-challenge-admin.webp" target="_blank" rel="noopener"><img src="turquoise-challenge-admin.webp" alt="Turquoise Accessories custom admin dashboard"></a>
+                    <a href="turquoise-challenge-admin1.webp" target="_blank" rel="noopener"><img src="turquoise-challenge-admin1.webp" alt="Turquoise Accessories admin dashboard detail"></a>
                 </div>
                 <p class="media-caption">The custom Admin Dashboard — drag-and-drop uploads and real-time inventory search, built to replace the old fragmented workflow.</p>
             </div>
@@ -472,7 +476,7 @@ body {
                     </div>
                 </div>
                 <figure>
-                    <img src="turquoise-challenge-shoplook.webp" alt="Turquoise Accessories Shop the Look collection card">
+                    <a href="turquoise-challenge-shoplook.webp" target="_blank" rel="noopener"><img src="turquoise-challenge-shoplook.webp" alt="Turquoise Accessories Shop the Look collection card"></a>
                     <figcaption>The "Shop the Look" Collection Card, grouping every item from one styled photo onto a single page.</figcaption>
                 </figure>
             </div>
@@ -484,24 +488,28 @@ body {
         <div class="pj-label">Key Screens</div>
         <div class="pj-gallery">
             <figure>
-                <img src="turquoise-homepage.webp" alt="Turquoise Accessories homepage">
-                <figcaption>Homepage</figcaption>
-            </figure>
-            <figure>
-                <img src="turquoise-product.webp" alt="Turquoise Accessories product page">
-                <figcaption>Product Page</figcaption>
-            </figure>
-            <figure>
-                <img src="turquoise-carousel.webp" alt="Turquoise Accessories homepage carousels">
+                <a href="turquoise-carousel.webp" target="_blank" rel="noopener"><img src="turquoise-carousel.webp" alt="Turquoise Accessories homepage carousels"></a>
                 <figcaption>Featured &amp; Category Carousels</figcaption>
             </figure>
             <figure>
-                <img src="turquoise-productcard.webp" alt="Turquoise Accessories product card">
+                <a href="turquoise-productcard.webp" target="_blank" rel="noopener"><img src="turquoise-productcard.webp" alt="Turquoise Accessories product card"></a>
                 <figcaption>Product Card</figcaption>
             </figure>
             <figure>
-                <img src="turquoise-cart.webp" alt="Turquoise Accessories cart and checkout">
+                <a href="turquoise-homepage.webp" target="_blank" rel="noopener"><img src="turquoise-homepage.webp" alt="Turquoise Accessories homepage"></a>
+                <figcaption>Homepage</figcaption>
+            </figure>
+            <figure>
+                <a href="turquoise-product.webp" target="_blank" rel="noopener"><img src="turquoise-product.webp" alt="Turquoise Accessories product page"></a>
+                <figcaption>Product Page</figcaption>
+            </figure>
+            <figure>
+                <a href="turquoise-cart.webp" target="_blank" rel="noopener"><img src="turquoise-cart.webp" alt="Turquoise Accessories cart and checkout"></a>
                 <figcaption>Cart &amp; Checkout</figcaption>
+            </figure>
+            <figure>
+                <a href="turquoise-bestsellers.webp" target="_blank" rel="noopener"><img src="turquoise-bestsellers.webp" alt="Turquoise Accessories best sellers section"></a>
+                <figcaption>Best Sellers</figcaption>
             </figure>
         </div>
     </div>
@@ -516,7 +524,7 @@ body {
         </p>
         <div class="pj-gallery full" style="margin-top: 24px;">
             <figure>
-                <img src="turquoise-admin.webp" alt="Turquoise Accessories admin dashboard">
+                <a href="turquoise-admin.webp" target="_blank" rel="noopener"><img src="turquoise-admin.webp" alt="Turquoise Accessories admin dashboard"></a>
                 <figcaption>Admin Dashboard — Product Management</figcaption>
             </figure>
         </div>
