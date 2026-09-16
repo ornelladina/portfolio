@@ -120,12 +120,32 @@ body {
 }
 
 .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.project { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 525 / 409; background: #fff; border: 1px solid rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: 0.3s ease; }
+.project { position: relative; display: block; overflow: hidden; border-radius: 12px; aspect-ratio: 525 / 409; background: #fff; border: 1px solid rgba(0,0,0,0.08); text-decoration: none; color: inherit; transition: 0.3s ease; }
 .project img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s ease; }
 .project:hover { transform: translateY(-4px); border-color: rgba(0,0,0,0.2); }
 .project:hover img { transform: scale(1.03); }
 .label { position: absolute; bottom: 14px; left: 14px; font-size: 13px; background: rgba(248,245,241,0.9); padding: 8px 12px; border-radius: 6px; }
 .label span { display: block; font-size: 10px; opacity: 0.6; text-transform: uppercase; margin-bottom: 2px; }
+
+/* TECH / SKILL TAGS — sit under each thumbnail so recruiters can
+   skim the toolset without opening the project page */
+.tags {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.tags span {
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .02em;
+    color: #1a1a1a;
+    background: #FFFCEF;
+    border: 1px solid #E6D99C;
+    padding: 4px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
 
 /* ABOUT */
 .about-section { max-width: 900px; margin: 90px auto 80px; }
@@ -192,7 +212,7 @@ body {
         <span class="eyebrow">Portfolio · 2026</span>
         <h1>ORNELLA DINA DELIA</h1>
         <div class="rule"></div>
-        <p>UI/UX DESIGNER · VISUAL STORYTELLER · CREATIVE DESIGNER</p>
+        <p>BRAND &amp; WEB DESIGNER · VISUAL STORYTELLER</p>
     </div>
 </div>
 
@@ -210,26 +230,58 @@ body {
     <div class="category-group">
         <div class="category-title">E-Commerce</div>
         <div class="grid">
-            <a href="project-turquoise.html" class="project">
-                <img src="turquoise-homepage.webp">
-                <div class="label"><span>E-Commerce / Web Design</span> TURQUOISE ACCESSORIES</div>
-            </a>
+            <div>
+                <a href="project-turquoise.html" class="project">
+                    <img src="turquoise-homepage.webp">
+                    <div class="label"><span>Full-Stack Web App (Next.js 14 &amp; Supabase)</span> TURQUOISE ACCESSORIES</div>
+                </a>
+                <div class="tags">
+                    <span>Brand Identity</span>
+                    <span>Figma UI Layout</span>
+                    <span>Next.js</span>
+                    <span>TypeScript</span>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="category-group">
         <div class="category-title">UI/UX</div>
         <div class="grid">
-            <a href="project-aethel.html" class="project"><img src="aethel-display2.webp"><div class="label"><span>UI/UX</span> AETHEL</div></a>
-            <a href="project-illumix.html" class="project"><img src="illumix-cover.webp"><div class="label"><span>UI/ Web Design</span> ILLUMIX</div></a>
+            <div>
+                <a href="project-aethel.html" class="project"><img src="aethel-display2.webp"><div class="label"><span>UI/UX</span> AETHEL</div></a>
+                <div class="tags">
+                    <span>UI/UX Design</span>
+                    <span>Interactive Figma Prototype</span>
+                </div>
+            </div>
+            <div>
+                <a href="project-illumix.html" class="project"><img src="illumix-cover.webp"><div class="label"><span>UI/ Web Design</span> ILLUMIX</div></a>
+                <div class="tags">
+                    <span>Web Design</span>
+                    <span>Visual Systems</span>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="category-group">
-        <div class="category-title">Branding & Web Design</div>
+        <div class="category-title">Branding &amp; Web Design</div>
         <div class="grid">
-            <a href="project-haven.html" class="project"><img src="haven-package-girl.webp"><div class="label"><span>Branding/ Packaging</span> HAVEN</div></a>
-            <a href="project-moonhive.html" class="project"><img src="moonhive-bc.webp"><div class="label"><span>Branding/ Web Design</span> MOONHIVE</div></a>
+            <div>
+                <a href="project-haven.html" class="project"><img src="haven-package-girl.webp"><div class="label"><span>Branding/ Packaging</span> HAVEN</div></a>
+                <div class="tags">
+                    <span>Branding</span>
+                    <span>Custom Packaging Design</span>
+                </div>
+            </div>
+            <div>
+                <a href="project-moonhive.html" class="project"><img src="moonhive-bc.webp"><div class="label"><span>Branding/ Web Design</span> MOONHIVE</div></a>
+                <div class="tags">
+                    <span>Brand Identity</span>
+                    <span>Web Design</span>
+                </div>
+            </div>
         </div>
     </div>
 
