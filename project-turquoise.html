@@ -271,9 +271,14 @@ body {
 /* Featured pair — Carousel + Product Card get their own row, equal
    size, above the rest of the gallery. */
 .pj-gallery.featured { grid-template-columns: 1fr 1fr; margin-bottom: 20px; }
-.pj-gallery.featured figure { aspect-ratio: 4 / 3; }
-.pj-gallery.featured figure a, .pj-gallery.featured figure img { height: 100%; }
-.pj-gallery.featured figure img { object-fit: cover; }
+.pj-gallery.featured figure a {
+    aspect-ratio: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+.pj-gallery.featured figure img { width: auto; height: 100%; max-width: 100%; object-fit: contain; }
 
 /* Video section */
 .pj-video { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #000; }
@@ -372,10 +377,7 @@ body {
     </div>
 
     <!-- Walkthrough video — placed right after the cover shot so it's one
-         of the first things a visitor sees. Drop the file in as
-         turquoise-walkthrough.mp4 next to your images and uncomment this
-         block; otherwise delete it. -->
-    <!--
+         of the first things a visitor sees. -->
     <div class="pj-section">
         <div class="pj-label">Walkthrough</div>
         <div class="pj-video">
@@ -384,7 +386,6 @@ body {
             </video>
         </div>
     </div>
-    -->
 
     <div class="pj-section">
         <div class="pj-label">Overview</div>
