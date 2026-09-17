@@ -212,13 +212,15 @@ body {
 }
 
 /* Two-photo pair inside a challenge block (Admin Dashboard) — shown in
-   full, uncropped, at their own natural proportions */
+   full, uncropped, at their own natural proportions. Widened from 420px
+   to 600px so the pair reads at a normal size, not cramped, while still
+   nowhere near full-bleed. */
 .pj-challenge .media-pair {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-top: 24px;
-    max-width: 420px;
+    max-width: 600px;
 }
 .pj-challenge .media-pair > a {
     display: block;
@@ -269,8 +271,13 @@ body {
 .pj-gallery.full figure { max-width: 640px; }
 
 /* Featured pair — Carousel + Product Card get their own row, equal
-   size, above the rest of the gallery. */
-.pj-gallery.featured { grid-template-columns: 1fr 1fr; margin-bottom: 20px; }
+   size, above the rest of the gallery. Capped and centered so it
+   doesn't blow up too large on wide/desktop screens. */
+.pj-gallery.featured {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto 20px;
+    max-width: 480px;
+}
 .pj-gallery.featured figure a {
     aspect-ratio: 2 / 3;
     display: flex;
@@ -284,9 +291,21 @@ body {
 .pj-video { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #000; }
 .pj-video video { width: 100%; display: block; }
 
-/* Main walkthrough video — capped to a phone-portrait width instead of
-   stretching to the full container, since it's recorded vertically. */
-.pj-video.walkthrough { max-width: 380px; margin: 0 auto; }
+/* Main walkthrough video — capped to a phone-portrait width, with a
+   fixed 9:16 aspect-ratio on the container so it reserves the correct
+   size immediately (before the video's real dimensions are known),
+   instead of collapsing to a small placeholder box until playback. */
+.pj-video.walkthrough {
+    max-width: 380px;
+    margin: 0 auto;
+    aspect-ratio: 9 / 16;
+}
+.pj-video.walkthrough video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
 /* Bottom CTA — same pill button as the hero's "Visit Live Site" */
 .pj-cta { text-align: center; margin-top: 70px; padding-top: 60px; border-top: 1px solid rgba(0,0,0,0.08); }
