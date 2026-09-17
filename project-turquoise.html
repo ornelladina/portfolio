@@ -284,6 +284,10 @@ body {
 .pj-video { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #000; }
 .pj-video video { width: 100%; display: block; }
 
+/* Main walkthrough video — capped to a phone-portrait width instead of
+   stretching to the full container, since it's recorded vertically. */
+.pj-video.walkthrough { max-width: 380px; margin: 0 auto; }
+
 /* Bottom CTA — same pill button as the hero's "Visit Live Site" */
 .pj-cta { text-align: center; margin-top: 70px; padding-top: 60px; border-top: 1px solid rgba(0,0,0,0.08); }
 .pj-cta p { margin: 0 auto 24px; }
@@ -380,7 +384,7 @@ body {
          of the first things a visitor sees. -->
     <div class="pj-section">
         <div class="pj-label">Walkthrough</div>
-        <div class="pj-video">
+        <div class="pj-video walkthrough">
             <video controls poster="turquoise-cover.webp">
                 <source src="turquoise-walkthrough.mp4" type="video/mp4">
             </video>
