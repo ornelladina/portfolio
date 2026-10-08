@@ -130,6 +130,12 @@ body {
 .project img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s ease; }
 .project:hover { transform: translateY(-4px); border-color: rgba(0,0,0,0.2); }
 .project:hover img { transform: scale(1.03); }
+
+/* Full-frame cover — the Profix screenshot is much wider than the card, so
+   it's shown whole (contain) on white instead of being cropped. The white
+   matches the top of the screenshot, so the extra space blends in. */
+.project.fit-full { background: #fff; }
+.project.fit-full img { object-fit: contain; }
 .label { position: absolute; bottom: 14px; left: 14px; font-size: 13px; background: rgba(248,245,241,0.9); padding: 8px 12px; border-radius: 6px; }
 .label span { display: block; font-size: 10px; opacity: 0.6; text-transform: uppercase; margin-bottom: 2px; }
 
@@ -239,8 +245,8 @@ body {
                 </div>
             </div>
             <div>
-                <a href="project-profix.html" class="project">
-                    <img src="profix-cover.png" alt="Profix Handyman Services website" style="object-position: left top;">
+                <a href="project-profix.html" class="project fit-full">
+                    <img src="profix-cover.png" alt="Profix Handyman Services website">
                     <div class="label"><span>UI/UX Design &amp; Webflow Build</span> PROFIX HANDYMAN SERVICES</div>
                 </a>
                 <div class="tags">
