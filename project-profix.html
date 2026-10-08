@@ -108,11 +108,10 @@ a:focus-visible, video:focus-visible {
 /* CONTAINER */
 .container { flex: 1; max-width: 1000px; margin: 0 auto; padding: 60px 24px 80px; width: 100%; box-sizing: border-box; }
 
-/* Logo block — sits where the Turquoise page has its cover shot. The dark
-   tile is the same charcoal as the Profix site's own header, so the logo
-   always has the background it was designed for. */
+/* Logo block — sits where the Turquoise page has its cover shot. White
+   tile, since the logo is a transparent PNG with dark lettering. */
 .cover-shot { width: 100%; max-width: 720px; margin: 0 0 70px 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); }
-.cover-shot.logo-cover { background: #2a2a2a; padding: 56px 24px; text-align: center; }
+.cover-shot.logo-cover { background: #ffffff; padding: 56px 24px; text-align: center; }
 .cover-shot.logo-cover img { width: auto; max-width: 280px; height: auto; margin: 0 auto; display: block; }
 
 /* SECTIONS — same label style as the homepage's category-title */
@@ -220,9 +219,8 @@ a:focus-visible, video:focus-visible {
         <div class="pj-label">Walkthrough</div>
         <div class="pj-video">
             <video controls playsinline preload="metadata">
-                <source src="profix-video.mov" type="video/quicktime">
-                <source src="profix-video.mov" type="video/mp4">
-                Your browser can't play this video. You can download it from <a href="profix-video.mov">profix-video.mov</a>.
+                <source src="profix-video.mp4" type="video/mp4">
+                Your browser can't play this video.
             </video>
         </div>
         <p class="media-caption">A walkthrough of the finished Profix website.</p>
