@@ -1,40 +1,37 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Study: Profix Handyman Services</title>
+<title>Profix Handyman Services — ORNELLA DINA DELIA</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-  :root {
-    --brand-teal: #00B8D9;
-    --dark-grey: #1a1a1a;
-    --off-white: #F8F5F1;
-    --accent-gold: #E6D99C;
-    --font-sora: 'Sora', sans-serif;
-    --font-inter: 'Inter', sans-serif;
-  }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--off-white);
+/* GLOBAL — same tokens as the homepage, so this page matches it exactly */
+body {
+    margin: 0;
+    background: #F8F5F1;
     color: #1a1a1a;
-    font-family: var(--font-sora);
-    border: 12px solid var(--accent-gold);
+    font-family: "Sora", sans-serif;
+    border: 12px solid #E6D99C;
     min-height: 100vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-  }
+}
 
-  /* NAVBAR */
-  .navbar {
+a:focus-visible, video:focus-visible {
+    outline: 3px solid #1E8783;
+    outline-offset: 3px;
+}
+
+/* NAVBAR (shared look — burger behavior lives in header.html) */
+.navbar {
     width: 100%;
     height: 45px;
     background-color: #FFFCEF;
@@ -44,89 +41,285 @@
     align-items: center;
     box-sizing: border-box;
     z-index: 10000;
-  }
-  .logo { font-size: 16px; font-weight: 500; letter-spacing: 1px; }
-  .nav-links { display: flex; gap: 40px; font-size: 14px; align-items: center; }
-  .nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; }
+    overflow: visible;
+}
+.logo { font-size: 16px; font-weight: 130; letter-spacing: 1px; white-space: nowrap; }
+.nav-links { display: flex; gap: 40px; font-size: 14px; font-weight: 130; letter-spacing: 0.5px; height: 100%; align-items: center; }
+.nav-item { cursor: pointer; text-decoration: none; color: #1a1a1a; position: relative; height: 100%; display: flex; align-items: center; white-space: nowrap; }
+.dropdown {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFFCEF;
+    border: 2px solid #E6D99C;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 160px;
+    z-index: 10001;
+    border-radius: 4px;
+}
+.nav-item:hover .dropdown { display: flex; }
+.dropdown a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+.dropdown a:hover { background-color: #E6D99C; color: #FFFCEF; }
 
-  /* CASE STUDY SECTIONS */
-  .section-1 { background-color: var(--dark-grey); height: 80px; display: flex; align-items: center; justify-content: center; color: white; }
-  
-  .section-2 { position: relative; width: 100%; height: 60vh; overflow: hidden; background: #000; }
-  .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
-  .hero-text { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: white; font-family: var(--font-sora); font-size: 48px; text-align: center; }
+/* FOOTER (shared look) */
+.footer { padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid #E6D99C; background: #F8F5F1; box-sizing: border-box; }
+.footer-col h4 { font-size: 14px; text-transform: uppercase; margin-bottom: 20px; }
+.footer-col a { display: block; color: #1a1a1a; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
+.social-icons { display: flex; gap: 15px; align-items: center; }
 
-  .container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; font-family: var(--font-inter); }
-  .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-  
-  .section-mockup { padding: 60px 20px; background: white; text-align: center; }
-  .section-mockup img { max-width: 800px; width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-  
-  h2 { font-family: var(--font-sora); margin-bottom: 20px; color: var(--brand-teal); }
+/* PROJECT HERO — no colored background: it sits on the page's own
+   off-white, separated from the content by the same gold line used
+   elsewhere in the portfolio. */
+.project-hero {
+    position: relative;
+    width: 100%;
+    padding: 90px 24px 70px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #F8F5F1;
+    border-bottom: 1px solid #E6D99C;
+    text-align: center;
+    color: #1a1a1a;
+}
+.project-hero .eyebrow {
+    display: block;
+    margin-bottom: 18px;
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: #8A7627;
+}
+.project-hero h1 { margin: 0; font-size: 48px; font-weight: 100; letter-spacing: .12em; text-transform: uppercase; }
+.project-hero .subtitle { margin: 18px 0 0; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; opacity: .65; }
+.project-hero .rule { width: 64px; height: 1px; background: #E6D99C; margin: 26px auto 0; }
 
-  /* FOOTER */
-  .footer { padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid var(--accent-gold); background: var(--off-white); }
-  .footer-col h4 { font-size: 14px; text-transform: uppercase; margin-bottom: 20px; }
-  .footer-col a { display: block; color: #1a1a1a; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
+/* CONTAINER */
+.container { flex: 1; max-width: 1000px; margin: 0 auto; padding: 60px 24px 80px; width: 100%; box-sizing: border-box; }
 
-  @media (max-width: 768px) {
-    body { border-width: 8px; }
-    .navbar { padding: 0 16px; }
-    .footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
-  }
+/* Logo block — sits where the Turquoise page has its cover shot. The dark
+   tile is the same charcoal as the Profix site's own header, so the logo
+   always has the background it was designed for. */
+.cover-shot { width: 100%; max-width: 720px; margin: 0 0 70px 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); }
+.cover-shot.logo-cover { background: #2a2a2a; padding: 56px 24px; text-align: center; }
+.cover-shot.logo-cover img { width: auto; max-width: 280px; height: auto; margin: 0 auto; display: block; }
+
+/* SECTIONS — same label style as the homepage's category-title */
+.pj-section { margin-bottom: 64px; }
+.pj-section:last-child { margin-bottom: 0; }
+.pj-label {
+    margin: 0 0 18px;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E6D99C;
+}
+.pj-section p {
+    font-size: 17px;
+    line-height: 1.8;
+    font-weight: 300;
+    letter-spacing: .01em;
+    color: #222;
+    max-width: 760px;
+}
+
+/* Quick facts row under the intro */
+.pj-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 36px 0 0;
+    padding-top: 28px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+.pj-fact span { display: block; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; opacity: .55; margin-bottom: 8px; }
+.pj-fact strong { font-size: 15px; font-weight: 400; }
+
+/* Workflow line — Figma -> Webflow -> responsive */
+.pj-workflow {
+    margin: 20px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+.pj-workflow span.label { display: block; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; opacity: .55; margin-bottom: 10px; }
+.pj-workflow .steps { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-family: "Space Mono", monospace; font-size: 12.5px; }
+.pj-workflow .steps .arrow { opacity: .4; }
+
+/* Numbered build steps — a real sequence, so numbering is meaningful */
+.pj-challenge-list { display: flex; flex-direction: column; gap: 44px; }
+.pj-challenge .num {
+    display: block;
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #B9A24E;
+    margin-bottom: 8px;
+}
+.pj-challenge h3 { font-size: 19px; font-weight: 500; margin: 0 0 16px; letter-spacing: .01em; }
+.pj-challenge p { font-size: 15px; line-height: 1.75; opacity: .9; margin: 0; max-width: 760px; }
+
+/* Video section */
+.pj-video { width: 100%; max-width: 560px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #000; }
+.pj-video video { width: 100%; display: block; }
+.media-caption { margin: 12px 0 0; font-size: 12.5px; line-height: 1.5; opacity: .65; max-width: none; }
+
+.pj-nextlink { text-align: center; margin-top: 70px; padding-top: 40px; border-top: 1px solid rgba(0,0,0,0.08); }
+.pj-nextlink a { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #E6D99C; padding-bottom: 4px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  body { border-width: 8px; }
+  .navbar { padding: 0 16px; }
+  .logo { font-size: 12px; }
+  .footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 31px; }
+  .project-hero { padding: 60px 20px 50px; }
+  .project-hero h1 { font-size: 30px; }
+  .container { padding: 40px 20px 60px; }
+  .cover-shot { max-width: 100%; margin-bottom: 40px; }
+  .cover-shot.logo-cover { padding: 40px 20px; }
+  .pj-facts { grid-template-columns: 1fr; }
+}
 </style>
 </head>
+
 <body>
 
-  <nav class="navbar">
-    <div class="logo">PROFIX</div>
-    <div class="nav-links">
-      <a class="nav-item">Work</a>
-      <a class="nav-item">About</a>
+{% include header.html %}
+
+<div class="project-hero">
+    <span class="eyebrow">Case Study</span>
+    <h1>Profix Handyman Services</h1>
+    <div class="rule"></div>
+    <p class="subtitle">UI/UX Design · Webflow Development · Responsive Web Design</p>
+</div>
+
+<div class="container">
+
+    <div class="cover-shot logo-cover">
+        <img src="profix-logo.png" alt="Profix Handyman Services logo">
     </div>
-  </nav>
 
-  <section class="section-1">
-    <h1>Profix Handyman Services CA</h1>
-  </section>
-
-  <section class="section-2">
-    <img class="hero-img" src="Screen Shot 2026-06-29 at 5.53.11 PM.png" alt="Profix Hero">
-    <div class="hero-text">RELIABLE REPAIRS, ELEVATED.</div>
-  </section>
-
-  <section class="container">
-    <div class="grid-2col">
-      <div>
-        <h2>Project Overview</h2>
-        <p>Profix Handyman Services provides professional home maintenance and repair solutions in Orange County. The objective was to create a digital storefront that builds instant trust and streamlines the lead generation process.</p>
-      </div>
-      <div>
-        <h2>Design Strategy</h2>
-        <p>Focused on "conversion-first" design. By utilizing high-contrast call-to-actions and service-oriented imagery, the site bridges the gap between a casual browser and a booked client.</p>
-      </div>
+    <!-- Walkthrough video — right after the cover block, same position as
+         the Turquoise page, so it's one of the first things a visitor sees. -->
+    <div class="pj-section">
+        <div class="pj-label">Walkthrough</div>
+        <div class="pj-video">
+            <video controls playsinline preload="metadata">
+                <source src="profix-video.mov" type="video/quicktime">
+                <source src="profix-video.mov" type="video/mp4">
+                Your browser can't play this video. You can download it from <a href="profix-video.mov">profix-video.mov</a>.
+            </video>
+        </div>
+        <p class="media-caption">A walkthrough of the finished Profix website.</p>
     </div>
-  </section>
 
-  <section class="section-mockup">
-    <h2>Mobile & Desktop Interface</h2>
-    <img src="profix-laptop.webp" alt="Profix Laptop Mockup">
-  </section>
+    <div class="pj-section">
+        <div class="pj-label">Overview</div>
+        <p>
+            Profix Handyman Services provides home repair and property maintenance in Orange County,
+            California. I took their website from the initial design phase to a final, fully working
+            Webflow site, handling every stage myself: all of the pages designed in Figma, the
+            technical build done in Webflow, and every page made responsive so it works across
+            screen sizes.
+        </p>
 
-  <section class="container">
-    <h2>Project Gallery Approach</h2>
-    <p>To showcase expertise, we implemented a clean, card-based gallery system. This allows customers to view "Before & After" transformations like the ones found in Screen Shot 2026-06-29 at 5.55.02 PM.png and Screen Shot 2026-06-29 at 5.55.06 PM.png.</p>
-  </section>
+        <div class="pj-facts">
+            <div class="pj-fact"><span>Role</span><strong>UI/UX Designer &amp; Webflow Developer</strong></div>
+            <div class="pj-fact"><span>Deliverables</span><strong>Page Designs, Webflow Build, Responsive Layouts</strong></div>
+            <div class="pj-fact"><span>Tools &amp; Tech</span><strong>Figma, Webflow</strong></div>
+        </div>
 
-  <section class="section-mockup">
-    <img src="Screen Shot 2026-06-29 at 6.15.06 PM.png" alt="Project Details">
-  </section>
+        <div class="pj-workflow">
+            <span class="label">Workflow</span>
+            <div class="steps">
+                <span>UI/UX Design (Figma)</span><span class="arrow">➔</span>
+                <span>Technical Build (Webflow)</span><span class="arrow">➔</span>
+                <span>Responsive Layouts (All Screen Sizes)</span><span class="arrow">➔</span>
+                <span>Finished, Working Website</span>
+            </div>
+        </div>
+    </div>
 
-  <footer class="footer">
-    <div class="footer-col"><h4>Profix</h4><p>Handyman Services CA</p></div>
-    <div class="footer-col"><h4>Navigation</h4><a href="#">Home</a><a href="#">Projects</a></div>
-    <div class="footer-col"><h4>Contact</h4><a href="#">562-525-6091</a></div>
-  </footer>
+    <div class="pj-section">
+        <div class="pj-label">Design Approach</div>
+        <p>
+            The site is designed around one goal: turning a visitor into a quote request. The
+            "Get a Free Quote" and call buttons stay within reach throughout, trust points such as
+            licensed and insured professionals and same-day service sit right below the hero, and a
+            project gallery of before-and-after work lets customers see the quality of the work
+            before they get in touch.
+        </p>
+    </div>
+
+    <div class="pj-section">
+        <div class="pj-label">How I Built It</div>
+        <div class="pj-challenge-list">
+
+            <div class="pj-challenge">
+                <span class="num">01</span>
+                <h3>Designed every page in Figma</h3>
+                <p>
+                    I designed all of the site's pages in Figma first, setting the layout, structure,
+                    and visual style before any development started. I also built a clickable mobile
+                    prototype to test how the experience would work on a phone.
+                </p>
+            </div>
+
+            <div class="pj-challenge">
+                <span class="num">02</span>
+                <h3>Built the site in Webflow</h3>
+                <p>
+                    I handled the technical work in Webflow myself, turning the Figma designs into a
+                    live site. That covered the page structure, styling, navigation, the services
+                    slider, and the project gallery.
+                </p>
+            </div>
+
+            <div class="pj-challenge">
+                <span class="num">03</span>
+                <h3>Made every page responsive</h3>
+                <p>
+                    I checked and adjusted each page so it works across screen sizes, from desktop
+                    down to mobile, keeping the quote and call buttons easy to reach wherever the
+                    visitor is.
+                </p>
+            </div>
+
+            <div class="pj-challenge">
+                <span class="num">04</span>
+                <h3>Delivered a complete, working site</h3>
+                <p>
+                    The result is a finished website, taken from the first design to the final build
+                    with no handoff in between, so customers can request a free quote or call in a
+                    couple of taps.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="pj-nextlink">
+        <a href="index.html">← Back to All Work</a>
+    </div>
+
+</div>
+
+{% include footer.html %}
 
 </body>
 </html>
